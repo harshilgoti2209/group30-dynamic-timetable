@@ -1,0 +1,3 @@
+# group30-dynamic-timetable
+...
+## Assignments
