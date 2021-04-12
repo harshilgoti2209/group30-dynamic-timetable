@@ -53,3 +53,8 @@ class Account(AbstractBaseUser):
 
     def has_module_perms(self, app_label):
         return True
+
+class Notes(models.Model ):
+    userid= models.CharField(max_length=100)
+    slotid= models.CharField(max_length=100)
+    notes = models.TextField(max_length=1000)

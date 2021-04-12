@@ -1,9 +1,9 @@
 from django.shortcuts import render,redirect
 from django.contrib.auth import logout as logout_,login as login_,authenticate,update_session_auth_hash
-from .forms import UserSignUpForm,profileform,ProfSignUpForm
+from .forms import UserSignUpForm,profileform,ProfSignUpForm,Editnotes
 from django.contrib.auth.forms import AuthenticationForm,PasswordChangeForm
 from django.contrib import messages
-from .models import Account
+from .models import Account,Notes
 import csv,io
 
 def home(request):
@@ -123,7 +123,6 @@ def studentcsv(request):
         data_set = csv_file.read().decode('UTF-8')
         io_string=io.StringIO(data_set)
         next(io_string)
-        error=""
         for column in csv.reader(io_string, delimiter=',', quotechar='|'):
             x=Account.objects.filter(username=column[0])
             y=Account.objects.filter(email=column[1])
@@ -163,4 +162,24 @@ def addprof(request):
     else:
         return redirect('login')
 
-
+def editnotes(request,id,slotid):
+    if not request.user.is_authenticated or id!=str(request.user.id):
+        messages.info(request,"You can not edit/view someone's notes")
+        return redirect('login')
+    else:
+        account=Notes.objects.filter(userid=id,slotid=slotid)
+        if account.count()==0:
+            ob=Notes(userid=id, slotid=slotid, notes='')
+            ob.save()
+        account=Notes.objects.get(userid=id,slotid=slotid)
+        if request.method=="POST":
+            fm=Editnotes(request.POST, instance=account)
+            if fm.is_valid():
+                data=fm.cleaned_data['notes']
+                note=Notes(id=account.id,userid=id,slotid=slotid,notes=data) 
+                note.save()
+                messages.success(request,'Your Notes is edited successfully!!!')
+                return redirect('viewtimetable')
+        else:
+            fm=Editnotes( instance=account)
+        return render(request,'main/editnotes.html',{'form':fm})
