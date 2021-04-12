@@ -5,6 +5,7 @@ from django.contrib.auth.forms import AuthenticationForm,PasswordChangeForm
 from django.contrib import messages
 from .models import Account
 
+
 def home(request):
     return render(request,'main/home.html')
 
