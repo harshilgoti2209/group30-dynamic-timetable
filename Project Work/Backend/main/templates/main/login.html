@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'main/css/home.css' %}">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Login</h1>
+    <form method="post" novalidate>
+        {% if form.non_field_errors %}
+         {% for error in form.non_field_errors %}
+          <p> {{error}} </p>
+         {% endfor%}
+        {% endif%}
+       {% csrf_token %}
+     {% for fm in form %}
+     {{ fm.label_tag }} {{fm}} {{ fm.errors|striptags}} <br>
+     {% endfor%}
+     <button type="submit">Login</button>
+   </form>
+   <a href="{% url 'home' %}">back</a>
+</body>
+</html>
