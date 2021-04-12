@@ -183,3 +183,7 @@ def editnotes(request,id,slotid):
         else:
             fm=Editnotes( instance=account)
         return render(request,'main/editnotes.html',{'form':fm})
+
+
+
+        
