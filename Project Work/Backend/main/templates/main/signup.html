@@ -12,9 +12,9 @@
 
 <body>
   <h2>Add student</h2>
-  <form method="post" action="/studentcsv/">
+  <form method="post" action="/studentcsv/" enctype="multipart/form-data">
     {% csrf_token %}
-    <input type="file" name="file">
+    <input type="file" name="data">
     <button type="submit">submit</button>
   </form>
   <form method="post" novalidate>

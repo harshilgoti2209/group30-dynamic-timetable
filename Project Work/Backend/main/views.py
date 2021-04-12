@@ -4,7 +4,7 @@ from .forms import UserSignUpForm,profileform,ProfSignUpForm
 from django.contrib.auth.forms import AuthenticationForm,PasswordChangeForm
 from django.contrib import messages
 from .models import Account
-
+import csv,io
 
 def home(request):
     return render(request,'main/home.html')
@@ -119,7 +119,19 @@ def signup(request):
 
 def studentcsv(request):
     if request.method=='POST':
-        data=request.POST.get('file')  #csv file read code
+        csv_file=request.FILES['data']   #csv file read code
+        data_set = csv_file.read().decode('UTF-8')
+        io_string=io.StringIO(data_set)
+        next(io_string)
+        error=""
+        for column in csv.reader(io_string, delimiter=',', quotechar='|'):
+            x=Account.objects.filter(username=column[0])
+            y=Account.objects.filter(email=column[1])
+            if x.count() > 0 or y.count()>0 :
+                messages.info(request,f'{column[0]} username or {column[1]} email is already exist') 
+            else:
+                fm=Account(username=column[0], email=column[1] , password=column[2] , batch=column[3])
+                fm.save() 
         messages.info(request,'success')
         return redirect('signup')
     else:
@@ -144,8 +156,11 @@ def addprof(request):
                 prof=Account(username=name,password=password,email=email,is_prof=True)
                 prof.save()
                 messages.success(request,'success!!!')
+                fm=ProfSignUpForm()
         else:
             fm=ProfSignUpForm()
         return render(request,'main/profsignup.html',{'form':fm})
     else:
         return redirect('login')
+
+
