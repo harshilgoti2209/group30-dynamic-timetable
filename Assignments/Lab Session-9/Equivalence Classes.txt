@@ -1,0 +1,32 @@
+﻿Equivalence Classes : 
+
+
+Year : 
+1. Year less than 1900 is invalid class.
+2. Year between 1900 and 2015 (including 1900 and 2015) is valid class.
+3. Year greater than 2015 is invalid class.
+
+
+Month : 
+1. Month less than 1 is invalid class.
+2. Month between 1 and 12 (including 1 and 12) is valid class.
+3. Month greater than 12 is invalid class.
+
+
+Day : 
+1. For months 1,3,5,7,8,10,12 : 
+   1. Day less than 1 is invalid class.
+   2. Day between 1 and 31 (including 1 and 31) is valid class.
+   3. Day greater than 31 is invalid class.
+2. For month 4,6,9,11 : 
+   1. Day less than 1 is invalid class.
+   2. Day between 1 and 30 (including 1 and 30) is valid class.
+   3. Day greater than 30 is invalid class. 
+3. For month 2 and leap year : 
+   1. Day less than 29 is invalid class.
+   2. Day between 1 and 29 (including 1 and 29) is valid class.
+   3. Day greater than 29 is invalid class.
+4. For moth 2 and not leap year : 
+   1. Day less than 1 is invalid class.
+   2. Day between 1 and 28 (including 1 and 28) is valid class.
+   3. Day greater than 28 is invalid class.
