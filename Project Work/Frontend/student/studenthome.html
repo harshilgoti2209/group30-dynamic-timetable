@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>proff_home</title>
+    <title>student_home</title>
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alegreya+Sans+SC">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Encode+Sans">
@@ -28,27 +28,15 @@
     <div style="margin-top: 0px;">
         <ul class="nav nav-pills nav-justified text-center d-flex d-xl-flex flex-row align-items-xl-start" role="tablist" data-aos="fade-down" data-aos-duration="600" style="width: 100%;background: #ffffff;padding: 10px;font-family: 'Encode Sans Expanded', sans-serif;">
             <li class="nav-item" role="presentation"><a class="nav-link active" role="tab" data-toggle="pill" href="#tab-5">Home</a></li>
-            
-            <li class="nav-item" role="presentation"><a class="nav-link" role="tab" data-toggle="pill" href="#tab-7">View profile</a></li>
-            <li class="nav-item" role="presentation"><a class="nav-link" role="tab" data-toggle="pill" href="#tab-4">Edit profile</a></li>
-            <li class="nav-item" role="presentation"><a class="nav-link" role="tab" data-toggle="pill" href="#tab-1">View Available slot</a></li>
-            <li class="nav-item" role="presentation"><a class="nav-link" role="tab" data-toggle="pill" href="#tab-6">change slot</a></li>
+            <!-- <li class="nav-item" role="presentation"><a class="nav-link" role="tab" data-toggle="pill" href="#tab-6">Add Batch</a></li> -->
+            <li class="nav-item" role="presentation"><a class="nav-link" role="tab" data-toggle="pill" href="#tab-1">View profile</a></li>
+            <li class="nav-item" role="presentation"><a class="nav-link" role="tab" data-toggle="pill" href="#tab-4">Edit Profile</a></li>
             <li class="nav-item" role="presentation"><a class="nav-link" role="tab" data-toggle="pill" href="#tab-2">View Time-Table</a></li>
-            <li class="nav-item" role="presentation"><a class="nav-link" role="tab" data-toggle="pill" href="#tab-3">Generate Table</a></li>
+            <!-- <li class="nav-item" role="presentation"><a class="nav-link" role="tab" data-toggle="pill" href="#tab-3">Generate Table</a></li> -->
             <li class="nav-item" role="presentation"><a class="nav-link" href="../home.html">Logout <i class="fa fa-sign-out"></i></a></li>
         </ul>
         <div class="tab-content" data-aos="fade-up" data-aos-delay="350" data-aos-once="true" style="height: 100vh;background: #f2f2f2;">
-            <div class="tab-pane active" role="tabpanel" id="tab-5">
-                <div class="container d-md-flex align-items-center justify-content-center">
-                    <div class="row">
-                        <div class="col-md-12" style="justify-content:center;">
-                            <p style="font-size:50px;font-family:Encode Sans Expanded;color:#495057;padding-top:250px;"> Welcome to Dynamic Time-Table System</p>
-                            <lottie-player src="https://assets8.lottiefiles.com/packages/lf20_vo0a1yca.json" background="transparent" speed="1" style="width: 400px; height: 400px; display:flex;position:relative; left:290px;" loop autoplay></lottie-player>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div id="tab-7" role="tabpanel" class="tab-pane container bootstrap snippets bootdey" style="margin-top:30px;">
+            <div id="tab-1" role="tabpanel" class="tab-pane container bootstrap snippets bootdey" style="margin-top:30px;">
                 <div class="panel-body inf-content">
                     <div class="row">
                         <div class="col-md-4">
@@ -156,24 +144,47 @@
                     </div>
                 </div>
             </div>
-            <div class="tab-pane" role="tabpanel" id="tab-3">
-                
-                <div style="padding-left: 50%;padding-top: 10%;">
-                    Generate Time-Table
+            <div class="tab-pane active" role="tabpanel" id="tab-5">
+                <div class="container d-md-flex align-items-center justify-content-center">
+                    <div class="row">
+                        <div class="col-md-12" style="justify-content:center;">
+                            <p style="font-size:50px;font-family:Encode Sans Expanded;color:#495057;padding-top:250px;"> Welcome to Dynamic Time-Table System</p>
+                            <lottie-player src="https://assets8.lottiefiles.com/packages/lf20_vo0a1yca.json" background="transparent" speed="1" style="width: 400px; height: 400px; display:flex;position:relative; left:290px;" loop autoplay></lottie-player>
+                        </div>
+                    </div>
                 </div>
             </div>
+
             <div class="tab-pane" role="tabpanel" id="tab-6">
-                
-                <div style="padding-left: 50%;padding-top: 10%;">
-                    chnange slots
+                <div class="row register-form">
+                    <div class="col-md-8 offset-md-2">
+                        <form class="custom-form">
+                            <h1>Add Batch</h1>
+                            <div class="form-row form-group">
+                                <div class="col-sm-4 label-column"><label class="col-form-label" for="name-input-field">Year&nbsp;</label></div>
+                                <div class="col-sm-6 input-column"><input class="form-control" type="text"></div>
+                            </div>
+                            <div class="form-row form-group">
+                                <div class="col-sm-4 label-column"><label class="col-form-label" for="email-input-field">Number of Subject&nbsp;</label></div>
+                                <div class="col-sm-6 input-column"><input class="form-control" type="email"></div>
+                            </div>
+                            <div class="form-row form-group">
+                                <div class="col-sm-4 label-column"><label class="col-form-label" for="dropdown-input-field">Subjects&nbsp;</label></div>
+                                <div class="col-sm-4 input-column">
+                                    <div class="dropdown"><button class="btn btn-light dropdown-toggle" aria-expanded="false" data-toggle="dropdown" type="button">Dropdown </button>
+                                        <div class="dropdown-menu"><a class="dropdown-item" href="#">First Item</a><a class="dropdown-item" href="#">Second Item</a><a class="dropdown-item" href="#">Third Item</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row form-group">
+                                <div class="col-sm-4 label-column"><label class="col-form-label" for="email-input-field">Batch Name&nbsp;</label></div>
+                                <div class="col-sm-6 input-column"><input class="form-control" type="email"></div>
+                            </div><button class="btn btn-light submit-button" type="button">ADD</button>
+                        </form>
+                    </div>
                 </div>
             </div>
-            <div class="tab-pane" role="tabpanel" id="tab-1">
-                
-                <div style="padding-left: 50%;padding-top: 10%;">
-                    available slots
-                </div>
-            </div>
+            
             <div class="tab-pane" role="tabpanel" id="tab-4">
                 <div class="container profile profile-view" id="profile">
                     <div class="row">
@@ -689,7 +700,10 @@
                     </tbody>
                 </table>
             </div>
-            
+            <div class="tab-pane" role="tabpanel" id="tab-3"></div>
+            <div class="tab-pane" role="tabpanel" id="tab-7">
+                <p>Tab content.</p>
+            </div>
         </div>
     </div>
     <script src="assets/js/jquery.min.js"></script>
