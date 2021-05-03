@@ -29,4 +29,5 @@ urlpatterns = [
     
     path('editnotes/<str:id>/<str:slotid>',editnotes,name='editnotes'),
 
+
 ]

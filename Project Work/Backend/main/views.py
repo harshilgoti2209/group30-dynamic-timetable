@@ -4,6 +4,7 @@ from .forms import UserSignUpForm,profileform,ProfSignUpForm,Editnotes
 from django.contrib.auth.forms import AuthenticationForm,PasswordChangeForm
 from django.contrib import messages
 from .models import Account,Notes
+from django.contrib.auth.hashers import make_password
 import csv,io
 
 def home(request):
@@ -129,8 +130,9 @@ def studentcsv(request):
             if x.count() > 0 or y.count()>0 :
                 messages.info(request,f'{column[0]} username or {column[1]} email is already exist') 
             else:
-                fm=Account(username=column[0], email=column[1] , password=column[2] , batch=column[3])
-                fm.save() 
+                hash_password=make_password( column[2]  )
+                fm=Account(username=column[0], email=column[1] , password=hash_password ,batch=column[3])
+                fm.save()
         messages.info(request,'success')
         return redirect('signup')
     else:
@@ -152,6 +154,7 @@ def addprof(request):
                 name=fm.cleaned_data['username']
                 password=fm.cleaned_data['password1']
                 email=fm.cleaned_data['email']
+                password=make_password(password)
                 prof=Account(username=name,password=password,email=email,is_prof=True)
                 prof.save()
                 messages.success(request,'success!!!')
