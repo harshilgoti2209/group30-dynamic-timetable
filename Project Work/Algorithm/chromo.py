@@ -22,38 +22,69 @@ class Chromosome:
 
     def calcFitness(self, timetable, genes, num_Batch, noClassInDay, noDays):
         fitness = 0
-        cube = timetable.reshape((num_Batch, noClassInDay, noDays)) 
-
         vis_prof = -1 * np.ones(100)
         vis_batch = -1 * np.ones(num_Batch)
 
-        for i in range(cube.shape[1]):
-            for j in range(cube.shape[2]):
+        for i in range(noClassInDay):
+            for j in range(noDays):
                 
                 time_slot = i*noDays + j
 
-                for k in range(cube.shape[0]):
-                    if cube[k, i, j] != -1:
-                        if(vis_prof[genes[cube[k,i,j]].prof_id] == time_slot) :
-                            fitness= fitness - 1
-                        else : 
-                            vis_prof[genes[cube[k,i,j]].prof_id] = time_slot
+                for k in range(num_Batch):
 
-                        if(vis_batch[genes[cube[k,i,j]].batch_id] == time_slot) : 
+                    slot = timetable[k*noClassInDay*noDays + i*noDays + j]
+
+                    if slot != -1:
+                        if(vis_prof[genes[slot].prof_id] == time_slot) :
                             fitness= fitness - 1
                         else : 
-                            vis_batch[genes[cube[k,i,j]].batch_id] = time_slot
+                            vis_prof[genes[slot].prof_id] = time_slot
+
+                        if(vis_batch[genes[slot].batch_id] == time_slot) : 
+                            fitness= fitness - 1
+                        else : 
+                            vis_batch[genes[slot].batch_id] = time_slot
         
         return (fitness)
 
-    def mutate(self, rate):
+    def mutate(self,rate) :
+        return self.mutation(rate,self.timetable, self.genes, self.num_Batch, self.classesInDay, self.days)
+
+    def mutation(self, rate, timetable, genes, num_Batch, noClassInDay, noDays) : 
+
         if np.random.uniform(0,1) < rate:
-            i = 0
-            j = 0
-            while i == j:
-                i = np.random.randint(0, self.timetable.shape[0])
-                j = np.random.randint(0, self.timetable.shape[0])
-            self.timetable = self.mut(self.timetable, i, j)
+            #Instead of randomly assigning i and j, find the two which are clashing and then swap those two.
+            vis_prof = -1 * np.ones(100)
+            vis_batch = -1 * np.ones(num_Batch)
+
+            s1 = -1
+            s2 = -1
+
+            for i in range(noClassInDay):
+                for j in range(noDays):
+
+                    if s1 != -1 and s2 != -1 : 
+                        break
+
+                    time_slot = i*noDays + j
+
+                    for k in range(num_Batch):
+
+                        slot = timetable[k*noClassInDay*noDays + i*noDays + j]
+
+                        if slot != -1 :
+                            if(vis_prof[genes[slot].prof_id] == time_slot or vis_batch[genes[slot].batch_id] == time_slot) :
+
+                                if s1 == -1 : 
+                                    s1 = slot    
+                                elif s2 == -1 and s1 != slot :
+                                    s2 = slot
+
+                            vis_prof[genes[slot].prof_id] = time_slot
+                            vis_batch[genes[slot].batch_id] = time_slot
+            
+            if s1 != -1 and s2 != -1 :
+                self.timetable = self.mut(self.timetable, s1, s2)
 
     def mut(self, timetable, i, j) :
         temp = timetable[i]
