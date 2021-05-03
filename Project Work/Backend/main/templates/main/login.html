@@ -2,26 +2,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="{% static 'main/css/home.css' %}">
-    <title>Document</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Login</title>
+    <link rel="stylesheet" href="{% static 'main/login_assets/bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <link rel="stylesheet" href="{% static 'main/login_assets/css/Login-Form-Clean.css' %}">
+    <link rel="stylesheet" href="{% static 'main/login_assets/css/styles.css' %}">
 </head>
 <body>
-    <h1>Login</h1>
-    <form method="post" novalidate>
-        {% if form.non_field_errors %}
-         {% for error in form.non_field_errors %}
-          <p> {{error}} </p>
-         {% endfor%}
-        {% endif%}
-       {% csrf_token %}
-     {% for fm in form %}
-     {{ fm.label_tag }} {{fm}} {{ fm.errors|striptags}} <br>
-     {% endfor%}
-     <button type="submit">Login</button>
-   </form>
-   <a href="{% url 'home' %}">back</a>
+     <section class="login-clean" style="height: 100vh;">
+        <form data-aos="fade-down" data-aos-duration="300" method="post" style="margin-top: 161px;border-radius: 25px;">
+            <h6 style="text-align: center">Admin</h6 style>
+            <div data-aos="fade-up" data-aos-duration="350" data-aos-delay="450" class="illustration"><img src="{% static 'main/login_assets/img/img-01.png' %}" style="height: 156px;"></div>
+            <div class="mb-3"><input class="form-control" type="text" name="email" placeholder="Username" /></div>
+            <div class="mb-3"><input class="form-control" type="password" name="password" placeholder="Password"></div>
+            <div class="mb-3"><button class="btn btn-primary d-block w-100" type="submit" style="background: rgb(102,215,215);">Log In</button></div><a class="forgot" href="#" style="margin-top: 20px;">Forgot your Username or password?</a><a class="forgot" href="{% url 'home' %}"
+                style="margin-top: 14px;">Back to Home</a>
+        </form>
+    </section>
+    <script src="{% static 'main/login_assets/bootstrap/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'main/login_assets/js/bs-init.js' %}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 </body>
 </html>
