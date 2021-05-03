@@ -3,7 +3,9 @@ from .views import home,login,about,signup,contact,logout,shome,sprofile,seditpr
 urlpatterns = [
     path('',home,name='home'),   #done
     
-    path('login/',login,name='login'),    #done
+    path('alogin/',login,name='alogin'),
+    path('plogin/',login,name='plogin'),
+    path('slogin/',login,name='slogin'),    #done
     path('logout/',logout,name='logout'),  #done
     
     path('about/',about,name='about'),  #done
