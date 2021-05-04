@@ -1,3 +1,4 @@
+{% load static%}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -42,7 +43,7 @@
             <li class="nav-item" role="presentation"><a class="nav-link" role="tab" data-toggle="pill" href="#tab-6">change slot</a></li>
             <li class="nav-item" role="presentation"><a class="nav-link" role="tab" data-toggle="pill" href="#tab-2">View Time-Table</a></li>
             <li class="nav-item" role="presentation"><a class="nav-link" role="tab" data-toggle="pill" href="#tab-3">Generate Table</a></li>
-            <li class="nav-item" role="presentation"><a class="nav-link" href="../home.html">Logout <i class="fa fa-sign-out"></i></a></li>
+            <li class="nav-item" role="presentation"><a class="nav-link" href="{% url 'logout'%}">Logout <i class="fa fa-sign-out"></i></a></li>
         </ul>
         <div class="tab-content" data-aos="fade-up" data-aos-delay="350" data-aos-once="true" style="height: 100vh;background: #f2f2f2;">
             <div class="tab-pane active" role="tabpanel" id="tab-5">
