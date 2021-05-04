@@ -1,17 +1,15 @@
 from django.urls import path
-from .views import home,login,about,signup,contact,logout,shome,sprofile,seditprofile,viewtimetable,phome,addprof,ahome,changepassword, studentcsv, profcsv ,editnotes
+from .views import * 
 urlpatterns = [
     path('',home,name='home'),   #done
     
     path('login/',login,name='login'),    #done
     path('logout/',logout,name='logout'),  #done
-    
-    path('about/',about,name='about'),  #done
-    path('contact/',contact,name='contact'),  #done
-   
     path('shome/',shome,name='shome'),  #done
-    path('sprofile/<str:id>',sprofile,name='sprofile'),   #done
-    path('seditprofile/<str:id>',seditprofile,name='seditprofile'),   #done
+
+
+    # path('sprofile/<str:id>',sprofile,name='sprofile'),   #done
+    path('seditprofile/',seditprofile,name='seditprofile'),   #done
     
     path('viewtimetable/',viewtimetable,name='viewtimetable'),   #done
 
