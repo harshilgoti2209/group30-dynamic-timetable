@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'main/prof_assets/bootstrap/css/bootstrap.min.css' %}">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alegreya+Sans+SC">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Encode+Sans">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Encode+Sans+Expanded">
@@ -31,7 +31,7 @@
     <link rel="shortcut icon" href="{% static 'main/prof_assets/img/timetable.png' %}" type="image/x-icon">
 </head>
 <body>
-    <h1> home page for professor</h1>
+    <!-- <h1> home page for professor</h1> -->
     <div style="margin-top: 0px;">
         <ul class="nav nav-pills nav-justified text-center d-flex d-xl-flex flex-row align-items-xl-start" role="tablist" data-aos="fade-down" data-aos-duration="600" style="width: 100%;background: #ffffff;padding: 10px;font-family: 'Encode Sans Expanded', sans-serif;">
             <li class="nav-item" role="presentation"><a class="nav-link active" role="tab" data-toggle="pill" href="#tab-5">Home</a></li>
@@ -701,15 +701,15 @@
 
         </div>
     </div>
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-    <script src="assets/js/bs-init.js"></script>
+    <script src="{% static 'main/prof_assets/js/jquery.min.js' %}"></script>
+    <script src="{% static 'main/prof_assets/bootstrap/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'main/home_assets/js/bs-init.js' %}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.15/js/dataTables.bootstrap.min.js"></script>
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-    <script src="assets/js/Profile-Edit-Form.js"></script>
-    <a href="{% url 'viewtimetable'%}">time table</a>
-    <a href="{% url 'logout' %}">logout</a>
+    <script src="{% static 'main/prof_assets/js/Profile-Edit-Form.js' %}"></script>
+    <!-- <a href="{% url 'viewtimetable'%}">time table</a> -->
+    <!-- <a href="{% url 'logout' %}">logout</a> -->
 </body>
 </html>
