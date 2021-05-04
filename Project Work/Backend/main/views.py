@@ -4,11 +4,15 @@ from .forms import UserSignUpForm,profileform,ProfSignUpForm,Editnotes
 from django.contrib.auth.forms import AuthenticationForm,PasswordChangeForm
 from django.contrib import messages
 from .models import Account,Notes
+from django.contrib.auth.hashers import make_password
+from .forms import loginForm
 import csv,io
 
+##working 
 def home(request):
     return render(request,'main/home.html')
 
+##working
 def login(request):
     if request.user.is_authenticated:
         if request.user.is_prof:
@@ -19,45 +23,42 @@ def login(request):
             return redirect('shome') 
     else:
         if request.method=='POST':
-            fm=AuthenticationForm(request=request,data=request.POST)
+            fm=loginForm(request=request,data=request.POST)
             if fm.is_valid():
                 email=fm.cleaned_data['username']
                 password=fm.cleaned_data['password']
                 user=authenticate(email=email,password=password)
                 if user is not None:
                     login_(request,user)
-                    messages.success(request,'welcome!!!')
                     return redirect('login')
         else:
-            fm=AuthenticationForm()
+            fm=loginForm()
         return render(request,'main/login.html',{'form':fm})
 
+##working
 def logout(request):
     logout_(request)
     return redirect('login')
 
-def about(request):
-    return render(request,'main/about.html')
-
-def contact(request):
-    return render(request,'main/contact.html')
 
 def shome(request):
     if request.user.is_authenticated and request.user.is_prof==False and request.user.is_superuser==False:
-        username=request.user.username
-        return render(request,'main/shome.html' ,{'username':username})
+        account=Account.objects.get(pk=request.user.id)
+        pform=profileform(instance=request.user )
+        return render(request,'main/shome.html' ,{'data':account,'pform': pform})
     else:
         return redirect('login')    
 
-def sprofile(request,id):
-    if not request.user.is_authenticated:
-        return redirect('login')
-    else:
-        account=Account.objects.get(pk=id)
-        return render(request,'main/sprofile.html',{'user':account})
+# def sprofile(request,id):
+#     if not request.user.is_authenticated:
+#         return redirect('login')
+#     else:
+#         account=Account.objects.get(pk=id)
+#         return render(request,'main/sprofile.html',{'user':account})
 
-def seditprofile(request,id):
-    if not request.user.is_authenticated or id!=str(request.user.id):
+
+def seditprofile(request):
+    if not request.user.is_authenticated: 
         messages.info(request,'You can not edit someone profile')
         return redirect('login')
     else:
@@ -67,10 +68,10 @@ def seditprofile(request,id):
             if fm.is_valid():
                 fm.save()
                 messages.success(request,'Your profile is edited successfully!!!')
-                return redirect('sprofile', id)
-        else:
-            fm=profileform( instance=request.user )
-        return render(request,'main/seditprofile.html',{'form':fm})
+                return redirect('login')
+            messages.info(request,f'username or email is already exist')
+            return redirect('login')
+
 
 def viewtimetable(request):
     if request.user.is_authenticated:
@@ -129,8 +130,9 @@ def studentcsv(request):
             if x.count() > 0 or y.count()>0 :
                 messages.info(request,f'{column[0]} username or {column[1]} email is already exist') 
             else:
-                fm=Account(username=column[0], email=column[1] , password=column[2] , batch=column[3])
-                fm.save() 
+                hash_password=make_password( column[2]  )
+                fm=Account(username=column[0], email=column[1] , password=hash_password ,batch=column[3])
+                fm.save()
         messages.info(request,'success')
         return redirect('signup')
     else:
@@ -152,6 +154,7 @@ def addprof(request):
                 name=fm.cleaned_data['username']
                 password=fm.cleaned_data['password1']
                 email=fm.cleaned_data['email']
+                password=make_password(password)
                 prof=Account(username=name,password=password,email=email,is_prof=True)
                 prof.save()
                 messages.success(request,'success!!!')
