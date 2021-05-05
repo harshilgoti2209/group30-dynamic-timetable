@@ -1,7 +1,7 @@
 import numpy as np
 import random
 from copy import deepcopy
-from gene import *
+from .gene import *
 
 class Chromosome:
 
@@ -124,13 +124,13 @@ class Chromosome:
                             vis_prof[genes[slot_1].prof_id] = time_slot
                             vis_batch[genes[slot_1].batch_id] = time_slot
 
-                    elif slot_2 != -1 and vis_prof[genes[slot_1].prof_id] != time_slot and vis_batch[genes[slot_1].batch_id] != time_slot and selected_slot[genes[slot_1].slot_id] == 0 :
+                    elif slot_2 != -1 and vis_prof[genes[slot_2].prof_id] != time_slot and vis_batch[genes[slot_2].batch_id] != time_slot and selected_slot[genes[slot_2].slot_id] == 0 :
                         
-                            newTable[pos] = genes[slot_1].slot_id
-                            selected_slot[genes[slot_1].slot_id] = 1
+                            newTable[pos] = genes[slot_2].slot_id
+                            selected_slot[genes[slot_2].slot_id] = 1
     
-                            vis_prof[genes[slot_1].prof_id] = time_slot
-                            vis_batch[genes[slot_1].batch_id] = time_slot
+                            vis_prof[genes[slot_2].prof_id] = time_slot
+                            vis_batch[genes[slot_2].batch_id] = time_slot
 
         #Find empty slots in current time table & shuffle
         empty_slots = []
