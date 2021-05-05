@@ -27,6 +27,7 @@ urlpatterns = [
     path('addprof/',addprof,name='addprof'),  # baki
     
     path('editnotes/<str:id>/<str:slotid>',editnotes,name='editnotes'),
-    path('changeslot/<str:batch>',changeslot,name='changeslot')
+    path('changeslot/<str:slot>',changeslot,name='changeslot'),
 
+    path('finalchangeslot/<str:slot>/<str:time>/<str:day>',finalchangeslot,name='finalchangeslot'),
 ]
