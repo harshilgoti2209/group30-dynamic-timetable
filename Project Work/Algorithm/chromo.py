@@ -1,7 +1,7 @@
 import numpy as np
 import random
 from copy import deepcopy
-from gene import *
+from .gene import *
 
 class Chromosome:
 
