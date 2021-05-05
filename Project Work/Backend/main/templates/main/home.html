@@ -1,18 +1,97 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="{% static 'main/css/home.css' %}">
-    <title>Document</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Time-Table Generator</title>
+    <link rel="stylesheet" href="{% static 'main/home_assets/bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=DM+Sans">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Merriweather">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+JP">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Condensed">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700">
+    <link rel="stylesheet" href="{% static 'main/home_assets/css/Corporate-Footer-Clean.css' %}">
+    <link rel="stylesheet" href="{% static 'main/home_assets/css/Features-Blue.css' %}">
+    <link rel="stylesheet" href="{% static 'main/home_assets/css/Footer-Clean.css' %}">
+    <link rel="stylesheet" href="{% static 'main/home_assets/css/Footer-Dark.css' %}">
+    <link rel="stylesheet" href="{% static 'main/home_assets/css/Header-Blue.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <link rel="stylesheet" href="https://unpkg.com/@bootstrapstudio/bootstrap-better-nav/dist/bootstrap-better-nav.min.css">
+    <link rel="stylesheet" href="{% static 'main/home_assets/css/Logo.css' %}">
+    <link rel="stylesheet" href="{% static 'main/home_assets/css/Navigation-with-Button.css' %}">
+    <link rel="stylesheet" href="{% static 'main/home_assets/css/styles.css' %}">
+    <link rel="shortcut icon" href="{% static 'main/home_assets/img/timetable.png' %}" type="image/png">
 </head>
+
 <body>
-    <h1> Dynamic timetable</h1>
-    <a href="{% url 'login' %}">Login</a>
-    <a href="{% url 'contact' %}">Contact</a>
-    <a href="{% url 'about' %}">About</a>
-    <h1> Write design here</h1>
-</body>
+
+    <body style="background: rgb(255,255,255);">
+        <header></header>
+        <section style="width: 100%;height: 100vh;background: var(--light);">
+            <nav class="navbar navbar-light navbar-expand-md navigation-clean-button" data-aos="fade-down" data-aos-duration="400" data-aos-once="true">
+                <div class="container">
+                    <a class="navbar-brand" href="#" style="background: url(&quot;{% static 'main/home_assets/img/logo-ps2.png' %}&quot;) center / 200px no-repeat;width: 206.125px;height: 76px;border-color: rgb(163,16,16);margin: 0;"></a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span></button>
+                    <div class="collapse navbar-collapse" id="navcol-1">
+                        <ul class="navbar-nav mr-auto">
+                            <li class="nav-item"></li>
+                            <li class="nav-item"></li>
+                        </ul><span class="navbar-text actions"> <a class="login" href="#aboutus">About us</a><a class="login" href="#contactus" style="margin: 16px;">Contact us</a><a class="btn btn-light action-button" role="button" href="{% url 'login' %}" style="margin: 10px ;">Login</a></span>
+                    </div>
+                </div>
+            </nav>
+            <div class="container">
+                <div class="row d-flex d-xl-flex justify-content-center justify-content-xl-center" style="height: 565px;">
+                    <div class="col-md-4 col-xl-4 d-flex" data-aos="fade-left" data-aos-duration="350" data-aos-delay="350" data-aos-once="true" style="height: 492px; margin: 0px; padding: 46px; width: 725px;">
+                        <h1 class="text-uppercase text-center d-inline-block" style="font-family: Nunito, sans-serif;margin: 141px 0px;padding: 0px;text-align: center;font-size: 54px;/*text-shadow: 0px 0px 0px rgb(54,54,54);*/color: rgb(75,75,75);">TIME-TABLE GENERATOR</h1>
+                    </div>
+                    <div class="col-md-8 overflow-scroll" data-aos="fade-left" data-aos-duration="350" data-aos-delay="350" data-aos-once="true" style="height: 564px;filter: hue-rotate(14deg);width: 778px;"><img class="img-fluid d-flex float-right" src="{% static 'main/home_assets/img/photo.png' %}" style="width: 570px;margin: 26px 10px;padding: 0px;filter: brightness(98%) contrast(90%) grayscale(0%);" width="100%" height="100%"></div>
+                </div>
+            </div>
+            <footer class="justify-content-center align-items-center align-content-center page-footer overflow-hidden" data-aos="fade-up" data-aos-duration="400" data-aos-delay="450" data-aos-once="true" style="background: rgb(255,255,255);">
+                <div class="container d-flex d-xl-flex flex-column justify-content-xl-center">
+                    <div class="row">
+                        <div id="aboutus" class="col-md-6" style="height: 102px;">
+                            <h1 style="font-size: 20px;font-family: Montserrat, sans-serif;line-height: 25px;">About us</h1>
+                            <h1 style="font-size: 15px;color: rgb(94,95,96);line-height: 25px;">Register your institute and we will generate proper time-table for your institute for any batch.</h1>
+                        </div>
+                        <div id="contactus" class="col-md-6">
+                            <h1 style="font-size: 20px;font-family: Montserrat, sans-serif;line-height: 25px;">Contact us</h1>
+                            <h1 style="font-size: 15px;color: rgb(94,95,96);line-height: 25px;">Register your institute and we will generate proper time-table for your institute for any batch.</h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="row align-items-center">
+                    <div class="col-12">
+                        <div class="border-top my-5"></div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6 col-xl-12 offset-xl-7 d-flex justify-content-center align-items-center align-content-center" style="margin-left: 0px;">
+                            <p style="text-align: center;font-size: 13px;width: 239.484px;">Dhirubhai Abmani Institute of Information and Communication Technology, Gandhinagar, Gujarat - India
+                                <a class="navbar-brand" id="brand-logo-1" href="#" style="background: url(&quot;{% static 'main/home_assets/img/DA-IICT-Emblem-Final%20Colour.jpg' %}&quot;) no-repeat;background-size: 100px;height: 102px;width: 101px;margin-top: 18px;"></a>
+                            </p>
+                        </div>
+                        <div class="col-xl-12 offset-xl-0" style="text-align: center;">
+                            <p style="height: 31px;">Copyright © 2021. All rights reserved.</p>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </section>
+        <script src="{% static 'main/home_assets/js/jquery.min.js' %}"></script>
+        <script src="{% static 'main/home_assets/bootstrap/js/bootstrap.min.js' %}"></script>
+        <script src="{% static 'main/home_assets/js/bs-init.js' %}"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+        <script src="https://unpkg.com/@bootstrapstudio/bootstrap-better-nav/dist/bootstrap-better-nav.min.js"></script>
+    </body>
+
 </html>

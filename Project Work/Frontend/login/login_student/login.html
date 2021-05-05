@@ -2,97 +2,29 @@
 <html lang="en">
 
 <head>
-    <title>Login student</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" type="image/png" href="../src/images/icons/favicon.ico" />
-    <link rel="stylesheet" type="text/css" href="../src/vendor/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="../src/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="../src/vendor/animate/animate.css">
-    <link rel="stylesheet" type="text/css" href="../src/vendor/css-hamburgers/hamburgers.min.css">
-    <link rel="stylesheet" type="text/css" href="../src/vendor/select2/select2.min.css">
-    <link rel="stylesheet" type="text/css" href="./css/util.css">
-    <link rel="stylesheet" type="text/css" href="./css/main.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link rel="shortcut icon" href="/assets/img/timetable.png" type="image/x-icon">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Student Login</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <link rel="stylesheet" href="assets/css/Login-Form-Clean.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 
 <body>
-
-    <div class="limiter">
-        <div class="container-login100" >
-            <div class="wrap-login100">
-                <div class="login100-pic js-tilt" data-tilt>
-                    <img src="images/img-01.png" alt="IMG">
-                </div>
-
-                <form class="login100-form validate-form">
-                    <span class="login100-form-title">
-						Login
-					</span>
-
-                    <div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
-                        <input class="input100" type="text" name="email" placeholder="Username">
-                        <span class="focus-input100"></span>
-                        <span class="symbol-input100">
-							<i class="fa fa-user" aria-hidden="true"></i>
-						</span>
-                    </div>
-
-                    <div class="wrap-input100 validate-input" data-validate="Password is required">
-                        <input class="input100" type="password" name="pass" placeholder="Password">
-                        <span class="focus-input100"></span>
-                        <span class="symbol-input100">
-							<i class="fa fa-lock" aria-hidden="true"></i>
-						</span>
-                    </div>
-
-                    <div class="container-login100-form-btn">
-                        <button class="login100-form-btn" type="submit" formaction="../../student/studenthome.html"> 
-                            Login
-                        </button>
-                    </div>
-
-                    <div class="text-center p-t-12">
-                        <span class="txt1">
-							Forgot
-						</span>
-                        <a class="txt2" href="#" style="font-size: 13px;">
-							Username / Password?
-						</a>
-                    </div>
-                    <div class="text-center p-t-136">
-                        <!-- <a class="txt2" href="../signup/signup.html">
-							Create your Account
-							<i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
-						</a> -->
-                        <br>
-                        <a class="txt2" href="/home.html">
-                            <i class="fa fa-long-arrow-left m-l-5" aria-hidden="true"></i> Back to Home
-                        </a>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-
-
-
-
-    <script src="vendor/jquery/jquery-3.2.1.min.js"></script>
-    <script src="vendor/bootstrap/js/popper.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-    <script src="vendor/select2/select2.min.js"></script>
-    <script src="vendor/tilt/tilt.jquery.min.js"></script>
-    <script>
-        $('.js-tilt').tilt({
-            scale: 1.1
-        })
-    </script>
-    <script src="js/main.js"></script>
-
+    <section class="login-clean" style="height: 100vh;">
+        <form data-aos="fade-down" data-aos-duration="300" method="post" style="margin-top: 161px;border-radius: 25px;">
+            <h6 style="text-align: center">Student</h6 style>
+            <div data-aos="fade-up" data-aos-duration="350" data-aos-delay="450" class="illustration"><img src="assets/img/img-01.png" style="height: 156px;"></div>
+            <div class="mb-3"><input class="form-control" type="text" name="email" placeholder="Username" /></div>
+            <div class="mb-3"><input class="form-control" type="password" name="password" placeholder="Password"></div>
+            <div class="mb-3"><button class="btn btn-primary d-block w-100" type="submit" style="background: rgb(102,215,215);">Log In</button></div><a class="forgot" href="#" style="margin-top: 20px;">Forgot your Username or password?</a><a class="forgot" href="../../home.html"
+                style="margin-top: 14px;">Back to Home</a>
+        </form>
+    </section>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/bs-init.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 </body>
 
 </html>
