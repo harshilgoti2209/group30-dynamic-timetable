@@ -1,8 +1,8 @@
 import pandas as pd
-from gene import *
+from .gene import *
 
-def load() :
-    df = pd.read_csv("DTT_Dataset_V2.csv")
+def load(s) :
+    df = pd.read_csv(s)
 
     Prof_ID = df[['ID of Prof.']].values
     Subject = []
@@ -74,6 +74,14 @@ def load() :
 
     my_df = pd.DataFrame(data=da, columns=['Slot ID','ID of Prof.','Name of Prof.','Subject','Subject ID','Batch'])
 
+    t=0
+    slot_id = []
+    for i in range(len(my_df)) : 
+        slot_id.append(t)
+        t=t+1
+    
+    my_df['Slot ID'] = slot_id
+
     disc = {}
     B = my_df['Batch'].values
     BID = []
@@ -92,10 +100,9 @@ def load() :
     my_data = my_df[['Slot ID','ID of Prof.','Name of Prof.','Subject','Subject ID','Batch','Batch ID']].values
     genes = []
     for i in range(len(my_data)) : 
-        g = Gene(my_data[i][0],my_data[i][1],my_data[i][2],my_data[i][3],my_data[i][4],my_data[i][5],my_data[i][6])
+        g = Gene(my_data[i][0],my_data[i][2],my_data[i][1],my_data[i][3],my_data[i][4],my_data[i][5],my_data[i][6])
         genes.append(g)
-        genes[i].display()
+        #genes[i].display()
 
     return genes
 
-load()
