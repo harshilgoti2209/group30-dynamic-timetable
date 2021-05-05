@@ -3,10 +3,12 @@ from django.contrib.auth import logout as logout_,login as login_,authenticate,u
 from .forms import UserSignUpForm,profileform,ProfSignUpForm,Editnotes
 from django.contrib.auth.forms import AuthenticationForm,PasswordChangeForm
 from django.contrib import messages
-from .models import Account,Notes
+from .models import Account,Notes,Algo
 from django.contrib.auth.hashers import make_password
 from .forms import loginForm
 import csv,io
+from .timetable_generator_V2 import *
+
 
 ##working 
 def home(request):
@@ -40,23 +42,44 @@ def logout(request):
     logout_(request)
     return redirect('login')
 
+##working
+def gtimetable(request):
+    if request.method=='POST':
+        csv_file=request.FILES['data']  
+        cube, genes =timetable( csv_file)  
+        for i in range(cube.shape[1]):
+            for j in range(cube.shape[2]):
+                for k in range(cube.shape[0]) : 
+                    if(cube[k,i,j] != -1) : 
+                        obj=Algo( slot_id=genes[cube[k,i,j]].slot_id, prof_name=genes[cube[k,i,j]].prof_name,prof_id=genes[cube[k,i,j]].prof_id,subject=genes[cube[k,i,j]].subject,subject_id=genes[cube[k,i,j]].subject_id,batch=genes[cube[k,i,j]].batch,batch_id=genes[cube[k,i,j]].batch_id, day=j,time=i )
+                        obj.save() 
+        return redirect('login')
+    else:
+        return redirect('login')
 
+##working
 def shome(request):
     if request.user.is_authenticated and request.user.is_prof==False and request.user.is_superuser==False:
         account=Account.objects.get(pk=request.user.id)
-        pform=profileform(instance=request.user )
-        return render(request,'main/shome.html' ,{'data':account,'pform': pform})
+        pform=profileform(instance=request.user)
+        dic={}
+        lis=[]
+        for i in range(0,4):
+            li=[]
+            for j in range(0,6):
+                li.append(dic)
+            lis.append(li)
+        timetable=Algo.objects.filter(batch_id=account.batch-1)
+        for item in timetable:
+            lis[item.time][item.day]={
+                'prof':item.prof_name,
+                'subject':item.subject,
+            }
+        return render(request,'main/shome.html' ,{'data':account,'pform': pform,'timetable':lis})
     else:
-        return redirect('login')    
+        return redirect('login')  
 
-# def sprofile(request,id):
-#     if not request.user.is_authenticated:
-#         return redirect('login')
-#     else:
-#         account=Account.objects.get(pk=id)
-#         return render(request,'main/sprofile.html',{'user':account})
-
-
+##working
 def seditprofile(request):
     if not request.user.is_authenticated: 
         messages.info(request,'You can not edit someone profile')
@@ -70,8 +93,14 @@ def seditprofile(request):
                 messages.success(request,'Your profile is edited successfully!!!')
                 return redirect('login')
             messages.info(request,f'username or email is already exist')
-            return redirect('login')
+            return redirect('login')  
 
+# def sprofile(request,id):
+#     if not request.user.is_authenticated:
+#         return redirect('login')
+#     else:
+#         account=Account.objects.get(pk=id)
+#         return render(request,'main/sprofile.html',{'user':account})
 
 def viewtimetable(request):
     if request.user.is_authenticated:
@@ -79,9 +108,66 @@ def viewtimetable(request):
     else:
         return redirect('login')
 
+def changeslot(request,slot):
+    if request.user.is_prof:
+        dic=0
+        lis=[]
+        for i in range(0,4):
+            li=[]
+            for j in range(0,6):
+                li.append(dic)
+            lis.append(li)
+        timetable=Algo.objects.filter(prof_id=66)
+        for item in timetable:
+            lis[item.time][item.day]=1
+        batch=Algo.objects.get(slot_id=int(slot)).batch
+        timetable=Algo.objects.filter(batch=batch)
+        for item in timetable:
+            lis[item.time][item.day]=1
+        available=[]
+        for i in range(0,4):
+            for j in range(0,6):
+                if lis[i][j]==0:
+                    available.append({
+                        'time':i,
+                        'day':j,
+                    })
+        if available.count==0:
+            return redirect('phome')
+        else:
+            return render(request,'main/available.html',{'available':available,'slot':slot})
+    else:
+        return redirect('login')
+
+def finalchangeslot(request,slot,time,day):
+    if request.user.is_prof:
+        obj=Algo.objects.get(slot_id=int(slot))
+        obj.time=int(time)
+        obj.day=int(day)
+        obj.save()
+        return redirect('login')
+    else:
+        return redirect('login')   
+
 def phome(request):
     if request.user.is_prof:
-        return render(request,'main/phome.html')
+        account=Account.objects.get(pk=request.user.id)
+        pform=profileform(instance=request.user)
+        dic={}
+        lis=[]
+        for i in range(0,4):
+            li=[]
+            for j in range(0,6):
+                li.append(dic)
+            lis.append(li)
+        timetable=Algo.objects.filter(prof_id=66)
+        for item in timetable:
+            lis[item.time][item.day]={
+                'batch':item.batch,
+                'subject':item.subject,
+                'slot':item.slot_id,
+            }
+        return render(request,'main/phome.html',{'data':account,'pform': pform,'timetable':lis})
     else:
         return redirect('login')
 
@@ -116,35 +202,20 @@ def signup(request):
             fm=UserSignUpForm()
         return render(request,'main/signup.html',{'form':fm})
     else:
-        return redirect('login')   # a change karwanu che
+        return redirect('login')   
 
-def studentcsv(request):
-    if request.method=='POST':
-        csv_file=request.FILES['data']   #csv file read code
-        data_set = csv_file.read().decode('UTF-8')
-        io_string=io.StringIO(data_set)
-        next(io_string)
-        for column in csv.reader(io_string, delimiter=',', quotechar='|'):
-            x=Account.objects.filter(username=column[0])
-            y=Account.objects.filter(email=column[1])
-            if x.count() > 0 or y.count()>0 :
-                messages.info(request,f'{column[0]} username or {column[1]} email is already exist') 
-            else:
-                hash_password=make_password( column[2]  )
-                fm=Account(username=column[0], email=column[1] , password=hash_password ,batch=column[3])
-                fm.save()
-        messages.info(request,'success')
-        return redirect('signup')
-    else:
-        return redirect('login')
 
-def profcsv(request):
-    if request.method=='POST':
-        data=request.POST.get('file')  #csv file read code
-        messages.info(request,'success')
-        return redirect('addprof')
-    else:
-        return redirect('login') 
+
+# def profcsv(request):
+#     if request.method == 'POST':
+#         for key,value in request.FILES:
+#             print(key)
+#         # doc = request.FILES #returns a dict-like object
+#         # doc_name = doc['filename']
+#         print('hello')
+#         return redirect('login')
+#     else:
+#         return redirect('login') 
               
 def addprof(request):
     if  request.user.is_superuser==True:
@@ -186,3 +257,5 @@ def editnotes(request,id,slotid):
         else:
             fm=Editnotes( instance=account)
         return render(request,'main/editnotes.html',{'form':fm})
+
+
