@@ -20,11 +20,13 @@ urlpatterns = [
     path('changepassword/',changepassword,name='changepassword'),   #done
     
     path('signup/',signup,name='signup'),   #done
-    path('studentcsv/',studentcsv,name='studentcsv'),  #done 
-    path('profcsv/',profcsv,name='profcsv'), #baki
+    path('gtimetable/',gtimetable,name='gtimetable'),  #done 
+    
+    # path('profcsv/',profcsv,name='profcsv'), #baki
       
     path('addprof/',addprof,name='addprof'),  # baki
     
     path('editnotes/<str:id>/<str:slotid>',editnotes,name='editnotes'),
+    path('changeslot/<str:batch>',changeslot,name='changeslot')
 
 ]
