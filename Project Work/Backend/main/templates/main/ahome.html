@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans+Condensed">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inria+Sans">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Julius+Sans+One">
-    <link rel="stylesheet" href="{% static 'main/dean_asset/css/Data-Table-1.css '%}">
+    <link rel="stylesheet" href="{% static 'main/dean_asset/css/Data-Table-1.css' %}">
     <link rel="stylesheet" href="{% static 'main/dean_asset/css/Data-Table.css'%}">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.15/css/dataTables.bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
@@ -32,7 +32,7 @@
             <li class="nav-item" role="presentation"><a class="nav-link" role="tab" data-toggle="pill" href="#tab-4">View/Edit Profile</a></li>
             <li class="nav-item" role="presentation"><a class="nav-link" role="tab" data-toggle="pill" href="#tab-2">View Time-Table</a></li>
             <li class="nav-item" role="presentation"><a class="nav-link" role="tab" data-toggle="pill" href="#tab-3">Generate Table</a></li>
-            <li class="nav-item" role="presentation"><a class="nav-link" href="{% url 'home'%}">Logout <i class="fa fa-sign-out"></i></a></li>
+            <li class="nav-item" role="presentation"><a class="nav-link" href="{% url 'logout'%}">Logout <i class="fa fa-sign-out"></i></a></li>
         </ul>
         <div class="tab-content" data-aos="fade-up" data-aos-delay="350" data-aos-once="true" style="height: 100vh;background: #f2f2f2;">
             <div class="tab-pane active" role="tabpanel" id="tab-5">
@@ -618,7 +618,13 @@
                     </tbody>
                 </table>
             </div>
-            <div class="tab-pane" role="tabpanel" id="tab-3"></div>
+            <div class="tab-pane" role="tabpanel" id="tab-3">
+                <form method="post" action="/gtimetable/" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <input type="file" name="data">
+                    <button type="submit">submit</button>
+                  </form>
+            </div>
             <div class="tab-pane" role="tabpanel" id="tab-7">
                 <p>Tab content.</p>
             </div>

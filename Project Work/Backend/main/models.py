@@ -58,3 +58,15 @@ class Notes(models.Model ):
     userid= models.CharField(max_length=100)
     slotid= models.CharField(max_length=100)
     notes = models.TextField(max_length=1000)
+
+class Algo(models.Model ):
+    slot_id=models.IntegerField( primary_key=True)
+    prof_name=models.CharField( max_length=50)
+    prof_id=models.IntegerField()
+    subject=models.CharField( max_length=50)
+    subject_id=models.CharField(max_length=256)
+    batch=models.CharField( max_length=50)
+    batch_id=models.IntegerField()
+    day=models.IntegerField()
+    time=models.IntegerField()
+
