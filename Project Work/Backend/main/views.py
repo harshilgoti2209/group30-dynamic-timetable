@@ -9,6 +9,7 @@ from .forms import loginForm
 import csv,io
 from .timetable_generator_V2 import *
 
+
 ##working 
 def home(request):
     return render(request,'main/home.html')
@@ -107,7 +108,7 @@ def viewtimetable(request):
     else:
         return redirect('login')
 
-def changeslot(request,batch):
+def changeslot(request,slot):
     if request.user.is_prof:
         dic=0
         lis=[]
@@ -119,6 +120,7 @@ def changeslot(request,batch):
         timetable=Algo.objects.filter(prof_id=66)
         for item in timetable:
             lis[item.time][item.day]=1
+        batch=Algo.objects.get(slot_id=int(slot)).batch
         timetable=Algo.objects.filter(batch=batch)
         for item in timetable:
             lis[item.time][item.day]=1
@@ -133,12 +135,24 @@ def changeslot(request,batch):
         if available.count==0:
             return redirect('phome')
         else:
-            return render(request,'main/available.html',{'available':available})
+            return render(request,'main/available.html',{'available':available,'slot':slot})
     else:
         return redirect('login')
 
+def finalchangeslot(request,slot,time,day):
+    if request.user.is_prof:
+        obj=Algo.objects.get(slot_id=int(slot))
+        obj.time=int(time)
+        obj.day=int(day)
+        obj.save()
+        return redirect('login')
+    else:
+        return redirect('login')   
+
 def phome(request):
     if request.user.is_prof:
+        account=Account.objects.get(pk=request.user.id)
+        pform=profileform(instance=request.user)
         dic={}
         lis=[]
         for i in range(0,4):
@@ -151,8 +165,9 @@ def phome(request):
             lis[item.time][item.day]={
                 'batch':item.batch,
                 'subject':item.subject,
+                'slot':item.slot_id,
             }
-        return render(request,'main/phome.html',{'timetable':lis})
+        return render(request,'main/phome.html',{'data':account,'pform': pform,'timetable':lis})
     else:
         return redirect('login')
 
@@ -242,3 +257,5 @@ def editnotes(request,id,slotid):
         else:
             fm=Editnotes( instance=account)
         return render(request,'main/editnotes.html',{'form':fm})
+
+

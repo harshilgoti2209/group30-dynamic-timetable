@@ -79,84 +79,57 @@
                                         <tr>
                                             <td>
                                                 <strong>
-                                                <span class="glyphicon glyphicon-asterisk text-primary"></span>
-                                                ID                                              
-                                            </strong>
+                                                    <span class="glyphicon glyphicon-asterisk text-primary"></span>
+                                                    Username
+                                                </strong>
                                             </td>
                                             <td class="text-primary">
-                                                123456789
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <strong>
-                                                <span class="glyphicon glyphicon-user  text-primary"></span>    
-                                                Firstname                                                
-                                            </strong>
-                                            </td>
-                                            <td class="text-primary">
-                                                Bootdey
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <strong>
-                                                <span class="glyphicon glyphicon-cloud text-primary"></span>  
-                                                Lastname                                                
-                                            </strong>
-                                            </td>
-                                            <td class="text-primary">
-                                                Bootstrap
+                                                {{data.username}}
                                             </td>
                                         </tr>
 
                                         <tr>
                                             <td>
                                                 <strong>
-                                                <span class="glyphicon glyphicon-eye-open text-primary"></span> 
-                                                Role                                                
-                                            </strong>
+                                                    <span class="glyphicon glyphicon-eye-open text-primary"></span>
+                                                    Role
+                                                </strong>
                                             </td>
                                             <td class="text-primary">
-                                                Admin
+                                                Professor
                                             </td>
                                         </tr>
                                         <tr>
                                             <td>
                                                 <strong>
-                                                <span class="glyphicon glyphicon-envelope text-primary"></span> 
-                                                Email                                                
-                                            </strong>
+                                                    <span class="glyphicon glyphicon-envelope text-primary"></span>
+                                                    Email
+                                                </strong>
                                             </td>
                                             <td class="text-primary">
-                                                noreply@email.com
+                                                {{data.email}}
                                             </td>
                                         </tr>
                                         <tr>
                                             <td>
                                                 <strong>
-                                                <span class="glyphicon glyphicon-calendar text-primary"></span>
-                                                created                                                
-                                            </strong>
+                                                    <span class="glyphicon glyphicon-envelope text-primary"></span>
+                                                    Batch
+                                                </strong>
                                             </td>
                                             <td class="text-primary">
-                                                20 jul 20014
+                                                {{data.batch}}
                                             </td>
                                         </tr>
                                         <tr>
                                             <td>
                                                 <strong>
-                                                <span class="glyphicon glyphicon-calendar text-primary"></span>
-                                                Modified                                                
-                                            </strong>
+                                                    <span class="glyphicon glyphicon-calendar text-primary"></span>
+                                                    created
+                                                </strong>
                                             </td>
                                             <td class="text-primary">
-                                                20 jul 20014 20:00:00
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <button class="btn btn-primary">Edit</button>
+                                                {{ data.date_joined}}
                                             </td>
                                         </tr>
                                     </tbody>
@@ -175,7 +148,6 @@
             <div class="tab-pane" role="tabpanel" id="tab-6">
 
                 <div style="padding-left: 50%;padding-top: 10%;">
-                    ///////////////////////////////////////////////////////////////////////////////////////////
                 </div>
             </div>
             <div class="tab-pane" role="tabpanel" id="tab-1">
@@ -188,39 +160,33 @@
                 <div class="container profile profile-view" id="profile">
                     <div class="row">
                         <div class="col-md-12 alert-col relative">
-                            <div class="alert alert-info alert-dismissible absolue center" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button><span>Profile save with success</span></div>
+                            <!-- <div class="alert alert-info alert-dismissible absolue center" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button><span>Profile save with success</span></div> -->
                         </div>
                     </div>
-                    <form>
+                    <form method="POST" action="/seditprofile/">
+                        {% csrf_token %}
                         <div class="form-row profile-row">
                             <div class="col-md-4 relative">
                                 <div class="avatar">
-                                    <div class="avatar-bg center"></div>
-                                </div><input class="form-control-file form-control" type="file" name="avatar-file">
-                            </div>
-                            <div class="col-md-8">
+                                    <div class="avatar-bg center">
+                                        <img alt="" style="width:600px; " title=""
+                                            class="img-circle img-thumbnail isTooltip"
+                                            src="https://bootdey.com/img/Content/avatar/avatar7.png"
+                                            data-original-title="Usuario">
+                                    </div>
+                                </div>
+                            </div>     
+                               <div class="col-md-8">
                                 <h1>Profile </h1>
                                 <hr>
+                                {% for fm in pform%}
                                 <div class="form-row">
                                     <div class="col-sm-12 col-md-6">
-                                        <div class="form-group"><label>Firstname </label><input class="form-control" type="text" name="firstname"></div>
-                                    </div>
-                                    <div class="col-sm-12 col-md-6">
-                                        <div class="form-group"><label>ID</label><input class="form-control" type="text" name="lastname"></div>
+                                        <div class="form-group"><label>{{fm.label_tag}}</label>{{fm}}</div>
                                     </div>
                                 </div>
-                                <div class="form-group"><label>Email </label><input class="form-control" type="email" autocomplete="off" required="" name="email"></div>
-                                <div class="form-row">
-                                    <div class="col-sm-12 col-md-6">
-                                        <div class="form-group"><label>Password </label><input class="form-control" type="password" name="password" autocomplete="off" required=""></div>
-                                    </div>
-                                    <div class="col-sm-12 col-md-6">
-                                        <div class="form-group"><label>Confirm Password</label><input class="form-control" type="password" name="confirmpass" autocomplete="off" required=""></div>
-                                    </div>
-                                </div>
-                                <hr>
-                                <div class="form-row">
-                                    <div class="col-md-12 content-right"><button class="btn btn-primary form-btn" type="submit">SAVE </button><button class="btn btn-danger form-btn" type="reset">CANCEL </button></div>
+                                {% endfor%}                                <div class="form-row">
+                                    <div class="col-md-12 content-right"><button class="btn btn-primary form-btn" type="submit">SAVE </button></div>
                                 </div>
                             </div>
                         </div>
@@ -241,36 +207,36 @@
                     </thead>
                     <tbody>
                         <tr>
-                           <td><a href="/changeslot/{{ timetable.0.0.batch}}"> {{timetable.0.0.batch}} {{timetable.0.0.subject}}</a></td>
-                           <td><a href="/changeslot/{{ timetable.0.1.batch}}"> {{timetable.0.1.batch}} {{timetable.0.1.subject}}</a></td> 
-                           <td><a href="/changeslot/{{ timetable.0.2.batch}}"> {{timetable.0.2.batch}} {{timetable.0.2.subject}}</a></td> 
-                           <td><a href="/changeslot/{{ timetable.0.3.batch}}"> {{timetable.0.3.batch}} {{timetable.0.3.subject}}</a></td>
-                           <td><a href="/changeslot/{{ timetable.0.4.batch}}"> {{timetable.0.4.batch}} {{timetable.0.4.subject}}</a></td>
-                           <td><a href="/changeslot/{{ timetable.0.5.batch}}"> {{timetable.0.5.batch}} {{timetable.0.5.subject}}</a></td>
+                           <td><a href="/changeslot/{{ timetable.0.0.slot}}"> {{timetable.0.0.batch}} {{timetable.0.0.subject}}</a></td>
+                           <td><a href="/changeslot/{{ timetable.0.1.slot}}"> {{timetable.0.1.batch}} {{timetable.0.1.subject}}</a></td> 
+                           <td><a href="/changeslot/{{ timetable.0.2.slot}}"> {{timetable.0.2.batch}} {{timetable.0.2.subject}}</a></td> 
+                           <td><a href="/changeslot/{{ timetable.0.3.slot}}"> {{timetable.0.3.batch}} {{timetable.0.3.subject}}</a></td>
+                           <td><a href="/changeslot/{{ timetable.0.4.slot}}"> {{timetable.0.4.batch}} {{timetable.0.4.subject}}</a></td>
+                           <td><a href="/changeslot/{{ timetable.0.5.slot}}"> {{timetable.0.5.batch}} {{timetable.0.5.subject}}</a></td>
                         </tr>
                         <tr>
-                           <td><a href="/changeslot/{{ timetable.1.0.batch}}"> {{timetable.1.0.batch}} {{timetable.1.0.subject}}</a></td>
-                           <td><a href="/changeslot/{{ timetable.1.1.batch}}"> {{timetable.1.1.batch}} {{timetable.1.1.subject}}</a></td> 
-                           <td><a href="/changeslot/{{ timetable.1.2.batch}}"> {{timetable.1.2.batch}} {{timetable.1.2.subject}}</a></td> 
-                           <td><a href="/changeslot/{{ timetable.1.3.batch}}"> {{timetable.1.3.batch}} {{timetable.1.3.subject}}</a></td>
-                           <td><a href="/changeslot/{{ timetable.1.4.batch}}"> {{timetable.1.4.batch}} {{timetable.1.4.subject}}</a></td>
-                           <td><a href="/changeslot/{{ timetable.1.5.batch}}"> {{timetable.1.5.batch}} {{timetable.1.5.subject}}</a></td>
+                           <td><a href="/changeslot/{{ timetable.1.0.slot}}"> {{timetable.1.0.batch}} {{timetable.1.0.subject}}</a></td>
+                           <td><a href="/changeslot/{{ timetable.1.1.slot}}"> {{timetable.1.1.batch}} {{timetable.1.1.subject}}</a></td> 
+                           <td><a href="/changeslot/{{ timetable.1.2.slot}}"> {{timetable.1.2.batch}} {{timetable.1.2.subject}}</a></td> 
+                           <td><a href="/changeslot/{{ timetable.1.3.slot}}"> {{timetable.1.3.batch}} {{timetable.1.3.subject}}</a></td>
+                           <td><a href="/changeslot/{{ timetable.1.4.slot}}"> {{timetable.1.4.batch}} {{timetable.1.4.subject}}</a></td>
+                           <td><a href="/changeslot/{{ timetable.1.5.slot}}"> {{timetable.1.5.batch}} {{timetable.1.5.subject}}</a></td>
                          </tr>
                          <tr>
-                           <td><a href="/changeslot/{{ timetable.2.0.batch}}"> {{timetable.2.0.batch}} {{timetable.2.0.subject}}</a></td>
-                           <td><a href="/changeslot/{{ timetable.2.1.batch}}"> {{timetable.2.1.batch}} {{timetable.2.1.subject}}</a></td> 
-                           <td><a href="/changeslot/{{ timetable.2.2.batch}}"> {{timetable.2.2.batch}} {{timetable.2.2.subject}}</a></td> 
-                           <td><a href="/changeslot/{{ timetable.2.3.batch}}"> {{timetable.2.3.batch}} {{timetable.2.3.subject}}</a></td>
-                           <td><a href="/changeslot/{{ timetable.2.4.batch}}"> {{timetable.2.4.batch}} {{timetable.2.4.subject}}</a></td>
-                           <td><a href="/changeslot/{{ timetable.2.5.batch}}"> {{timetable.2.5.batch}} {{timetable.2.5.subject}}</a></td>
+                           <td><a href="/changeslot/{{ timetable.2.0.slot}}"> {{timetable.2.0.batch}} {{timetable.2.0.subject}}</a></td>
+                           <td><a href="/changeslot/{{ timetable.2.1.slot}}"> {{timetable.2.1.batch}} {{timetable.2.1.subject}}</a></td> 
+                           <td><a href="/changeslot/{{ timetable.2.2.slot}}"> {{timetable.2.2.batch}} {{timetable.2.2.subject}}</a></td> 
+                           <td><a href="/changeslot/{{ timetable.2.3.slot}}"> {{timetable.2.3.batch}} {{timetable.2.3.subject}}</a></td>
+                           <td><a href="/changeslot/{{ timetable.2.4.slot}}"> {{timetable.2.4.batch}} {{timetable.2.4.subject}}</a></td>
+                           <td><a href="/changeslot/{{ timetable.2.5.slot}}"> {{timetable.2.5.batch}} {{timetable.2.5.subject}}</a></td>
                          </tr>
                          <tr>
-                           <td><a href="/changeslot/{{ timetable.3.0.batch}}"> {{timetable.3.0.batch}} {{timetable.3.0.subject}}</a></td>
-                           <td><a href="/changeslot/{{ timetable.3.1.batch}}"> {{timetable.3.1.batch}} {{timetable.3.1.subject}}</a></td> 
-                           <td><a href="/changeslot/{{ timetable.3.2.batch}}"> {{timetable.3.2.batch}} {{timetable.3.2.subject}}</a></td> 
-                           <td><a href="/changeslot/{{ timetable.3.3.batch}}"> {{timetable.3.3.batch}} {{timetable.3.3.subject}}</a></td>
-                           <td><a href="/changeslot/{{ timetable.3.4.batch}}"> {{timetable.3.4.batch}} {{timetable.3.4.subject}}</a></td>
-                           <td><a href="/changeslot/{{ timetable.3.5.batch}}"> {{timetable.3.5.batch}} {{timetable.3.5.subject}}</a></td>
+                           <td><a href="/changeslot/{{ timetable.3.0.slot}}"> {{timetable.3.0.batch}} {{timetable.3.0.subject}}</a></td>
+                           <td><a href="/changeslot/{{ timetable.3.1.slot}}"> {{timetable.3.1.batch}} {{timetable.3.1.subject}}</a></td> 
+                           <td><a href="/changeslot/{{ timetable.3.2.slot}}"> {{timetable.3.2.batch}} {{timetable.3.2.subject}}</a></td> 
+                           <td><a href="/changeslot/{{ timetable.3.3.slot}}"> {{timetable.3.3.batch}} {{timetable.3.3.subject}}</a></td>
+                           <td><a href="/changeslot/{{ timetable.3.4.slot}}"> {{timetable.3.4.batch}} {{timetable.3.4.subject}}</a></td>
+                           <td><a href="/changeslot/{{ timetable.3.5.slot}}"> {{timetable.3.5.batch}} {{timetable.3.5.subject}}</a></td>
                          </tr>
                          
                     </tbody>
@@ -286,7 +252,7 @@
     <script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.15/js/dataTables.bootstrap.min.js"></script>
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-    <script src="{% static 'main/prof_assets/js/Profile-Edit-Form.js' %}"></script>
+    <!-- <script src="{% static 'main/prof_assets/js/Profile-Edit-Form.js' %}"></script> -->
     <!-- <a href="{% url 'viewtimetable'%}">time table</a> -->
     <!-- <a href="{% url 'logout' %}">logout</a> -->
 </body>
