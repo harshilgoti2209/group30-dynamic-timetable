@@ -1,6 +1,7 @@
 {% load static%}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -31,6 +32,7 @@
     <!-- <link rel="shortcut icon" href="/assets/img/timetable.png" type="image/x-icon"> -->
     <link rel="shortcut icon" href="{% static 'main/prof_assets/img/timetable.png' %}" type="image/x-icon">
 </head>
+
 <body>
     <!-- <h1> home page for professor</h1> -->
     <div style="margin-top: 0px;">
@@ -57,7 +59,11 @@
             <div id="tab-7" role="tabpanel" class="tab-pane container bootstrap snippets bootdey" style="margin-top:30px;">
                 <div class="panel-body inf-content">
                     <div class="row">
+<<<<<<< Updated upstream
                         <div class="col-md-4" style="margin-top:50px;">
+=======
+                        <div class="col-md-4" style="padding-top:50px;">
+>>>>>>> Stashed changes
                             <img alt="" style="width:600px;" title="" class="img-circle img-thumbnail isTooltip" src="https://bootdey.com/img/Content/avatar/avatar7.png" data-original-title="Usuario">
                             <ul title="Ratings" class="list-inline ratings text-center">
                                 <li><a href="#"><span class="glyphicon glyphicon-star"></span></a></li>
@@ -67,7 +73,11 @@
                                 <li><a href="#"><span class="glyphicon glyphicon-star"></span></a></li>
                             </ul>
                         </div>
+<<<<<<< Updated upstream
                         <div class="col-md-6" style="margin-top:50px;">
+=======
+                        <div class="col-md-6" style="padding-top:50px;">
+>>>>>>> Stashed changes
                             <strong style="padding-left: 11px;">User Information</strong><br>
                             <div class="table-responsive">
                                 <table class="table table-user-information">
@@ -128,6 +138,7 @@
                                                 noreply@email.com
                                             </td>
                                         </tr>
+<<<<<<< Updated upstream
                                         <tr>
                                             <td>
                                                 <strong>
@@ -139,6 +150,9 @@
                                                 20 jul 20014
                                             </td>
                                         </tr>
+=======
+                                        
+>>>>>>> Stashed changes
                                         <tr>
                                             <td>
                                                 <strong>
@@ -158,7 +172,11 @@
                     </div>
                 </div>
             </div>
+<<<<<<< Updated upstream
             
+=======
+
+>>>>>>> Stashed changes
             <div class="tab-pane" role="tabpanel" id="tab-4">
                 <div class="container profile profile-view" id="profile">
                     <div class="row">
@@ -166,6 +184,7 @@
                             <div class="alert alert-info alert-dismissible absolue center" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button><span>Profile save with success</span></div>
                         </div>
                     </div>
+<<<<<<< Updated upstream
                     <form>
                         <div class="form-row profile-row">
                             <div class="col-md-4 relative">
@@ -176,6 +195,21 @@
                             <div class="col-md-8">
                                 <h1>Profile </h1>
                                 <hr>
+=======
+                    <form method="POST" action="/seditprofile/" style="margin-top:50px;">
+                        {% csrf_token %}
+                        <div class="form-row profile-row">
+                            <div class="col-md-4 relative">
+                                <div class="avatar">
+                                    <div class="avatar-bg center">
+                                        <img alt="" style="width:600px; " title="" class="img-circle img-thumbnail isTooltip" src="https://bootdey.com/img/Content/avatar/avatar7.png" data-original-title="Usuario">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-8">
+                                <h1>Profile </h1>
+                                <hr> {% for fm in pform%}
+>>>>>>> Stashed changes
                                 <div class="form-row">
                                     <div class="col-sm-12 col-md-6">
                                         <div class="form-group"><label>Firstname </label><input class="form-control" type="text" name="firstname"></div>
@@ -184,6 +218,7 @@
                                         <div class="form-group"><label>ID</label><input class="form-control" type="text" name="lastname"></div>
                                     </div>
                                 </div>
+<<<<<<< Updated upstream
                                 <div class="form-group"><label>Email </label><input class="form-control" type="email" autocomplete="off" required="" name="email"></div>
                                 <div class="form-row">
                                     <div class="col-sm-12 col-md-6">
@@ -196,6 +231,11 @@
                                 <hr>
                                 <div class="form-row">
                                     <div class="col-md-12 content-right"><button class="btn btn-primary form-btn" type="submit">SAVE </button><button class="btn btn-danger form-btn" type="reset">CANCEL </button></div>
+=======
+                                {% endfor%}
+                                <div class="form-row">
+                                    <div class="col-md-12 content-right"><button class="btn btn-primary form-btn" type="submit">SAVE </button></div>
+>>>>>>> Stashed changes
                                 </div>
                             </div>
                         </div>
@@ -203,6 +243,7 @@
                 </div>
             </div>
             <div class="tab-pane" role="tabpanel" id="tab-2">
+<<<<<<< Updated upstream
                 <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
                     <thead>
                         <tr>
@@ -673,10 +714,64 @@
                         </tr>
                     </tbody>
                 </table>
+=======
+                <div class="row justify-content-center">
+                    <div class="col-auto" style="margin-top:50px; background-color:white;">
+                        <table id="example" class="table table-striped table-bordered" cellspacing="0" width="90%">
+                            <thead>
+                                <tr>
+                                    <th>Monday</th>
+                                    <th>Tuesday</th>
+                                    <th>Wednesday</th>
+                                    <th>Thursday</th>
+                                    <th>Friday</th>
+                                    <th>Saturday</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><a href="/changeslot/{{ timetable.0.0.slot}} "> {{timetable.0.0.batch}} {{timetable.0.0.subject}}</a></td>
+                                    <td><a href="/changeslot/{{ timetable.0.1.slot}} "> {{timetable.0.1.batch}} {{timetable.0.1.subject}}</a></td>
+                                    <td><a href="/changeslot/{{ timetable.0.2.slot}} "> {{timetable.0.2.batch}} {{timetable.0.2.subject}}</a></td>
+                                    <td><a href="/changeslot/{{ timetable.0.3.slot}} "> {{timetable.0.3.batch}} {{timetable.0.3.subject}}</a></td>
+                                    <td><a href="/changeslot/{{ timetable.0.4.slot}} "> {{timetable.0.4.batch}} {{timetable.0.4.subject}}</a></td>
+                                    <td><a href="/changeslot/{{ timetable.0.5.slot}} "> {{timetable.0.5.batch}} {{timetable.0.5.subject}}</a></td>
+                                </tr>
+                                <tr>
+                                    <td><a href="/changeslot/{{ timetable.1.0.slot}} "> {{timetable.1.0.batch}} {{timetable.1.0.subject}}</a></td>
+                                    <td><a href="/changeslot/{{ timetable.1.1.slot}} "> {{timetable.1.1.batch}} {{timetable.1.1.subject}}</a></td>
+                                    <td><a href="/changeslot/{{ timetable.1.2.slot}} "> {{timetable.1.2.batch}} {{timetable.1.2.subject}}</a></td>
+                                    <td><a href="/changeslot/{{ timetable.1.3.slot}} "> {{timetable.1.3.batch}} {{timetable.1.3.subject}}</a></td>
+                                    <td><a href="/changeslot/{{ timetable.1.4.slot}} "> {{timetable.1.4.batch}} {{timetable.1.4.subject}}</a></td>
+                                    <td><a href="/changeslot/{{ timetable.1.5.slot}} "> {{timetable.1.5.batch}} {{timetable.1.5.subject}}</a></td>
+                                </tr>
+                                <tr>
+                                    <td><a href="/changeslot/{{ timetable.2.0.slot}} "> {{timetable.2.0.batch}} {{timetable.2.0.subject}}</a></td>
+                                    <td><a href="/changeslot/{{ timetable.2.1.slot}} "> {{timetable.2.1.batch}} {{timetable.2.1.subject}}</a></td>
+                                    <td><a href="/changeslot/{{ timetable.2.2.slot}} "> {{timetable.2.2.batch}} {{timetable.2.2.subject}}</a></td>
+                                    <td><a href="/changeslot/{{ timetable.2.3.slot}} "> {{timetable.2.3.batch}} {{timetable.2.3.subject}}</a></td>
+                                    <td><a href="/changeslot/{{ timetable.2.4.slot}} "> {{timetable.2.4.batch}} {{timetable.2.4.subject}}</a></td>
+                                    <td><a href="/changeslot/{{ timetable.2.5.slot}} "> {{timetable.2.5.batch}} {{timetable.2.5.subject}}</a></td>
+                                </tr>
+                                <tr>
+                                    <td><a href="/changeslot/{{ timetable.3.0.slot}} "> {{timetable.3.0.batch}} {{timetable.3.0.subject}}</a></td>
+                                    <td><a href="/changeslot/{{ timetable.3.1.slot}} "> {{timetable.3.1.batch}} {{timetable.3.1.subject}}</a></td>
+                                    <td><a href="/changeslot/{{ timetable.3.2.slot}} "> {{timetable.3.2.batch}} {{timetable.3.2.subject}}</a></td>
+                                    <td><a href="/changeslot/{{ timetable.3.3.slot}} "> {{timetable.3.3.batch}} {{timetable.3.3.subject}}</a></td>
+                                    <td><a href="/changeslot/{{ timetable.3.4.slot}} "> {{timetable.3.4.batch}} {{timetable.3.4.subject}}</a></td>
+                                    <td><a href="/changeslot/{{ timetable.3.5.slot}} "> {{timetable.3.5.batch}} {{timetable.3.5.subject}}</a></td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+>>>>>>> Stashed changes
             </div>
 
         </div>
     </div>
+<<<<<<< Updated upstream
     <script src="{% static 'main/prof_assets/js/jquery.min.js' %}"></script>
     <script src="{% static 'main/prof_assets/bootstrap/js/bootstrap.min.js' %}"></script>
     <script src="{% static 'main/home_assets/js/bs-init.js' %}"></script>
@@ -687,5 +782,15 @@
     <script src="{% static 'main/prof_assets/js/Profile-Edit-Form.js' %}"></script>
     <!-- <a href="{% url 'viewtimetable'%}">time table</a> -->
     <!-- <a href="{% url 'logout' %}">logout</a> -->
+=======
+    <script src="{% static 'main/prof_assets/js/jquery.min.js' %} "></script>
+    <script src="{% static 'main/prof_assets/bootstrap/js/bootstrap.min.js' %} "></script>
+    <script src="{% static 'main/home_assets/js/bs-init.js' %} "></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js "></script>
+    <script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js "></script>
+    <script src="https://cdn.datatables.net/1.10.15/js/dataTables.bootstrap.min.js "></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js "></script>
+>>>>>>> Stashed changes
 </body>
+
 </html>
