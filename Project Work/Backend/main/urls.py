@@ -21,7 +21,7 @@ urlpatterns = [
     
     path('signup/',signup,name='signup'),   #done
     path('gtimetable/',gtimetable,name='gtimetable'),  #done 
-    
+    path('studentcsv/',studentcsv,name='studentcsv'),  #done 
     # path('profcsv/',profcsv,name='profcsv'), #baki
       
     path('addprof/',addprof,name='addprof'),  # baki
