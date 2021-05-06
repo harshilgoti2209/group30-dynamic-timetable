@@ -40,7 +40,7 @@ def login(request):
 ##working
 def logout(request):
     logout_(request)
-    return redirect('login')
+    return redirect('home')
 
 ##working
 def gtimetable(request):
