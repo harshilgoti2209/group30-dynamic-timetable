@@ -1,5 +1,5 @@
 from django.contrib import admin
-from main .models import Account,Notes
+from main .models import Account,Notes,Algo
 
 class AccountA(admin.ModelAdmin):
     model=Account
@@ -13,3 +13,10 @@ class NotesA(admin.ModelAdmin):
     list_display=['userid','slotid','notes']
 
 admin.site.register(Notes,NotesA)
+
+
+class AlgoA(admin.ModelAdmin):
+    model=Algo
+    list_display=['slot_id','batch_id','day','time']
+
+admin.site.register(Algo,AlgoA)
