@@ -1,5 +1,5 @@
-from .chromo import Chromosome	
-from .loader import *
+from chromo import Chromosome	
+from loader import *
 from copy import deepcopy
 import numpy as np
 import pandas as pd
@@ -106,7 +106,7 @@ class GA:
         return self.chroms[argsorted[-1]]
 
 def timetable(s):
-    p = 20
+    p = 10
     days = 6
     classesInDay = 4
     num_Batch = 24
@@ -116,9 +116,6 @@ def timetable(s):
 
     best = ga.selection(iteration=100, mutationRate=0.03, group=4,
                         parentToChildRatio=0.4)
-
-    best.toStudentsTimetableHtml()
-    best.toTeacherTimetableHtml()
 
     print ('Final fitnees is : ', best.fitness())
     cube = best.timetable.reshape((num_Batch, classesInDay, days))
