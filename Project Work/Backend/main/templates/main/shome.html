@@ -21,25 +21,18 @@
     <link rel="stylesheet" href="{% static 'main/student_assets/css/Profile-Edit-Form-1.css'%}">
     <link rel="stylesheet" href="{% static 'main/student_assets/css/Profile-Edit-Form.css'%}">
     <link rel="stylesheet" href="{% static 'main/student_assets/css/styles.css'%}">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
-        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <link rel="shortcut icon" href="{% static 'main/student_assets/img/timetable.png'%}" type="image/x-icon">
 </head>
 
 <body>
     <div style="margin-top: 0px;">
-        <ul class="nav nav-pills nav-justified text-center d-flex d-xl-flex flex-row align-items-xl-start"
-            role="tablist" data-aos="fade-down" data-aos-duration="600"
-            style="width: 100%;background: #ffffff;padding: 10px;font-family: 'Encode Sans Expanded', sans-serif;">
-            <li class="nav-item" role="presentation"><a class="nav-link active" role="tab" data-toggle="pill"
-                    href="#tab-5">Home</a></li>
+        <ul class="nav nav-pills nav-justified text-center d-flex d-xl-flex flex-row align-items-xl-start" role="tablist" data-aos="fade-down" data-aos-duration="600" style="width: 100%;background: #ffffff;padding: 10px;font-family: 'Encode Sans Expanded', sans-serif;">
+            <li class="nav-item" role="presentation"><a class="nav-link active" role="tab" data-toggle="pill" href="#tab-5">Home</a></li>
             <!-- <li class="nav-item" role="presentation"><a class="nav-link" role="tab" data-toggle="pill" href="#tab-6">Add Batch</a></li> -->
-            <li class="nav-item" role="presentation"><a class="nav-link" role="tab" data-toggle="pill"
-                    href="#tab-1">View profile</a></li>
-            <li class="nav-item" role="presentation"><a class="nav-link" role="tab" data-toggle="pill"
-                    href="#tab-4">Edit Profile</a></li>
-            <li class="nav-item" role="presentation"><a class="nav-link" role="tab" data-toggle="pill"
-                    href="#tab-2">View Time-Table</a></li>
+            <li class="nav-item" role="presentation"><a class="nav-link" role="tab" data-toggle="pill" href="#tab-1">View profile</a></li>
+            <li class="nav-item" role="presentation"><a class="nav-link" role="tab" data-toggle="pill" href="#tab-4">Edit Profile</a></li>
+            <li class="nav-item" role="presentation"><a class="nav-link" role="tab" data-toggle="pill" href="#tab-2">View Time-Table</a></li>
             <!-- <li class="nav-item" role="presentation"><a class="nav-link" role="tab" data-toggle="pill" href="#tab-3">Generate Table</a></li> -->
             <li class="nav-item" role="presentation"><a class="nav-link" href="{% url 'logout'%}">Logout <i
                         class="fa fa-sign-out"></i></a></li>
@@ -49,15 +42,12 @@
         {{m}}
         {% endfor%}
         {% endif%} -->
-        <div class="tab-content" data-aos="fade-up" data-aos-delay="350" data-aos-once="true"
-            style="height: 100vh;background: #f2f2f2;">
-            <div id="tab-1" role="tabpanel" class="tab-pane container bootstrap snippets bootdey"
-                style="margin-top:30px;">
+        <div class="tab-content" data-aos="fade-up" data-aos-delay="350" data-aos-once="true" style="height: 100vh;background: #f2f2f2;">
+            <div id="tab-1" role="tabpanel" class="tab-pane container bootstrap snippets bootdey" style="margin-top:30px;">
                 <div class="panel-body inf-content">
                     <div class="row">
                         <div class="col-md-4">
-                            <img alt="" style="width:600px;" title="" class="img-circle img-thumbnail isTooltip"
-                                src="https://bootdey.com/img/Content/avatar/avatar7.png" data-original-title="Usuario">
+                            <img alt="" style="width:600px;" title="" class="img-circle img-thumbnail isTooltip" src="https://bootdey.com/img/Content/avatar/avatar7.png" data-original-title="Usuario">
                             <ul title="Ratings" class="list-inline ratings text-center">
                                 <li><a href="#"><span class="glyphicon glyphicon-star"></span></a></li>
                                 <li><a href="#"><span class="glyphicon glyphicon-star"></span></a></li>
@@ -120,7 +110,7 @@
                                             <td>
                                                 <strong>
                                                     <span class="glyphicon glyphicon-calendar text-primary"></span>
-                                                    created
+                                                    Created
                                                 </strong>
                                             </td>
                                             <td class="text-primary">
@@ -139,13 +129,11 @@
                 <div class="container d-md-flex align-items-center justify-content-center">
                     <div class="row">
                         <div class="col" style="margin-top:5rem;">
-                            <p
-                                style="font-size:50px;font-family:Encode Sans Expanded;color:#495057;padding-top:250px; float:left;">
+                            <p style="font-size:50px;font-family:Encode Sans Expanded;color:#495057;padding-top:200px; float:left;">
                                 Welcome to Dynamic Time-Table System</p>
                         </div>
                         <div class="col" style="margin-top:10rem;">
-                            <lottie-player src="https://assets10.lottiefiles.com/packages/lf20_u0w6fbdq.json"
-                                background="transparent" speed="1" style="width: 500px; height: 500px;" loop autoplay>
+                            <lottie-player src="https://assets10.lottiefiles.com/packages/lf20_u0w6fbdq.json" background="transparent" speed="1" style="width: 500px; height: 500px;" loop autoplay>
                             </lottie-player>
                         </div>
                     </div>
@@ -186,8 +174,7 @@
                 <div class="container profile profile-view" id="profile">
                     <div class="row">
                         <div class="col-md-12 alert-col relative">
-                            <div class="alert alert-info alert-dismissible absolue center" role="alert"><button
-                                    type="button" class="close" data-dismiss="alert" aria-label="Close"><span
+                            <div class="alert alert-info alert-dismissible absolue center" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
                                         aria-hidden="true">×</span></button><span>Profile save with success</span></div>
                         </div>
                     </div>
@@ -197,17 +184,13 @@
                             <div class="col-md-4 relative">
                                 <div class="avatar">
                                     <div class="avatar-bg center">
-                                        <img alt="" style="width:600px; " title=""
-                                            class="img-circle img-thumbnail isTooltip"
-                                            src="https://bootdey.com/img/Content/avatar/avatar7.png"
-                                            data-original-title="Usuario">
+                                        <img alt="" style="width:600px; " title="" class="img-circle img-thumbnail isTooltip" src="https://bootdey.com/img/Content/avatar/avatar7.png" data-original-title="Usuario">
                                     </div>
                                 </div>
                             </div>
                             <div class="col-md-8">
                                 <h1>Profile </h1>
-                                <hr>
-                                {% for fm in pform%}
+                                <hr> {% for fm in pform%}
                                 <div class="form-row">
                                     <div class="col-sm-12 col-md-6">
                                         <div class="form-group"><label>{{fm.label_tag}}</label>{{fm}}</div>
@@ -227,54 +210,58 @@
                 </div>
             </div>
             <div class="tab-pane" role="tabpanel" id="tab-2">
-                <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
-                    <thead>
-                        <tr>
-                            <th>Monday</th>
-                            <th>Tuesday</th>
-                            <th>Wednesday</th>
-                            <th>Thursday</th>
-                            <th>Friday</th>
-                            <th>Saturday</th>
-                    
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>{{timetable.0.0.prof}} {{timetable.0.0.subject}}</td>
-                            <td>{{timetable.0.1.prof}} {{timetable.0.1.subject}}</td>
-                            <td>{{timetable.0.2.prof}} {{timetable.0.2.subject}}</td>
-                            <td>{{timetable.0.3.prof}} {{timetable.0.3.subject}}</td>
-                            <td>{{timetable.0.4.prof}} {{timetable.0.4.subject}}</td>
-                            <td>{{timetable.0.5.prof}} {{timetable.0.5.subject}}</td>
-                        </tr>
-                        <tr>
-                            <td>{{timetable.1.0.prof}} {{timetable.1.0.subject}}</td>
-                            <td>{{timetable.1.1.prof}} {{timetable.1.1.subject}}</td>
-                            <td>{{timetable.1.2.prof}} {{timetable.1.2.subject}}</td>
-                            <td>{{timetable.1.3.prof}} {{timetable.1.3.subject}}</td>
-                            <td>{{timetable.1.4.prof}} {{timetable.1.4.subject}}</td>
-                            <td>{{timetable.1.5.prof}} {{timetable.1.5.subject}}</td>
-                        </tr>
-                        <tr>
-                            <td>{{timetable.2.0.prof}} {{timetable.2.0.subject}}</td>
-                            <td>{{timetable.2.1.prof}} {{timetable.2.1.subject}}</td>
-                            <td>{{timetable.2.2.prof}} {{timetable.2.2.subject}}</td>
-                            <td>{{timetable.2.3.prof}} {{timetable.2.3.subject}}</td>
-                            <td>{{timetable.2.4.prof}} {{timetable.2.4.subject}}</td>
-                            <td>{{timetable.2.5.prof}} {{timetable.2.5.subject}}</td>
-                        </tr>
-                        <tr>
-                            <td>{{timetable.3.0.prof}} {{timetable.3.0.subject}}</td>
-                            <td>{{timetable.3.1.prof}} {{timetable.3.1.subject}}</td>
-                            <td>{{timetable.3.2.prof}} {{timetable.3.2.subject}}</td>
-                            <td>{{timetable.3.3.prof}} {{timetable.3.3.subject}}</td>
-                            <td>{{timetable.3.4.prof}} {{timetable.3.4.subject}}</td>
-                            <td>{{timetable.3.5.prof}} {{timetable.3.5.subject}}</td>
-                        </tr>
-                                
-                        </tbody>
-                </table>
+                <div class="row justify-content-center">
+                    <div class="col-auto" style="margin-top:50px; background-color:white;padding:50px">
+                        <table id="example" class="table table-striped table-bordered" cellspacing="0" width="80%">
+                            <thead>
+                                <tr>
+                                    <th>Monday</th>
+                                    <th>Tuesday</th>
+                                    <th>Wednesday</th>
+                                    <th>Thursday</th>
+                                    <th>Friday</th>
+                                    <th>Saturday</th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>{% if timetable.0.0%}Professor : {{timetable.0.0.prof}} <br> Subject: {{timetable.0.0.subject}}{%endif%}</td>
+                                    <td>{% if timetable.0.1%}Professor :{{timetable.0.1.prof}} <br> Subject: {{timetable.0.1.subject}}{%endif%}</td>
+                                    <td>{% if timetable.0.2%}Professor :{{timetable.0.2.prof}} <br> Subject: {{timetable.0.2.subject}}{%endif%}</td>
+                                    <td>{% if timetable.0.3%}Professor :{{timetable.0.3.prof}} <br> Subject: {{timetable.0.3.subject}}{%endif%}</td>
+                                    <td>{% if timetable.0.4%}Professor :{{timetable.0.4.prof}} <br> Subject: {{timetable.0.4.subject}}{%endif%}</td>
+                                    <td>{% if timetable.0.5%}Professor :{{timetable.0.5.prof}} <br> Subject: {{timetable.0.5.subject}}{%endif%}</td>
+                                </tr>
+                                <tr>
+                                    <td>{% if timetable.1.0%}Professor :{{timetable.1.0.prof}} <br> Subject: {{timetable.1.0.subject}}{%endif%}</td>
+                                    <td>{% if timetable.1.1%}Professor :{{timetable.1.1.prof}} <br> Subject: {{timetable.1.1.subject}}{%endif%}</td>
+                                    <td>{% if timetable.1.2%}Professor :{{timetable.1.2.prof}} <br> Subject: {{timetable.1.2.subject}}{%endif%}</td>
+                                    <td>{% if timetable.1.3%}Professor :{{timetable.1.3.prof}} <br> Subject: {{timetable.1.3.subject}}{%endif%}</td>
+                                    <td>{% if timetable.1.4%}Professor :{{timetable.1.4.prof}} <br> Subject: {{timetable.1.4.subject}}{%endif%}</td>
+                                    <td>{% if timetable.1.5%}Professor :{{timetable.1.5.prof}} <br> Subject: {{timetable.1.5.subject}}{%endif%}</td>
+                                </tr>
+                                <tr>
+                                    <td>{% if timetable.2.0%}Professor :{{timetable.2.0.prof}} <br> Subject: {{timetable.2.0.subject}}{%endif%}</td>
+                                    <td>{% if timetable.2.1%}Professor :{{timetable.2.1.prof}} <br> Subject: {{timetable.2.1.subject}}{%endif%}</td>
+                                    <td>{% if timetable.2.2%}Professor :{{timetable.2.2.prof}} <br> Subject: {{timetable.2.2.subject}}{%endif%}</td>
+                                    <td>{% if timetable.2.3%}Professor :{{timetable.2.3.prof}} <br> Subject: {{timetable.2.3.subject}}{%endif%}</td>
+                                    <td>{% if timetable.2.4%}Professor :{{timetable.2.4.prof}} <br> Subject: {{timetable.2.4.subject}}{%endif%}</td>
+                                    <td>{% if timetable.2.5%}Professor :{{timetable.2.5.prof}} <br> Subject: {{timetable.2.5.subject}}{%endif%}</td>
+                                </tr>
+                                <tr>
+                                    <td>{% if timetable.3.0%}Professor :{{timetable.3.0.prof}} <br> Subject: {{timetable.3.0.subject}}{%endif%}</td>
+                                    <td>{% if timetable.3.1%}Professor :{{timetable.3.1.prof}} <br> Subject: {{timetable.3.1.subject}}{%endif%}</td>
+                                    <td>{% if timetable.3.2%}Professor :{{timetable.3.2.prof}} <br> Subject: {{timetable.3.2.subject}}{%endif%}</td>
+                                    <td>{% if timetable.3.3%}Professor :{{timetable.3.3.prof}} <br> Subject: {{timetable.3.3.subject}}{%endif%}</td>
+                                    <td>{% if timetable.3.4%}Professor :{{timetable.3.4.prof}} <br> Subject: {{timetable.3.4.subject}}{%endif%}</td>
+                                    <td>{% if timetable.3.5%}Professor :{{timetable.3.5.prof}} <br> Subject: {{timetable.3.5.subject}}{%endif%}</td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
             </div>
             <div class="tab-pane" role="tabpanel" id="tab-3"></div>
             <div class="tab-pane" role="tabpanel" id="tab-7">

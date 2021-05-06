@@ -3,10 +3,18 @@
 <head>
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
     <script src="js/bootstrap.min..js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300&display=swap" rel="stylesheet">
 </head>
 
 <body>
     <style>
+        * {
+            font-family: 'Roboto Slab', serif;
+        }
+
         .title,
         table td {
             text-align: center;
@@ -14,12 +22,15 @@
 
         .title {
             font-size: 24px;
+            font-family: cursive;
+            color: black;
         }
 
         table td {
             height: 100px;
-            width: 20%;
-            padding: 30 10 30 10 !important;
+            width: 200px;
+            padding: 30 10 30 10;
+            background-color: #e2eab4;
         }
 
         .teacher,
@@ -27,13 +38,17 @@
             display: block;
         }
 
+        .no {
+            color: #965008;
+        }
+
         .teacher {
             font-weight: bold;
-            color: #0c4d58;
+            color: blue;
         }
 
         .course {
-            color: #543709;
+            color: red;
             font-size: 16px;
         }
 
@@ -44,11 +59,169 @@
         }
     </style>
     <div class='container'>
+        <h3 class='title'>ME3th year, section 15, ME3 15</h3>
+        <table class='table table-bordered'>
+            <tr>
+                <td><span class='course'>Kinematics</span>
+                    <hr><span class='teacher'>Ulises Farrand</span>
+                </td>
+                <td><span class='course'>Dynamics of Machinery</span>
+                    <hr><span class='teacher'>Rochette Geale</span>
+                </td>
+                <td><span class='course'>Kinematics</span>
+                    <hr><span class='teacher'>Ulises Farrand</span>
+                </td>
+                <td><span class='course'>Dynamics of Machinery</span>
+                    <hr><span class='teacher'>Rochette Geale</span>
+                </td>
+                <td><span class='course'>Maintenance Engineering</span>
+                    <hr><span class='teacher'>Conrado Esslement</span>
+                </td>
+                <td><span class='course'>Advanced Manufacturing Processes</span>
+                    <hr><span class='teacher'>Ondrea Dederick</span>
+                </td>
+            </tr>
+            <tr>
+                <td><span class='course'>Kinematics</span>
+                    <hr><span class='teacher'>Ulises Farrand</span>
+                </td>
+                <td><span class='course'>Statistics</span>
+                    <hr><span class='teacher'>Debera Andreichik</span>
+                </td>
+                <td><span class='course'>Advanced Manufacturing Processes</span>
+                    <hr><span class='teacher'>Ondrea Dederick</span>
+                </td>
+                <td><span class='course'>Culture and Politics</span>
+                    <hr><span class='teacher'>Rosaline Bragge</span>
+                </td>
+                <td><span class='course'>Dynamics of Machinery</span>
+                    <hr><span class='teacher'>Rochette Geale</span>
+                </td>
+                <td class='no'>Free Slot</td>
+            </tr>
+            <tr>
+                <td><span class='course'>Advanced Manufacturing Processes</span>
+                    <hr><span class='teacher'>Ondrea Dederick</span>
+                </td>
+                <td><span class='course'>Culture and Politics</span>
+                    <hr><span class='teacher'>Rosaline Bragge</span>
+                </td>
+                <td class='no'>Free Slot</td>
+                <td><span class='course'>Advanced Manufacturing Processes</span>
+                    <hr><span class='teacher'>Ondrea Dederick</span>
+                </td>
+                <td><span class='course'>Culture and Politics</span>
+                    <hr><span class='teacher'>Rosaline Bragge</span>
+                </td>
+                <td><span class='course'>Thermodynamics</span>
+                    <hr><span class='teacher'>Karlie Gledstane</span>
+                </td>
+            </tr>
+            <tr>
+                <td><span class='course'>Statistics</span>
+                    <hr><span class='teacher'>Debera Andreichik</span>
+                </td>
+                <td><span class='course'>Advanced Manufacturing Processes</span>
+                    <hr><span class='teacher'>Ondrea Dederick</span>
+                </td>
+                <td><span class='course'>Thermodynamics</span>
+                    <hr><span class='teacher'>Karlie Gledstane</span>
+                </td>
+                <td><span class='course'>Maintenance Engineering</span>
+                    <hr><span class='teacher'>Conrado Esslement</span>
+                </td>
+                <td><span class='course'>Maintenance Engineering</span>
+                    <hr><span class='teacher'>Conrado Esslement</span>
+                </td>
+                <td><span class='course'>Advanced Manufacturing Processes</span>
+                    <hr><span class='teacher'>Ondrea Dederick</span>
+                </td>
+            </tr>
+        </table>
+        <h3 class='title'>EC1th year, section 3, EC1 3</h3>
+        <table class='table table-bordered'>
+            <tr>
+                <td class='no'>Free Slot</td>
+                <td><span class='course'>Power Engineering</span>
+                    <hr><span class='teacher'>Judye Springett</span>
+                </td>
+                <td><span class='course'>Power Engineering</span>
+                    <hr><span class='teacher'>Judye Springett</span>
+                </td>
+                <td><span class='course'>Basic Signal Processing</span>
+                    <hr><span class='teacher'>Genvieve Easby</span>
+                </td>
+                <td><span class='course'>Basic Electronics</span>
+                    <hr><span class='teacher'>Faunie Sweeny</span>
+                </td>
+                <td><span class='course'>Physics</span>
+                    <hr><span class='teacher'>Benny Sansome</span>
+                </td>
+            </tr>
+            <tr>
+                <td><span class='course'>Calculus</span>
+                    <hr><span class='teacher'>Kristel Snasel</span>
+                </td>
+                <td><span class='course'>Introduction to Communication System</span>
+                    <hr><span class='teacher'>Hastings Poppy</span>
+                </td>
+                <td><span class='course'>Introduction to Communication System</span>
+                    <hr><span class='teacher'>Hastings Poppy</span>
+                </td>
+                <td><span class='course'>Language and Literature</span>
+                    <hr><span class='teacher'>Jeane Fozzard</span>
+                </td>
+                <td><span class='course'>Basic Electronics</span>
+                    <hr><span class='teacher'>Faunie Sweeny</span>
+                </td>
+                <td><span class='course'>Physics</span>
+                    <hr><span class='teacher'>Benny Sansome</span>
+                </td>
+            </tr>
+            <tr>
+                <td><span class='course'>Physics</span>
+                    <hr><span class='teacher'>Benny Sansome</span>
+                </td>
+                <td><span class='course'>Basic Signal Processing</span>
+                    <hr><span class='teacher'>Genvieve Easby</span>
+                </td>
+                <td class='no'>Free Slot</td>
+                <td><span class='course'>Basic Electronics</span>
+                    <hr><span class='teacher'>Faunie Sweeny</span>
+                </td>
+                <td><span class='course'>Calculus</span>
+                    <hr><span class='teacher'>Kristel Snasel</span>
+                </td>
+                <td class='no'>Free Slot</td>
+            </tr>
+            <tr>
+                <td class='no'>Free Slot</td>
+                <td><span class='course'>Calculus</span>
+                    <hr><span class='teacher'>Kristel Snasel</span>
+                </td>
+                <td class='no'>Free Slot</td>
+                <td><span class='course'>Power Engineering</span>
+                    <hr><span class='teacher'>Judye Springett</span>
+                </td>
+                <td><span class='course'>Basic Signal Processing</span>
+                    <hr><span class='teacher'>Genvieve Easby</span>
+                </td>
+                <td><span class='course'>Language and Literature</span>
+                    <hr><span class='teacher'>Jeane Fozzard</span>
+                </td>
+            </tr>
+        </table>
         <h3 class='title'>ME5th year, section 19, ME5 19</h3>
         <table class='table table-bordered'>
             <tr>
-                <td><span class='course'>Organizational Behavior</span>
-                    <hr><span class='teacher'>Miguela Charrington</span>
+                <td><span class='course'>Fluid Mechanics</span>
+                    <hr><span class='teacher'>Taber Swarbrigg</span>
+                </td>
+                <td><span class='course'>Manufacturing Processes</span>
+                    <hr><span class='teacher'>Mozelle Husbands</span>
+                </td>
+                <td><span class='course'>Dynamics of Machinery</span>
+                    <hr><span class='teacher'>Rochette Geale</span>
                 </td>
                 <td><span class='course'>Calculus</span>
                     <hr><span class='teacher'>Lilah Ellis</span>
@@ -56,320 +229,313 @@
                 <td><span class='course'>Probability</span>
                     <hr><span class='teacher'>Millard Neeve</span>
                 </td>
-                <td></td>
-                <td></td>
-                <td><span class='course'>Dynamics of Machinery</span>
-                    <hr><span class='teacher'>Rochette Geale</span>
-                </td>
-            </tr>
-            <tr>
-                <td><span class='course'>Calculus</span>
-                    <hr><span class='teacher'>Lilah Ellis</span>
-                </td>
-                <td><span class='course'>Fluid Mechanics</span>
-                    <hr><span class='teacher'>Taber Swarbrigg</span>
-                </td>
-                <td><span class='course'>Calculus</span>
-                    <hr><span class='teacher'>Lilah Ellis</span>
-                </td>
                 <td><span class='course'>Probability</span>
                     <hr><span class='teacher'>Millard Neeve</span>
                 </td>
-                <td><span class='course'>Advanced Manufacturing Processes</span>
-                    <hr><span class='teacher'>Ondrea Dederick</span>
-                </td>
-                <td><span class='course'>Dynamics of Machinery</span>
-                    <hr><span class='teacher'>Rochette Geale</span>
-                </td>
             </tr>
             <tr>
                 <td><span class='course'>Fluid Mechanics</span>
                     <hr><span class='teacher'>Taber Swarbrigg</span>
-                </td>
-                <td><span class='course'>Fluid Mechanics</span>
-                    <hr><span class='teacher'>Taber Swarbrigg</span>
-                </td>
-                <td><span class='course'>Dynamics of Machinery</span>
-                    <hr><span class='teacher'>Rochette Geale</span>
-                </td>
-                <td></td>
-                <td><span class='course'>Advanced Manufacturing Processes</span>
-                    <hr><span class='teacher'>Ondrea Dederick</span>
-                </td>
-                <td><span class='course'>Manufacturing Processes</span>
-                    <hr><span class='teacher'>Mozelle Husbands</span>
-                </td>
-            </tr>
-            <tr>
-                <td></td>
-                <td><span class='course'>Manufacturing Processes</span>
-                    <hr><span class='teacher'>Mozelle Husbands</span>
-                </td>
-                <td><span class='course'>Probability</span>
-                    <hr><span class='teacher'>Millard Neeve</span>
-                </td>
-                <td><span class='course'>Manufacturing Processes</span>
-                    <hr><span class='teacher'>Mozelle Husbands</span>
-                </td>
-                <td><span class='course'>Advanced Manufacturing Processes</span>
-                    <hr><span class='teacher'>Ondrea Dederick</span>
                 </td>
                 <td><span class='course'>Organizational Behavior</span>
                     <hr><span class='teacher'>Miguela Charrington</span>
                 </td>
+                <td><span class='course'>Dynamics of Machinery</span>
+                    <hr><span class='teacher'>Rochette Geale</span>
+                </td>
+                <td><span class='course'>Advanced Kinematics</span>
+                    <hr><span class='teacher'>Ulises Farrand</span>
+                </td>
+                <td class='no'>Free Slot</td>
+                <td><span class='course'>Calculus</span>
+                    <hr><span class='teacher'>Lilah Ellis</span>
+                </td>
+            </tr>
+            <tr>
+                <td><span class='course'>Dynamics of Machinery</span>
+                    <hr><span class='teacher'>Rochette Geale</span>
+                </td>
+                <td><span class='course'>Organizational Behavior</span>
+                    <hr><span class='teacher'>Miguela Charrington</span>
+                </td>
+                <td><span class='course'>Probability</span>
+                    <hr><span class='teacher'>Millard Neeve</span>
+                </td>
+                <td><span class='course'>Calculus</span>
+                    <hr><span class='teacher'>Lilah Ellis</span>
+                </td>
+                <td><span class='course'>Advanced Kinematics</span>
+                    <hr><span class='teacher'>Ulises Farrand</span>
+                </td>
+                <td><span class='course'>Manufacturing Processes</span>
+                    <hr><span class='teacher'>Mozelle Husbands</span>
+                </td>
+            </tr>
+            <tr>
+                <td class='no'>Free Slot</td>
+                <td><span class='course'>Advanced Kinematics</span>
+                    <hr><span class='teacher'>Ulises Farrand</span>
+                </td>
+                <td><span class='course'>Fluid Mechanics</span>
+                    <hr><span class='teacher'>Taber Swarbrigg</span>
+                </td>
+                <td><span class='course'>Manufacturing Processes</span>
+                    <hr><span class='teacher'>Mozelle Husbands</span>
+                </td>
+                <td class='no'>Free Slot</td>
+                <td class='no'>Free Slot</td>
             </tr>
         </table>
-        <h3 class='title'>EL5th year, section 23, EL5 23</h3>
+        <h3 class='title'>EL1th year, section 0, EL1 0</h3>
         <table class='table table-bordered'>
             <tr>
-                <td><span class='course'>Instrumentation</span>
-                    <hr><span class='teacher'>Kristian Carbett</span>
+                <td><span class='course'>Physics</span>
+                    <hr><span class='teacher'>Benny Sansome</span>
                 </td>
+                <td><span class='course'>Circuit Design</span>
+                    <hr><span class='teacher'>Far Voysey</span>
+                </td>
+                <td><span class='course'>Basic Nano Technology</span>
+                    <hr><span class='teacher'>Win Mariot</span>
+                </td>
+                <td><span class='course'>Physics</span>
+                    <hr><span class='teacher'>Benny Sansome</span>
+                </td>
+                <td class='no'>Free Slot</td>
+                <td><span class='course'>Basic Electronics</span>
+                    <hr><span class='teacher'>Petronella Albany</span>
+                </td>
+            </tr>
+            <tr>
                 <td><span class='course'>Power Engineering</span>
                     <hr><span class='teacher'>Judye Springett</span>
                 </td>
-                <td><span class='course'>Advanced Electricity Technology and Machines</span>
-                    <hr><span class='teacher'>Agretha Oloshin</span>
+                <td><span class='course'>Basic Electronics</span>
+                    <hr><span class='teacher'>Petronella Albany</span>
                 </td>
-                <td></td>
+                <td><span class='course'>Language and Literature</span>
+                    <hr><span class='teacher'>Jeane Fozzard</span>
+                </td>
+                <td><span class='course'>Basic Nano Technology</span>
+                    <hr><span class='teacher'>Win Mariot</span>
+                </td>
+                <td><span class='course'>Circuit Design</span>
+                    <hr><span class='teacher'>Far Voysey</span>
+                </td>
                 <td><span class='course'>Calculus</span>
-                    <hr><span class='teacher'>Cristine Gormally</span>
+                    <hr><span class='teacher'>Lynn Stygall</span>
                 </td>
-                <td></td>
             </tr>
             <tr>
-                <td><span class='course'>Microelectronics</span>
-                    <hr><span class='teacher'>Hedvig Brayn</span>
+                <td><span class='course'>Basic Electronics</span>
+                    <hr><span class='teacher'>Petronella Albany</span>
                 </td>
-                <td><span class='course'>Organizational Behavior</span>
-                    <hr><span class='teacher'>Felice Bruyns</span>
-                </td>
-                <td><span class='course'>Advanced Signal Processing</span>
-                    <hr><span class='teacher'>Alexandrina O'Doghesty</span>
-                </td>
-                <td><span class='course'>Advanced Signal Processing</span>
-                    <hr><span class='teacher'>Alexandrina O'Doghesty</span>
-                </td>
-                <td></td>
                 <td><span class='course'>Power Engineering</span>
                     <hr><span class='teacher'>Judye Springett</span>
-                </td>
-            </tr>
-            <tr>
-                <td><span class='course'>Advanced Electricity Technology and Machines</span>
-                    <hr><span class='teacher'>Agretha Oloshin</span>
-                </td>
-                <td><span class='course'>Advanced Electricity Technology and Machines</span>
-                    <hr><span class='teacher'>Agretha Oloshin</span>
-                </td>
-                <td><span class='course'>Instrumentation</span>
-                    <hr><span class='teacher'>Kristian Carbett</span>
-                </td>
-                <td><span class='course'>Organizational Behavior</span>
-                    <hr><span class='teacher'>Felice Bruyns</span>
-                </td>
-                <td><span class='course'>Organizational Behavior</span>
-                    <hr><span class='teacher'>Felice Bruyns</span>
-                </td>
-                <td><span class='course'>Instrumentation</span>
-                    <hr><span class='teacher'>Kristian Carbett</span>
-                </td>
-            </tr>
-            <tr>
-                <td><span class='course'>Calculus</span>
-                    <hr><span class='teacher'>Cristine Gormally</span>
-                </td>
-                <td><span class='course'>Microelectronics</span>
-                    <hr><span class='teacher'>Hedvig Brayn</span>
-                </td>
-                <td><span class='course'>Microelectronics</span>
-                    <hr><span class='teacher'>Hedvig Brayn</span>
                 </td>
                 <td><span class='course'>Power Engineering</span>
                     <hr><span class='teacher'>Judye Springett</span>
                 </td>
                 <td><span class='course'>Calculus</span>
-                    <hr><span class='teacher'>Cristine Gormally</span>
+                    <hr><span class='teacher'>Lynn Stygall</span>
                 </td>
-                <td><span class='course'>Advanced Signal Processing</span>
-                    <hr><span class='teacher'>Alexandrina O'Doghesty</span>
+                <td class='no'>Free Slot</td>
+                <td><span class='course'>Language and Literature</span>
+                    <hr><span class='teacher'>Jeane Fozzard</span>
+                </td>
+            </tr>
+            <tr>
+                <td class='no'>Free Slot</td>
+                <td><span class='course'>Basic Nano Technology</span>
+                    <hr><span class='teacher'>Win Mariot</span>
+                </td>
+                <td class='no'>Free Slot</td>
+                <td class='no'>Free Slot</td>
+                <td><span class='course'>Circuit Design</span>
+                    <hr><span class='teacher'>Far Voysey</span>
+                </td>
+                <td><span class='course'>Calculus</span>
+                    <hr><span class='teacher'>Lynn Stygall</span>
                 </td>
             </tr>
         </table>
-        <h3 class='title'>EC2th year, section 13, EC2 13</h3>
+        <h3 class='title'>EC5th year, section 21, EC5 21</h3>
         <table class='table table-bordered'>
             <tr>
-                <td></td>
-                <td><span class='course'>Electromagnetics</span>
-                    <hr><span class='teacher'>Bathsheba Sorbie</span>
+                <td><span class='course'>Telecommunications</span>
+                    <hr><span class='teacher'>Kariotta Kirdsch</span>
                 </td>
-                <td><span class='course'>Computer Networks</span>
-                    <hr><span class='teacher'>Emanuel Dicke</span>
+                <td><span class='course'>Instrumentation</span>
+                    <hr><span class='teacher'>Kristian Carbett</span>
                 </td>
-                <td><span class='course'>Environmental Studies</span>
-                    <hr><span class='teacher'>Eugenius Vlasenko</span>
+                <td><span class='course'>Signal Processing</span>
+                    <hr><span class='teacher'>Genvieve Easby</span>
                 </td>
-                <td><span class='course'>Environmental Studies</span>
-                    <hr><span class='teacher'>Eugenius Vlasenko</span>
+                <td><span class='course'>Calculus</span>
+                    <hr><span class='teacher'>Marwin Langhorne</span>
                 </td>
-                <td><span class='course'>Digital Electronics</span>
-                    <hr><span class='teacher'>Faunie Sweeny</span>
+                <td><span class='course'>Organizational Behavior</span>
+                    <hr><span class='teacher'>Felice Bruyns</span>
                 </td>
-            </tr>
-            <tr>
-                <td><span class='course'>Environmental Studies</span>
-                    <hr><span class='teacher'>Eugenius Vlasenko</span>
-                </td>
-                <td></td>
-                <td><span class='course'>Probability</span>
-                    <hr><span class='teacher'>Lazarus Bordessa</span>
-                </td>
-                <td><span class='course'>Probability</span>
-                    <hr><span class='teacher'>Lazarus Bordessa</span>
-                </td>
-                <td></td>
-                <td><span class='course'>Discrete Mathematics</span>
-                    <hr><span class='teacher'>Kristel Snasel</span>
+                <td><span class='course'>Basic Microelectronics</span>
+                    <hr><span class='teacher'>Hedvig Brayn</span>
                 </td>
             </tr>
             <tr>
-                <td><span class='course'>Digital Electronics</span>
-                    <hr><span class='teacher'>Faunie Sweeny</span>
+                <td><span class='course'>Instrumentation</span>
+                    <hr><span class='teacher'>Kristian Carbett</span>
                 </td>
-                <td><span class='course'>Computer Networks</span>
-                    <hr><span class='teacher'>Emanuel Dicke</span>
+                <td><span class='course'>Basic Microelectronics</span>
+                    <hr><span class='teacher'>Hedvig Brayn</span>
                 </td>
-                <td><span class='course'>Electromagnetics</span>
-                    <hr><span class='teacher'>Bathsheba Sorbie</span>
+                <td><span class='course'>Instrumentation</span>
+                    <hr><span class='teacher'>Kristian Carbett</span>
                 </td>
-                <td><span class='course'>Probability</span>
-                    <hr><span class='teacher'>Lazarus Bordessa</span>
+                <td><span class='course'>Calculus</span>
+                    <hr><span class='teacher'>Marwin Langhorne</span>
                 </td>
-                <td></td>
-                <td><span class='course'>Discrete Mathematics</span>
-                    <hr><span class='teacher'>Kristel Snasel</span>
+                <td><span class='course'>Signal Processing</span>
+                    <hr><span class='teacher'>Genvieve Easby</span>
                 </td>
+                <td class='no'>Free Slot</td>
             </tr>
             <tr>
                 <td><span class='course'>Encoding</span>
-                    <hr><span class='teacher'>Paulo McCuffie</span>
+                    <hr><span class='teacher'>Gusti Hempel</span>
                 </td>
-                <td><span class='course'>Computer Networks</span>
-                    <hr><span class='teacher'>Emanuel Dicke</span>
-                </td>
-                <td><span class='course'>Electromagnetics</span>
-                    <hr><span class='teacher'>Bathsheba Sorbie</span>
+                <td><span class='course'>Circuit Analysis</span>
+                    <hr><span class='teacher'>Barbabra Oventon</span>
                 </td>
                 <td><span class='course'>Encoding</span>
-                    <hr><span class='teacher'>Paulo McCuffie</span>
+                    <hr><span class='teacher'>Gusti Hempel</span>
                 </td>
-                <td><span class='course'>Digital Electronics</span>
-                    <hr><span class='teacher'>Faunie Sweeny</span>
+                <td><span class='course'>Circuit Analysis</span>
+                    <hr><span class='teacher'>Barbabra Oventon</span>
                 </td>
-                <td><span class='course'>Discrete Mathematics</span>
-                    <hr><span class='teacher'>Kristel Snasel</span>
+                <td><span class='course'>Telecommunications</span>
+                    <hr><span class='teacher'>Kariotta Kirdsch</span>
+                </td>
+                <td><span class='course'>Circuit Analysis</span>
+                    <hr><span class='teacher'>Barbabra Oventon</span>
+                </td>
+            </tr>
+            <tr>
+                <td><span class='course'>Signal Processing</span>
+                    <hr><span class='teacher'>Genvieve Easby</span>
+                </td>
+                <td><span class='course'>Calculus</span>
+                    <hr><span class='teacher'>Marwin Langhorne</span>
+                </td>
+                <td><span class='course'>Organizational Behavior</span>
+                    <hr><span class='teacher'>Felice Bruyns</span>
+                </td>
+                <td><span class='course'>Encoding</span>
+                    <hr><span class='teacher'>Gusti Hempel</span>
+                </td>
+                <td><span class='course'>Organizational Behavior</span>
+                    <hr><span class='teacher'>Felice Bruyns</span>
+                </td>
+                <td><span class='course'>Basic Microelectronics</span>
+                    <hr><span class='teacher'>Hedvig Brayn</span>
                 </td>
             </tr>
         </table>
-        <h3 class='title'>EL6th year, section 22, EL6 22</h3>
+        <h3 class='title'>CS4th year, section 6, CS4 6</h3>
         <table class='table table-bordered'>
             <tr>
-                <td><span class='course'>Advanced Microelectronics</span>
-                    <hr><span class='teacher'>Hedvig Brayn</span>
+                <td><span class='course'>Object Oriented Programming</span>
+                    <hr><span class='teacher'>Harlen Antonijevic</span>
                 </td>
-                <td><span class='course'>Telecommunications</span>
-                    <hr><span class='teacher'>Hall Turban</span>
+                <td><span class='course'>JAVA Programing</span>
+                    <hr><span class='teacher'>Merill Petley</span>
                 </td>
-                <td><span class='course'>LinearAlgebra</span>
-                    <hr><span class='teacher'>Marwin Langhorne</span>
+                <td><span class='course'>Web Development</span>
+                    <hr><span class='teacher'>Sigrid Laker</span>
                 </td>
-                <td><span class='course'>Advanced Electrical Engineering Material</span>
-                    <hr><span class='teacher'>Helene Kelcey</span>
+                <td><span class='course'>Economics</span>
+                    <hr><span class='teacher'>Almira Courtese</span>
                 </td>
-                <td><span class='course'>LinearAlgebra</span>
-                    <hr><span class='teacher'>Marwin Langhorne</span>
+                <td><span class='course'>JAVA Programing</span>
+                    <hr><span class='teacher'>Merill Petley</span>
                 </td>
-                <td><span class='course'>Telecommunications</span>
-                    <hr><span class='teacher'>Hall Turban</span>
-                </td>
-            </tr>
-            <tr>
-                <td><span class='course'>History</span>
-                    <hr><span class='teacher'>Alina Branscombe</span>
-                </td>
-                <td></td>
-                <td><span class='course'>Discrete Mathematics</span>
-                    <hr><span class='teacher'>Cristine Gormally</span>
-                </td>
-                <td><span class='course'>History</span>
-                    <hr><span class='teacher'>Alina Branscombe</span>
-                </td>
-                <td><span class='course'>Advanced Microelectronics</span>
-                    <hr><span class='teacher'>Hedvig Brayn</span>
-                </td>
-                <td><span class='course'>Advanced Electrical Engineering Material</span>
-                    <hr><span class='teacher'>Helene Kelcey</span>
+                <td><span class='course'>Economics</span>
+                    <hr><span class='teacher'>Almira Courtese</span>
                 </td>
             </tr>
             <tr>
-                <td></td>
-                <td></td>
-                <td><span class='course'>Advanced Power Engineering</span>
-                    <hr><span class='teacher'>Xena Cockram</span>
+                <td><span class='course'>Statistics</span>
+                    <hr><span class='teacher'>Shanta Trendle</span>
                 </td>
-                <td><span class='course'>LinearAlgebra</span>
-                    <hr><span class='teacher'>Marwin Langhorne</span>
+                <td><span class='course'>Economics</span>
+                    <hr><span class='teacher'>Almira Courtese</span>
                 </td>
-                <td><span class='course'>Telecommunications</span>
-                    <hr><span class='teacher'>Hall Turban</span>
+                <td><span class='course'>Web Development</span>
+                    <hr><span class='teacher'>Sigrid Laker</span>
                 </td>
-                <td></td>
+                <td><span class='course'>Software Engineering</span>
+                    <hr><span class='teacher'>Lilith Fatharly</span>
+                </td>
+                <td><span class='course'>Statistics</span>
+                    <hr><span class='teacher'>Shanta Trendle</span>
+                </td>
+                <td><span class='course'>Big Data</span>
+                    <hr><span class='teacher'>Jess Kilbey</span>
+                </td>
             </tr>
             <tr>
-                <td></td>
-                <td><span class='course'>Discrete Mathematics</span>
-                    <hr><span class='teacher'>Cristine Gormally</span>
+                <td class='no'>Free Slot</td>
+                <td><span class='course'>Big Data</span>
+                    <hr><span class='teacher'>Jess Kilbey</span>
                 </td>
-                <td><span class='course'>Advanced Electrical Engineering Material</span>
-                    <hr><span class='teacher'>Helene Kelcey</span>
+                <td class='no'>Free Slot</td>
+                <td><span class='course'>Web Development</span>
+                    <hr><span class='teacher'>Sigrid Laker</span>
                 </td>
-                <td></td>
-                <td><span class='course'>Advanced Power Engineering</span>
-                    <hr><span class='teacher'>Xena Cockram</span>
+                <td><span class='course'>Statistics</span>
+                    <hr><span class='teacher'>Shanta Trendle</span>
                 </td>
-                <td><span class='course'>Discrete Mathematics</span>
-                    <hr><span class='teacher'>Cristine Gormally</span>
+                <td class='no'>Free Slot</td>
+            </tr>
+            <tr>
+                <td><span class='course'>JAVA Programing</span>
+                    <hr><span class='teacher'>Merill Petley</span>
+                </td>
+                <td class='no'>Free Slot</td>
+                <td><span class='course'>Object Oriented Programming</span>
+                    <hr><span class='teacher'>Harlen Antonijevic</span>
+                </td>
+                <td class='no'>Free Slot</td>
+                <td><span class='course'>Software Engineering</span>
+                    <hr><span class='teacher'>Lilith Fatharly</span>
+                </td>
+                <td><span class='course'>Software Engineering</span>
+                    <hr><span class='teacher'>Lilith Fatharly</span>
                 </td>
             </tr>
         </table>
         <h3 class='title'>CS3th year, section 1, CS3 1</h3>
         <table class='table table-bordered'>
             <tr>
+                <td><span class='course'>Discrete Mathematics</span>
+                    <hr><span class='teacher'>Lynn Stygall</span>
+                </td>
                 <td><span class='course'>Machine Learning</span>
                     <hr><span class='teacher'>Jess Kilbey</span>
-                </td>
-                <td><span class='course'>Database Management System</span>
-                    <hr><span class='teacher'>Lilith Fatharly</span>
                 </td>
                 <td><span class='course'>Advanced C/C++ Programming</span>
                     <hr><span class='teacher'>Merill Petley</span>
                 </td>
-                <td></td>
-                <td><span class='course'>Cryptography</span>
-                    <hr><span class='teacher'>Paulo McCuffie</span>
-                </td>
-                <td></td>
-            </tr>
-            <tr>
-                <td><span class='course'>Cryptography</span>
-                    <hr><span class='teacher'>Paulo McCuffie</span>
-                </td>
-                <td><span class='course'>Cryptography</span>
-                    <hr><span class='teacher'>Paulo McCuffie</span>
-                </td>
                 <td><span class='course'>Culture and Politics</span>
                     <hr><span class='teacher'>Rosaline Bragge</span>
                 </td>
+                <td><span class='course'>Discrete Mathematics</span>
+                    <hr><span class='teacher'>Lynn Stygall</span>
+                </td>
+                <td><span class='course'>Advanced C/C++ Programming</span>
+                    <hr><span class='teacher'>Merill Petley</span>
+                </td>
+            </tr>
+            <tr>
                 <td><span class='course'>Advanced Computer Networks</span>
                     <hr><span class='teacher'>Sigrid Laker</span>
                 </td>
@@ -379,336 +545,351 @@
                 <td><span class='course'>Advanced C/C++ Programming</span>
                     <hr><span class='teacher'>Merill Petley</span>
                 </td>
-            </tr>
-            <tr>
-                <td><span class='course'>Database Management System</span>
-                    <hr><span class='teacher'>Lilith Fatharly</span>
-                </td>
-                <td><span class='course'>Advanced C/C++ Programming</span>
-                    <hr><span class='teacher'>Merill Petley</span>
-                </td>
                 <td><span class='course'>Advanced Computer Networks</span>
                     <hr><span class='teacher'>Sigrid Laker</span>
-                </td>
-                <td><span class='course'>Discrete Mathematics</span>
-                    <hr><span class='teacher'>Lynn Stygall</span>
-                </td>
-                <td><span class='course'>Advanced Computer Networks</span>
-                    <hr><span class='teacher'>Sigrid Laker</span>
-                </td>
-                <td><span class='course'>Database Management System</span>
-                    <hr><span class='teacher'>Lilith Fatharly</span>
-                </td>
-            </tr>
-            <tr>
-                <td><span class='course'>Machine Learning</span>
-                    <hr><span class='teacher'>Jess Kilbey</span>
                 </td>
                 <td><span class='course'>Culture and Politics</span>
                     <hr><span class='teacher'>Rosaline Bragge</span>
                 </td>
+                <td><span class='course'>Database Management System</span>
+                    <hr><span class='teacher'>Lilith Fatharly</span>
+                </td>
+            </tr>
+            <tr>
                 <td><span class='course'>Machine Learning</span>
                     <hr><span class='teacher'>Jess Kilbey</span>
                 </td>
                 <td><span class='course'>Discrete Mathematics</span>
                     <hr><span class='teacher'>Lynn Stygall</span>
                 </td>
-                <td><span class='course'>Discrete Mathematics</span>
-                    <hr><span class='teacher'>Lynn Stygall</span>
+                <td><span class='course'>Database Management System</span>
+                    <hr><span class='teacher'>Lilith Fatharly</span>
                 </td>
-                <td></td>
+                <td><span class='course'>Cryptography</span>
+                    <hr><span class='teacher'>Paulo McCuffie</span>
+                </td>
+                <td><span class='course'>Machine Learning</span>
+                    <hr><span class='teacher'>Jess Kilbey</span>
+                </td>
+                <td><span class='course'>Advanced Computer Networks</span>
+                    <hr><span class='teacher'>Sigrid Laker</span>
+                </td>
+            </tr>
+            <tr>
+                <td><span class='course'>Cryptography</span>
+                    <hr><span class='teacher'>Paulo McCuffie</span>
+                </td>
+                <td class='no'>Free Slot</td>
+                <td><span class='course'>Cryptography</span>
+                    <hr><span class='teacher'>Paulo McCuffie</span>
+                </td>
+                <td><span class='course'>Database Management System</span>
+                    <hr><span class='teacher'>Lilith Fatharly</span>
+                </td>
+                <td class='no'>Free Slot</td>
+                <td class='no'>Free Slot</td>
             </tr>
         </table>
-        <h3 class='title'>EL2th year, section 8, EL2 8</h3>
+        <h3 class='title'>EC3th year, section 5, EC3 5</h3>
         <table class='table table-bordered'>
             <tr>
-                <td><span class='course'>Electromagnetics</span>
-                    <hr><span class='teacher'>Bathsheba Sorbie</span>
+                <td><span class='course'>Electrical Engineering Material</span>
+                    <hr><span class='teacher'>Helene Kelcey</span>
                 </td>
-                <td><span class='course'>Basic Signal Processing</span>
-                    <hr><span class='teacher'>Alexandrina O'Doghesty</span>
+                <td><span class='course'>Electrical Engineering Material</span>
+                    <hr><span class='teacher'>Helene Kelcey</span>
                 </td>
-                <td><span class='course'>Electromagnetics</span>
-                    <hr><span class='teacher'>Bathsheba Sorbie</span>
+                <td><span class='course'>LinearAlgebra</span>
+                    <hr><span class='teacher'>Kristel Snasel</span>
                 </td>
-                <td><span class='course'>Basic Microelectronics</span>
-                    <hr><span class='teacher'>Verla Turneaux</span>
+                <td><span class='course'>Information Theory</span>
+                    <hr><span class='teacher'>Shanta Trendle</span>
                 </td>
-                <td></td>
-                <td><span class='course'>Digital Electronics</span>
-                    <hr><span class='teacher'>Petronella Albany</span>
+                <td><span class='course'>Culture and Politics</span>
+                    <hr><span class='teacher'>Kynthia Cullivan</span>
                 </td>
-            </tr>
-            <tr>
-                <td><span class='course'>Digital Electronics</span>
-                    <hr><span class='teacher'>Petronella Albany</span>
-                </td>
-                <td><span class='course'>Basic Signal Processing</span>
-                    <hr><span class='teacher'>Alexandrina O'Doghesty</span>
-                </td>
-                <td></td>
-                <td><span class='course'>Telecommunications</span>
-                    <hr><span class='teacher'>Hall Turban</span>
-                </td>
-                <td><span class='course'>Basic Microelectronics</span>
-                    <hr><span class='teacher'>Verla Turneaux</span>
-                </td>
-                <td><span class='course'>Digital Electronics</span>
-                    <hr><span class='teacher'>Petronella Albany</span>
+                <td><span class='course'>Advanced Power Engineering</span>
+                    <hr><span class='teacher'>Xena Cockram</span>
                 </td>
             </tr>
             <tr>
-                <td><span class='course'>Telecommunications</span>
-                    <hr><span class='teacher'>Hall Turban</span>
+                <td><span class='course'>Advanced Computer Networks</span>
+                    <hr><span class='teacher'>Emanuel Dicke</span>
                 </td>
-                <td><span class='course'>Circuit Design using Logic gates</span>
-                    <hr><span class='teacher'>Far Voysey</span>
+                <td><span class='course'>Advanced Power Engineering</span>
+                    <hr><span class='teacher'>Xena Cockram</span>
                 </td>
-                <td><span class='course'>Basic Microelectronics</span>
-                    <hr><span class='teacher'>Verla Turneaux</span>
+                <td><span class='course'>LinearAlgebra</span>
+                    <hr><span class='teacher'>Kristel Snasel</span>
                 </td>
-                <td><span class='course'>Electromagnetics</span>
-                    <hr><span class='teacher'>Bathsheba Sorbie</span>
+                <td><span class='course'>Digital Communications</span>
+                    <hr><span class='teacher'>Hastings Poppy</span>
                 </td>
-                <td><span class='course'>Circuit Design using Logic gates</span>
-                    <hr><span class='teacher'>Far Voysey</span>
-                </td>
-                <td><span class='course'>Basic Signal Processing</span>
-                    <hr><span class='teacher'>Alexandrina O'Doghesty</span>
+                <td class='no'>Free Slot</td>
+                <td><span class='course'>Information Theory</span>
+                    <hr><span class='teacher'>Shanta Trendle</span>
                 </td>
             </tr>
+            <tr>
+                <td><span class='course'>Electrical Engineering Material</span>
+                    <hr><span class='teacher'>Helene Kelcey</span>
+                </td>
+                <td><span class='course'>Advanced Computer Networks</span>
+                    <hr><span class='teacher'>Emanuel Dicke</span>
+                </td>
+                <td><span class='course'>Advanced Power Engineering</span>
+                    <hr><span class='teacher'>Xena Cockram</span>
+                </td>
+                <td><span class='course'>Culture and Politics</span>
+                    <hr><span class='teacher'>Kynthia Cullivan</span>
+                </td>
+                <td class='no'>Free Slot</td>
+                <td><span class='course'>Information Theory</span>
+                    <hr><span class='teacher'>Shanta Trendle</span>
+                </td>
+            </tr>
+            <tr>
+                <td><span class='course'>Digital Communications</span>
+                    <hr><span class='teacher'>Hastings Poppy</span>
+                </td>
+                <td><span class='course'>Advanced Computer Networks</span>
+                    <hr><span class='teacher'>Emanuel Dicke</span>
+                </td>
+                <td><span class='course'>Culture and Politics</span>
+                    <hr><span class='teacher'>Kynthia Cullivan</span>
+                </td>
+                <td class='no'>Free Slot</td>
+                <td class='no'>Free Slot</td>
+                <td class='no'>Free Slot</td>
+            </tr>
+        </table>
+        <h3 class='title'>EL3th year, section 4, EL3 4</h3>
+        <table class='table table-bordered'>
+            <tr>
+                <td><span class='course'>Microelectronics</span>
+                    <hr><span class='teacher'>Verla Turneaux</span>
+                </td>
+                <td><span class='course'>Circuit Analysis</span>
+                    <hr><span class='teacher'>Barbabra Oventon</span>
+                </td>
+                <td><span class='course'>Culture and Politics</span>
+                    <hr><span class='teacher'>Kynthia Cullivan</span>
+                </td>
+                <td><span class='course'>Microelectronics</span>
+                    <hr><span class='teacher'>Verla Turneaux</span>
+                </td>
+                <td><span class='course'>Circuit Analysis</span>
+                    <hr><span class='teacher'>Barbabra Oventon</span>
+                </td>
+                <td><span class='course'>Microelectronics</span>
+                    <hr><span class='teacher'>Verla Turneaux</span>
+                </td>
+            </tr>
+            <tr>
+                <td><span class='course'>Digital Signal Processing</span>
+                    <hr><span class='teacher'>Hastings Poppy</span>
+                </td>
+                <td><span class='course'>Integrated Circuit Design</span>
+                    <hr><span class='teacher'>Far Voysey</span>
+                </td>
+                <td><span class='course'>Electrical Engineering Material</span>
+                    <hr><span class='teacher'>Helene Kelcey</span>
+                </td>
+                <td><span class='course'>Integrated Circuit Design</span>
+                    <hr><span class='teacher'>Far Voysey</span>
+                </td>
+                <td><span class='course'>Circuit Analysis</span>
+                    <hr><span class='teacher'>Barbabra Oventon</span>
+                </td>
+                <td><span class='course'>Electrical Engineering Material</span>
+                    <hr><span class='teacher'>Helene Kelcey</span>
+                </td>
+            </tr>
+            <tr>
+                <td><span class='course'>Instrumentation</span>
+                    <hr><span class='teacher'>Kristian Carbett</span>
+                </td>
+                <td><span class='course'>Digital Signal Processing</span>
+                    <hr><span class='teacher'>Hastings Poppy</span>
+                </td>
+                <td><span class='course'>Electrical Engineering Material</span>
+                    <hr><span class='teacher'>Helene Kelcey</span>
+                </td>
+                <td><span class='course'>Advanced Power Engineering</span>
+                    <hr><span class='teacher'>Xena Cockram</span>
+                </td>
+                <td><span class='course'>Culture and Politics</span>
+                    <hr><span class='teacher'>Kynthia Cullivan</span>
+                </td>
+                <td><span class='course'>Advanced Power Engineering</span>
+                    <hr><span class='teacher'>Xena Cockram</span>
+                </td>
+            </tr>
+            <tr>
+                <td><span class='course'>Integrated Circuit Design</span>
+                    <hr><span class='teacher'>Far Voysey</span>
+                </td>
+                <td><span class='course'>Instrumentation</span>
+                    <hr><span class='teacher'>Kristian Carbett</span>
+                </td>
+                <td class='no'>Free Slot</td>
+                <td><span class='course'>Culture and Politics</span>
+                    <hr><span class='teacher'>Kynthia Cullivan</span>
+                </td>
+                <td class='no'>Free Slot</td>
+                <td><span class='course'>Instrumentation</span>
+                    <hr><span class='teacher'>Kristian Carbett</span>
+                </td>
+            </tr>
+        </table>
+        <h3 class='title'>CS1th year, section 7, CS1 7</h3>
+        <table class='table table-bordered'>
+            <tr>
+                <td><span class='course'>Data Analysis</span>
+                    <hr><span class='teacher'>Jess Kilbey</span>
+                </td>
+                <td><span class='course'>Basic electronics</span>
+                    <hr><span class='teacher'>Hyacinth Esposito</span>
+                </td>
+                <td><span class='course'>C/C++ Programming</span>
+                    <hr><span class='teacher'>Harlen Antonijevic</span>
+                </td>
+                <td><span class='course'>Introduction to Programming</span>
+                    <hr><span class='teacher'>Dulcia Petera</span>
+                </td>
+                <td><span class='course'>Physics</span>
+                    <hr><span class='teacher'>Lutero Varnes</span>
+                </td>
+                <td><span class='course'>Introduction to Programming</span>
+                    <hr><span class='teacher'>Dulcia Petera</span>
+                </td>
+            </tr>
+            <tr>
+                <td><span class='course'>C/C++ Programming</span>
+                    <hr><span class='teacher'>Harlen Antonijevic</span>
+                </td>
+                <td class='no'>Free Slot</td>
+                <td><span class='course'>Data Analysis</span>
+                    <hr><span class='teacher'>Jess Kilbey</span>
+                </td>
+                <td><span class='course'>Data Analysis</span>
+                    <hr><span class='teacher'>Jess Kilbey</span>
+                </td>
+                <td><span class='course'>Language and Literature</span>
+                    <hr><span class='teacher'>Sterling Kitching</span>
+                </td>
+                <td><span class='course'>Language and Literature</span>
+                    <hr><span class='teacher'>Sterling Kitching</span>
+                </td>
+            </tr>
+            <tr>
+                <td><span class='course'>Mathematics</span>
+                    <hr><span class='teacher'>Ursala Glenn</span>
+                </td>
+                <td><span class='course'>Physics</span>
+                    <hr><span class='teacher'>Lutero Varnes</span>
+                </td>
+                <td><span class='course'>Mathematics</span>
+                    <hr><span class='teacher'>Ursala Glenn</span>
+                </td>
+                <td><span class='course'>Language and Literature</span>
+                    <hr><span class='teacher'>Sterling Kitching</span>
+                </td>
+                <td><span class='course'>Basic electronics</span>
+                    <hr><span class='teacher'>Hyacinth Esposito</span>
+                </td>
+                <td class='no'>Free Slot</td>
+            </tr>
+            <tr>
+                <td><span class='course'>Mathematics</span>
+                    <hr><span class='teacher'>Ursala Glenn</span>
+                </td>
+                <td><span class='course'>Basic electronics</span>
+                    <hr><span class='teacher'>Hyacinth Esposito</span>
+                </td>
+                <td><span class='course'>Introduction to Programming</span>
+                    <hr><span class='teacher'>Dulcia Petera</span>
+                </td>
+                <td class='no'>Free Slot</td>
+                <td class='no'>Free Slot</td>
+                <td><span class='course'>Physics</span>
+                    <hr><span class='teacher'>Lutero Varnes</span>
+                </td>
+            </tr>
+        </table>
+        <h3 class='title'>EC2th year, section 13, EC2 13</h3>
+        <table class='table table-bordered'>
             <tr>
                 <td><span class='course'>Environmental Studies</span>
                     <hr><span class='teacher'>Eugenius Vlasenko</span>
                 </td>
-                <td></td>
-                <td></td>
-                <td><span class='course'>Telecommunications</span>
-                    <hr><span class='teacher'>Hall Turban</span>
+                <td><span class='course'>Digital Electronics</span>
+                    <hr><span class='teacher'>Faunie Sweeny</span>
                 </td>
-                <td></td>
                 <td><span class='course'>Environmental Studies</span>
                     <hr><span class='teacher'>Eugenius Vlasenko</span>
                 </td>
-            </tr>
-        </table>
-        <h3 class='title'>EC4th year, section 14, EC4 14</h3>
-        <table class='table table-bordered'>
-            <tr>
-                <td><span class='course'>Advanced Information Theory</span>
-                    <hr><span class='teacher'>Serene Cunnah</span>
-                </td>
-                <td><span class='course'>Nano Technology</span>
-                    <hr><span class='teacher'>Win Mariot</span>
-                </td>
-                <td></td>
-                <td><span class='course'>Economics</span>
-                    <hr><span class='teacher'>Timothy Krzyzaniak</span>
-                </td>
-                <td><span class='course'>Web Development</span>
-                    <hr><span class='teacher'>Emanuel Dicke</span>
-                </td>
-                <td><span class='course'>Electricity Technology and Machines</span>
-                    <hr><span class='teacher'>Agretha Oloshin</span>
-                </td>
-            </tr>
-            <tr>
-                <td><span class='course'>Nano Technology</span>
-                    <hr><span class='teacher'>Win Mariot</span>
-                </td>
-                <td><span class='course'>Economics</span>
-                    <hr><span class='teacher'>Timothy Krzyzaniak</span>
-                </td>
-                <td><span class='course'>Nano Electronics</span>
-                    <hr><span class='teacher'>Faunie Sweeny</span>
-                </td>
-                <td><span class='course'>Economics</span>
-                    <hr><span class='teacher'>Timothy Krzyzaniak</span>
-                </td>
-                <td><span class='course'>Nano Electronics</span>
-                    <hr><span class='teacher'>Faunie Sweeny</span>
-                </td>
-                <td></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td><span class='course'>Statistics</span>
-                    <hr><span class='teacher'>Lazarus Bordessa</span>
-                </td>
-                <td><span class='course'>Statistics</span>
-                    <hr><span class='teacher'>Lazarus Bordessa</span>
-                </td>
-                <td><span class='course'>Web Development</span>
-                    <hr><span class='teacher'>Emanuel Dicke</span>
-                </td>
-                <td></td>
-                <td><span class='course'>Web Development</span>
-                    <hr><span class='teacher'>Emanuel Dicke</span>
-                </td>
-            </tr>
-            <tr>
-                <td><span class='course'>Advanced Information Theory</span>
-                    <hr><span class='teacher'>Serene Cunnah</span>
-                </td>
-                <td><span class='course'>Electricity Technology and Machines</span>
-                    <hr><span class='teacher'>Agretha Oloshin</span>
-                </td>
-                <td><span class='course'>Advanced Information Theory</span>
-                    <hr><span class='teacher'>Serene Cunnah</span>
-                </td>
-                <td><span class='course'>Electricity Technology and Machines</span>
-                    <hr><span class='teacher'>Agretha Oloshin</span>
-                </td>
-                <td><span class='course'>Nano Technology</span>
-                    <hr><span class='teacher'>Win Mariot</span>
-                </td>
-                <td><span class='course'>Statistics</span>
-                    <hr><span class='teacher'>Lazarus Bordessa</span>
-                </td>
-            </tr>
-        </table>
-        <h3 class='title'>ME2th year, section 11, ME2 11</h3>
-        <table class='table table-bordered'>
-            <tr>
-                <td><span class='course'>Basic Kinematics</span>
-                    <hr><span class='teacher'>Ulises Farrand</span>
-                </td>
                 <td><span class='course'>Discrete Mathematics</span>
-                    <hr><span class='teacher'>Mersey Challen</span>
+                    <hr><span class='teacher'>Kristel Snasel</span>
                 </td>
                 <td><span class='course'>Environmental Studies</span>
-                    <hr><span class='teacher'>Johna Hannabus</span>
+                    <hr><span class='teacher'>Eugenius Vlasenko</span>
                 </td>
-                <td><span class='course'>Environmental Studies</span>
-                    <hr><span class='teacher'>Johna Hannabus</span>
+                <td><span class='course'>Computer Networks</span>
+                    <hr><span class='teacher'>Emanuel Dicke</span>
+                </td>
+            </tr>
+            <tr>
+                <td class='no'>Free Slot</td>
+                <td><span class='course'>Encoding</span>
+                    <hr><span class='teacher'>Paulo McCuffie</span>
+                </td>
+                <td><span class='course'>Digital Electronics</span>
+                    <hr><span class='teacher'>Faunie Sweeny</span>
+                </td>
+                <td><span class='course'>Digital Electronics</span>
+                    <hr><span class='teacher'>Faunie Sweeny</span>
+                </td>
+                <td><span class='course'>Computer Networks</span>
+                    <hr><span class='teacher'>Emanuel Dicke</span>
                 </td>
                 <td><span class='course'>Electromagnetics</span>
                     <hr><span class='teacher'>Bathsheba Sorbie</span>
                 </td>
-                <td><span class='course'>Fluid Mechanics</span>
-                    <hr><span class='teacher'>Taber Swarbrigg</span>
-                </td>
             </tr>
             <tr>
+                <td><span class='course'>Electromagnetics</span>
+                    <hr><span class='teacher'>Bathsheba Sorbie</span>
+                </td>
                 <td><span class='course'>Discrete Mathematics</span>
-                    <hr><span class='teacher'>Mersey Challen</span>
-                </td>
-                <td><span class='course'>Manufacturing Processes</span>
-                    <hr><span class='teacher'>Mozelle Husbands</span>
-                </td>
-                <td></td>
-                <td><span class='course'>Probability</span>
-                    <hr><span class='teacher'>Debera Andreichik</span>
+                    <hr><span class='teacher'>Kristel Snasel</span>
                 </td>
                 <td><span class='course'>Electromagnetics</span>
                     <hr><span class='teacher'>Bathsheba Sorbie</span>
                 </td>
-                <td><span class='course'>Basic Kinematics</span>
-                    <hr><span class='teacher'>Ulises Farrand</span>
+                <td><span class='course'>Probability</span>
+                    <hr><span class='teacher'>Lazarus Bordessa</span>
                 </td>
+                <td><span class='course'>Encoding</span>
+                    <hr><span class='teacher'>Paulo McCuffie</span>
+                </td>
+                <td class='no'>Free Slot</td>
             </tr>
             <tr>
-                <td><span class='course'>Probability</span>
-                    <hr><span class='teacher'>Debera Andreichik</span>
+                <td><span class='course'>Computer Networks</span>
+                    <hr><span class='teacher'>Emanuel Dicke</span>
                 </td>
                 <td><span class='course'>Probability</span>
-                    <hr><span class='teacher'>Debera Andreichik</span>
+                    <hr><span class='teacher'>Lazarus Bordessa</span>
                 </td>
-                <td></td>
-                <td><span class='course'>Manufacturing Processes</span>
-                    <hr><span class='teacher'>Mozelle Husbands</span>
+                <td><span class='course'>Probability</span>
+                    <hr><span class='teacher'>Lazarus Bordessa</span>
                 </td>
-                <td><span class='course'>Fluid Mechanics</span>
-                    <hr><span class='teacher'>Taber Swarbrigg</span>
-                </td>
-                <td><span class='course'>Environmental Studies</span>
-                    <hr><span class='teacher'>Johna Hannabus</span>
-                </td>
-            </tr>
-            <tr>
-                <td><span class='course'>Manufacturing Processes</span>
-                    <hr><span class='teacher'>Mozelle Husbands</span>
-                </td>
-                <td><span class='course'>Fluid Mechanics</span>
-                    <hr><span class='teacher'>Taber Swarbrigg</span>
-                </td>
-                <td><span class='course'>Basic Kinematics</span>
-                    <hr><span class='teacher'>Ulises Farrand</span>
-                </td>
-                <td></td>
-                <td></td>
+                <td class='no'>Free Slot</td>
+                <td class='no'>Free Slot</td>
                 <td><span class='course'>Discrete Mathematics</span>
-                    <hr><span class='teacher'>Mersey Challen</span>
+                    <hr><span class='teacher'>Kristel Snasel</span>
                 </td>
-            </tr>
-        </table>
-        <h3 class='title'>CS2th year, section 2, CS2 2</h3>
-        <table class='table table-bordered'>
-            <tr>
-                <td><span class='course'>Computer Networks</span>
-                    <hr><span class='teacher'>Sigrid Laker</span>
-                </td>
-                <td><span class='course'>Probability</span>
-                    <hr><span class='teacher'>Shanta Trendle</span>
-                </td>
-                <td><span class='course'>LinearAlgebra</span>
-                    <hr><span class='teacher'>Lynn Stygall</span>
-                </td>
-                <td><span class='course'>Computer Networks</span>
-                    <hr><span class='teacher'>Sigrid Laker</span>
-                </td>
-                <td></td>
-                <td><span class='course'>LinearAlgebra</span>
-                    <hr><span class='teacher'>Lynn Stygall</span>
-                </td>
-            </tr>
-            <tr>
-                <td><span class='course'>Computer Networks</span>
-                    <hr><span class='teacher'>Sigrid Laker</span>
-                </td>
-                <td><span class='course'>Data Structures and Algorithms</span>
-                    <hr><span class='teacher'>Harlen Antonijevic</span>
-                </td>
-                <td><span class='course'>LinearAlgebra</span>
-                    <hr><span class='teacher'>Lynn Stygall</span>
-                </td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td><span class='course'>Probability</span>
-                    <hr><span class='teacher'>Shanta Trendle</span>
-                </td>
-                <td><span class='course'>Hardware Design</span>
-                    <hr><span class='teacher'>Hazel Jagson</span>
-                </td>
-                <td><span class='course'>Optimization</span>
-                    <hr><span class='teacher'>Paulo McCuffie</span>
-                </td>
-                <td><span class='course'>Optimization</span>
-                    <hr><span class='teacher'>Paulo McCuffie</span>
-                </td>
-                <td></td>
-                <td><span class='course'>Data Structures and Algorithms</span>
-                    <hr><span class='teacher'>Harlen Antonijevic</span>
-                </td>
-            </tr>
-            <tr>
-                <td><span class='course'>Hardware Design</span>
-                    <hr><span class='teacher'>Hazel Jagson</span>
-                </td>
-                <td></td>
-                <td><span class='course'>Environmental Studies</span>
-                    <hr><span class='teacher'>Johna Hannabus</span>
-                </td>
-                <td><span class='course'>Data Structures and Algorithms</span>
-                    <hr><span class='teacher'>Harlen Antonijevic</span>
-                </td>
-                <td><span class='course'>Environmental Studies</span>
-                    <hr><span class='teacher'>Johna Hannabus</span>
-                </td>
-                <td></td>
             </tr>
         </table>
         <h3 class='title'>ME1th year, section 10, ME1 10</h3>
@@ -717,899 +898,157 @@
                 <td><span class='course'>Basic Thermodynamics</span>
                     <hr><span class='teacher'>Karlie Gledstane</span>
                 </td>
-                <td><span class='course'>Language and Literature</span>
-                    <hr><span class='teacher'>Sterling Kitching</span>
+                <td><span class='course'>Basic Thermodynamics</span>
+                    <hr><span class='teacher'>Karlie Gledstane</span>
                 </td>
-                <td><span class='course'>Physics</span>
-                    <hr><span class='teacher'>Lutero Varnes</span>
+                <td><span class='course'>Introduction to Programming</span>
+                    <hr><span class='teacher'>Dulcia Petera</span>
                 </td>
-                <td><span class='course'>Physics</span>
-                    <hr><span class='teacher'>Lutero Varnes</span>
+                <td><span class='course'>Mathemetics</span>
+                    <hr><span class='teacher'>Ursala Glenn</span>
                 </td>
-                <td></td>
+                <td><span class='course'>Basic electronics</span>
+                    <hr><span class='teacher'>Hyacinth Esposito</span>
+                </td>
                 <td><span class='course'>Physics</span>
                     <hr><span class='teacher'>Lutero Varnes</span>
                 </td>
             </tr>
             <tr>
-                <td><span class='course'>Basic electronics</span>
-                    <hr><span class='teacher'>Hyacinth Esposito</span>
+                <td class='no'>Free Slot</td>
+                <td><span class='course'>Language and Literature</span>
+                    <hr><span class='teacher'>Sterling Kitching</span>
                 </td>
-                <td><span class='course'>Introduction to Programming</span>
-                    <hr><span class='teacher'>Dulcia Petera</span>
+                <td><span class='course'>Language and Literature</span>
+                    <hr><span class='teacher'>Sterling Kitching</span>
                 </td>
+                <td><span class='course'>Language and Literature</span>
+                    <hr><span class='teacher'>Sterling Kitching</span>
+                </td>
+                <td><span class='course'>Mathemetics</span>
+                    <hr><span class='teacher'>Ursala Glenn</span>
+                </td>
+                <td class='no'>Free Slot</td>
+            </tr>
+            <tr>
                 <td><span class='course'>Calculus</span>
                     <hr><span class='teacher'>Mersey Challen</span>
                 </td>
                 <td><span class='course'>Calculus</span>
                     <hr><span class='teacher'>Mersey Challen</span>
                 </td>
-                <td><span class='course'>Basic electronics</span>
-                    <hr><span class='teacher'>Hyacinth Esposito</span>
+                <td><span class='course'>Calculus</span>
+                    <hr><span class='teacher'>Mersey Challen</span>
                 </td>
-                <td><span class='course'>Language and Literature</span>
-                    <hr><span class='teacher'>Sterling Kitching</span>
+                <td><span class='course'>Mathemetics</span>
+                    <hr><span class='teacher'>Ursala Glenn</span>
+                </td>
+                <td><span class='course'>Introduction to Programming</span>
+                    <hr><span class='teacher'>Dulcia Petera</span>
+                </td>
+                <td><span class='course'>Introduction to Programming</span>
+                    <hr><span class='teacher'>Dulcia Petera</span>
                 </td>
             </tr>
             <tr>
-                <td><span class='course'>Introduction to Programming</span>
-                    <hr><span class='teacher'>Dulcia Petera</span>
-                </td>
-                <td><span class='course'>Basic electronics</span>
-                    <hr><span class='teacher'>Hyacinth Esposito</span>
-                </td>
-                <td><span class='course'>Language and Literature</span>
-                    <hr><span class='teacher'>Sterling Kitching</span>
-                </td>
-                <td><span class='course'>Introduction to Programming</span>
-                    <hr><span class='teacher'>Dulcia Petera</span>
+                <td><span class='course'>Physics</span>
+                    <hr><span class='teacher'>Lutero Varnes</span>
                 </td>
                 <td><span class='course'>Basic Thermodynamics</span>
                     <hr><span class='teacher'>Karlie Gledstane</span>
                 </td>
-                <td></td>
-            </tr>
-            <tr>
-                <td><span class='course'>Basic Thermodynamics</span>
-                    <hr><span class='teacher'>Karlie Gledstane</span>
-                </td>
-                <td><span class='course'>Mathemetics</span>
-                    <hr><span class='teacher'>Ursala Glenn</span>
-                </td>
-                <td><span class='course'>Calculus</span>
-                    <hr><span class='teacher'>Mersey Challen</span>
-                </td>
-                <td></td>
-                <td><span class='course'>Mathemetics</span>
-                    <hr><span class='teacher'>Ursala Glenn</span>
-                </td>
-                <td><span class='course'>Mathemetics</span>
-                    <hr><span class='teacher'>Ursala Glenn</span>
-                </td>
-            </tr>
-        </table>
-        <h3 class='title'>EL1th year, section 0, EL1 0</h3>
-        <table class='table table-bordered'>
-            <tr>
-                <td><span class='course'>Circuit Design</span>
-                    <hr><span class='teacher'>Far Voysey</span>
-                </td>
-                <td><span class='course'>Basic Electronics</span>
-                    <hr><span class='teacher'>Petronella Albany</span>
-                </td>
                 <td><span class='course'>Physics</span>
-                    <hr><span class='teacher'>Benny Sansome</span>
+                    <hr><span class='teacher'>Lutero Varnes</span>
                 </td>
-                <td><span class='course'>Circuit Design</span>
-                    <hr><span class='teacher'>Far Voysey</span>
+                <td><span class='course'>Basic electronics</span>
+                    <hr><span class='teacher'>Hyacinth Esposito</span>
                 </td>
-                <td></td>
-                <td><span class='course'>Language and Literature</span>
-                    <hr><span class='teacher'>Jeane Fozzard</span>
-                </td>
-            </tr>
-            <tr>
-                <td></td>
-                <td><span class='course'>Basic Nano Technology</span>
-                    <hr><span class='teacher'>Win Mariot</span>
-                </td>
-                <td></td>
-                <td></td>
-                <td><span class='course'>Circuit Design</span>
-                    <hr><span class='teacher'>Far Voysey</span>
-                </td>
-                <td><span class='course'>Calculus</span>
-                    <hr><span class='teacher'>Lynn Stygall</span>
-                </td>
-            </tr>
-            <tr>
-                <td><span class='course'>Power Engineering</span>
-                    <hr><span class='teacher'>Judye Springett</span>
-                </td>
-                <td><span class='course'>Basic Electronics</span>
-                    <hr><span class='teacher'>Petronella Albany</span>
-                </td>
-                <td><span class='course'>Basic Nano Technology</span>
-                    <hr><span class='teacher'>Win Mariot</span>
-                </td>
-                <td><span class='course'>Power Engineering</span>
-                    <hr><span class='teacher'>Judye Springett</span>
-                </td>
-                <td><span class='course'>Basic Nano Technology</span>
-                    <hr><span class='teacher'>Win Mariot</span>
-                </td>
-                <td><span class='course'>Power Engineering</span>
-                    <hr><span class='teacher'>Judye Springett</span>
-                </td>
-            </tr>
-            <tr>
-                <td><span class='course'>Basic Electronics</span>
-                    <hr><span class='teacher'>Petronella Albany</span>
-                </td>
-                <td><span class='course'>Language and Literature</span>
-                    <hr><span class='teacher'>Jeane Fozzard</span>
-                </td>
-                <td><span class='course'>Calculus</span>
-                    <hr><span class='teacher'>Lynn Stygall</span>
-                </td>
-                <td><span class='course'>Physics</span>
-                    <hr><span class='teacher'>Benny Sansome</span>
-                </td>
-                <td></td>
-                <td><span class='course'>Calculus</span>
-                    <hr><span class='teacher'>Lynn Stygall</span>
+                <td class='no'>Free Slot</td>
+                <td><span class='course'>Basic electronics</span>
+                    <hr><span class='teacher'>Hyacinth Esposito</span>
                 </td>
             </tr>
         </table>
-        <h3 class='title'>CS6th year, section 18, CS6 18</h3>
+        <h3 class='title'>EL5th year, section 23, EL5 23</h3>
         <table class='table table-bordered'>
-            <tr>
-                <td><span class='course'>History</span>
-                    <hr><span class='teacher'>Chandra Reily</span>
-                </td>
-                <td><span class='course'>Cryptography</span>
-                    <hr><span class='teacher'>Gusti Hempel</span>
-                </td>
-                <td></td>
-                <td><span class='course'>Discrete Mathematics</span>
-                    <hr><span class='teacher'>Kelsy Bantham</span>
-                </td>
-                <td><span class='course'>Advanced Hardware Design</span>
-                    <hr><span class='teacher'>Hazel Jagson</span>
-                </td>
-                <td><span class='course'>Statistics</span>
-                    <hr><span class='teacher'>Serene Cunnah</span>
-                </td>
-            </tr>
-            <tr>
-                <td><span class='course'>Statistics</span>
-                    <hr><span class='teacher'>Serene Cunnah</span>
-                </td>
-                <td><span class='course'>Cryptography</span>
-                    <hr><span class='teacher'>Gusti Hempel</span>
-                </td>
-                <td><span class='course'>Advanced Information Theory</span>
-                    <hr><span class='teacher'>Millard Neeve</span>
-                </td>
-                <td><span class='course'>Cryptography</span>
-                    <hr><span class='teacher'>Gusti Hempel</span>
-                </td>
-                <td><span class='course'>History</span>
-                    <hr><span class='teacher'>Chandra Reily</span>
-                </td>
-                <td><span class='course'>LinearAlgebra</span>
-                    <hr><span class='teacher'>Lilah Ellis</span>
-                </td>
-            </tr>
-            <tr>
-                <td><span class='course'>Advanced Information Theory</span>
-                    <hr><span class='teacher'>Millard Neeve</span>
-                </td>
-                <td><span class='course'>Statistics</span>
-                    <hr><span class='teacher'>Serene Cunnah</span>
-                </td>
-                <td><span class='course'>LinearAlgebra</span>
-                    <hr><span class='teacher'>Lilah Ellis</span>
-                </td>
-                <td><span class='course'>History</span>
-                    <hr><span class='teacher'>Chandra Reily</span>
-                </td>
-                <td><span class='course'>Advanced Hardware Design</span>
-                    <hr><span class='teacher'>Hazel Jagson</span>
-                </td>
-                <td></td>
-            </tr>
-            <tr>
-                <td><span class='course'>Discrete Mathematics</span>
-                    <hr><span class='teacher'>Kelsy Bantham</span>
-                </td>
-                <td><span class='course'>LinearAlgebra</span>
-                    <hr><span class='teacher'>Lilah Ellis</span>
-                </td>
-                <td></td>
-                <td><span class='course'>Advanced Information Theory</span>
-                    <hr><span class='teacher'>Millard Neeve</span>
-                </td>
-                <td><span class='course'>Advanced Hardware Design</span>
-                    <hr><span class='teacher'>Hazel Jagson</span>
-                </td>
-                <td><span class='course'>Discrete Mathematics</span>
-                    <hr><span class='teacher'>Kelsy Bantham</span>
-                </td>
-            </tr>
-        </table>
-        <h3 class='title'>EL3th year, section 4, EL3 4</h3>
-        <table class='table table-bordered'>
-            <tr>
-                <td></td>
-                <td><span class='course'>Circuit Analysis</span>
-                    <hr><span class='teacher'>Barbabra Oventon</span>
-                </td>
-                <td><span class='course'>Instrumentation</span>
-                    <hr><span class='teacher'>Kristian Carbett</span>
-                </td>
-                <td><span class='course'>Circuit Analysis</span>
-                    <hr><span class='teacher'>Barbabra Oventon</span>
-                </td>
-                <td><span class='course'>Instrumentation</span>
-                    <hr><span class='teacher'>Kristian Carbett</span>
-                </td>
-                <td><span class='course'>Advanced Power Engineering</span>
-                    <hr><span class='teacher'>Xena Cockram</span>
-                </td>
-            </tr>
             <tr>
                 <td><span class='course'>Microelectronics</span>
-                    <hr><span class='teacher'>Verla Turneaux</span>
-                </td>
-                <td><span class='course'>Electrical Engineering Material</span>
-                    <hr><span class='teacher'>Helene Kelcey</span>
-                </td>
-                <td><span class='course'>Digital Signal Processing</span>
-                    <hr><span class='teacher'>Hastings Poppy</span>
-                </td>
-                <td><span class='course'>Integrated Circuit Design</span>
-                    <hr><span class='teacher'>Far Voysey</span>
-                </td>
-                <td></td>
-                <td><span class='course'>Advanced Power Engineering</span>
-                    <hr><span class='teacher'>Xena Cockram</span>
-                </td>
-            </tr>
-            <tr>
-                <td><span class='course'>Microelectronics</span>
-                    <hr><span class='teacher'>Verla Turneaux</span>
-                </td>
-                <td><span class='course'>Electrical Engineering Material</span>
-                    <hr><span class='teacher'>Helene Kelcey</span>
-                </td>
-                <td><span class='course'>Culture and Politics</span>
-                    <hr><span class='teacher'>Kynthia Cullivan</span>
-                </td>
-                <td><span class='course'>Integrated Circuit Design</span>
-                    <hr><span class='teacher'>Far Voysey</span>
-                </td>
-                <td><span class='course'>Digital Signal Processing</span>
-                    <hr><span class='teacher'>Hastings Poppy</span>
-                </td>
-                <td><span class='course'>Electrical Engineering Material</span>
-                    <hr><span class='teacher'>Helene Kelcey</span>
-                </td>
-            </tr>
-            <tr>
-                <td><span class='course'>Instrumentation</span>
-                    <hr><span class='teacher'>Kristian Carbett</span>
-                </td>
-                <td><span class='course'>Culture and Politics</span>
-                    <hr><span class='teacher'>Kynthia Cullivan</span>
-                </td>
-                <td><span class='course'>Circuit Analysis</span>
-                    <hr><span class='teacher'>Barbabra Oventon</span>
-                </td>
-                <td><span class='course'>Microelectronics</span>
-                    <hr><span class='teacher'>Verla Turneaux</span>
-                </td>
-                <td><span class='course'>Integrated Circuit Design</span>
-                    <hr><span class='teacher'>Far Voysey</span>
-                </td>
-                <td><span class='course'>Culture and Politics</span>
-                    <hr><span class='teacher'>Kynthia Cullivan</span>
-                </td>
-            </tr>
-        </table>
-        <h3 class='title'>EC1th year, section 3, EC1 3</h3>
-        <table class='table table-bordered'>
-            <tr>
-                <td><span class='course'>Basic Electronics</span>
-                    <hr><span class='teacher'>Faunie Sweeny</span>
-                </td>
-                <td><span class='course'>Language and Literature</span>
-                    <hr><span class='teacher'>Jeane Fozzard</span>
-                </td>
-                <td><span class='course'>Introduction to Communication System</span>
-                    <hr><span class='teacher'>Hastings Poppy</span>
-                </td>
-                <td><span class='course'>Power Engineering</span>
-                    <hr><span class='teacher'>Judye Springett</span>
-                </td>
-                <td><span class='course'>Physics</span>
-                    <hr><span class='teacher'>Benny Sansome</span>
-                </td>
-                <td><span class='course'>Basic Signal Processing</span>
-                    <hr><span class='teacher'>Genvieve Easby</span>
-                </td>
-            </tr>
-            <tr>
-                <td><span class='course'>Physics</span>
-                    <hr><span class='teacher'>Benny Sansome</span>
-                </td>
-                <td><span class='course'>Calculus</span>
-                    <hr><span class='teacher'>Kristel Snasel</span>
-                </td>
-                <td></td>
-                <td><span class='course'>Power Engineering</span>
-                    <hr><span class='teacher'>Judye Springett</span>
-                </td>
-                <td><span class='course'>Calculus</span>
-                    <hr><span class='teacher'>Kristel Snasel</span>
-                </td>
-                <td></td>
-            </tr>
-            <tr>
-                <td><span class='course'>Physics</span>
-                    <hr><span class='teacher'>Benny Sansome</span>
-                </td>
-                <td></td>
-                <td><span class='course'>Power Engineering</span>
-                    <hr><span class='teacher'>Judye Springett</span>
-                </td>
-                <td><span class='course'>Basic Signal Processing</span>
-                    <hr><span class='teacher'>Genvieve Easby</span>
-                </td>
-                <td><span class='course'>Calculus</span>
-                    <hr><span class='teacher'>Kristel Snasel</span>
-                </td>
-                <td><span class='course'>Basic Signal Processing</span>
-                    <hr><span class='teacher'>Genvieve Easby</span>
-                </td>
-            </tr>
-            <tr>
-                <td><span class='course'>Basic Electronics</span>
-                    <hr><span class='teacher'>Faunie Sweeny</span>
-                </td>
-                <td><span class='course'>Introduction to Communication System</span>
-                    <hr><span class='teacher'>Hastings Poppy</span>
-                </td>
-                <td></td>
-                <td></td>
-                <td><span class='course'>Language and Literature</span>
-                    <hr><span class='teacher'>Jeane Fozzard</span>
-                </td>
-                <td><span class='course'>Basic Electronics</span>
-                    <hr><span class='teacher'>Faunie Sweeny</span>
-                </td>
-            </tr>
-        </table>
-        <h3 class='title'>CS4th year, section 6, CS4 6</h3>
-        <table class='table table-bordered'>
-            <tr>
-                <td></td>
-                <td><span class='course'>Economics</span>
-                    <hr><span class='teacher'>Almira Courtese</span>
-                </td>
-                <td><span class='course'>Statistics</span>
-                    <hr><span class='teacher'>Shanta Trendle</span>
-                </td>
-                <td><span class='course'>JAVA Programing</span>
-                    <hr><span class='teacher'>Merill Petley</span>
-                </td>
-                <td><span class='course'>Big Data</span>
-                    <hr><span class='teacher'>Jess Kilbey</span>
-                </td>
-                <td><span class='course'>JAVA Programing</span>
-                    <hr><span class='teacher'>Merill Petley</span>
-                </td>
-            </tr>
-            <tr>
-                <td></td>
-                <td><span class='course'>Software Engineering</span>
-                    <hr><span class='teacher'>Lilith Fatharly</span>
-                </td>
-                <td><span class='course'>Statistics</span>
-                    <hr><span class='teacher'>Shanta Trendle</span>
-                </td>
-                <td></td>
-                <td><span class='course'>Object Oriented Programming</span>
-                    <hr><span class='teacher'>Harlen Antonijevic</span>
-                </td>
-                <td><span class='course'>Economics</span>
-                    <hr><span class='teacher'>Almira Courtese</span>
-                </td>
-            </tr>
-            <tr>
-                <td><span class='course'>Big Data</span>
-                    <hr><span class='teacher'>Jess Kilbey</span>
-                </td>
-                <td></td>
-                <td><span class='course'>Economics</span>
-                    <hr><span class='teacher'>Almira Courtese</span>
-                </td>
-                <td></td>
-                <td><span class='course'>JAVA Programing</span>
-                    <hr><span class='teacher'>Merill Petley</span>
-                </td>
-                <td><span class='course'>Web Development</span>
-                    <hr><span class='teacher'>Sigrid Laker</span>
-                </td>
-            </tr>
-            <tr>
-                <td><span class='course'>Software Engineering</span>
-                    <hr><span class='teacher'>Lilith Fatharly</span>
-                </td>
-                <td><span class='course'>Web Development</span>
-                    <hr><span class='teacher'>Sigrid Laker</span>
-                </td>
-                <td><span class='course'>Statistics</span>
-                    <hr><span class='teacher'>Shanta Trendle</span>
-                </td>
-                <td><span class='course'>Web Development</span>
-                    <hr><span class='teacher'>Sigrid Laker</span>
-                </td>
-                <td><span class='course'>Object Oriented Programming</span>
-                    <hr><span class='teacher'>Harlen Antonijevic</span>
-                </td>
-                <td><span class='course'>Software Engineering</span>
-                    <hr><span class='teacher'>Lilith Fatharly</span>
-                </td>
-            </tr>
-        </table>
-        <h3 class='title'>EC3th year, section 5, EC3 5</h3>
-        <table class='table table-bordered'>
-            <tr>
-                <td><span class='course'>Information Theory</span>
-                    <hr><span class='teacher'>Shanta Trendle</span>
-                </td>
-                <td><span class='course'>Culture and Politics</span>
-                    <hr><span class='teacher'>Kynthia Cullivan</span>
-                </td>
-                <td></td>
-                <td></td>
-                <td><span class='course'>Digital Communications</span>
-                    <hr><span class='teacher'>Hastings Poppy</span>
-                </td>
-                <td><span class='course'>Advanced Computer Networks</span>
-                    <hr><span class='teacher'>Emanuel Dicke</span>
-                </td>
-            </tr>
-            <tr>
-                <td></td>
-                <td><span class='course'>Advanced Power Engineering</span>
-                    <hr><span class='teacher'>Xena Cockram</span>
-                </td>
-                <td><span class='course'>Culture and Politics</span>
-                    <hr><span class='teacher'>Kynthia Cullivan</span>
-                </td>
-                <td><span class='course'>Electrical Engineering Material</span>
-                    <hr><span class='teacher'>Helene Kelcey</span>
-                </td>
-                <td></td>
-                <td><span class='course'>Information Theory</span>
-                    <hr><span class='teacher'>Shanta Trendle</span>
-                </td>
-            </tr>
-            <tr>
-                <td></td>
-                <td><span class='course'>Advanced Power Engineering</span>
-                    <hr><span class='teacher'>Xena Cockram</span>
-                </td>
-                <td><span class='course'>Advanced Computer Networks</span>
-                    <hr><span class='teacher'>Emanuel Dicke</span>
-                </td>
-                <td><span class='course'>Digital Communications</span>
-                    <hr><span class='teacher'>Hastings Poppy</span>
-                </td>
-                <td><span class='course'>Culture and Politics</span>
-                    <hr><span class='teacher'>Kynthia Cullivan</span>
-                </td>
-                <td><span class='course'>Information Theory</span>
-                    <hr><span class='teacher'>Shanta Trendle</span>
-                </td>
-            </tr>
-            <tr>
-                <td><span class='course'>Advanced Computer Networks</span>
-                    <hr><span class='teacher'>Emanuel Dicke</span>
-                </td>
-                <td><span class='course'>LinearAlgebra</span>
-                    <hr><span class='teacher'>Kristel Snasel</span>
-                </td>
-                <td><span class='course'>LinearAlgebra</span>
-                    <hr><span class='teacher'>Kristel Snasel</span>
-                </td>
-                <td><span class='course'>Electrical Engineering Material</span>
-                    <hr><span class='teacher'>Helene Kelcey</span>
-                </td>
-                <td><span class='course'>Electrical Engineering Material</span>
-                    <hr><span class='teacher'>Helene Kelcey</span>
-                </td>
-                <td><span class='course'>Advanced Power Engineering</span>
-                    <hr><span class='teacher'>Xena Cockram</span>
-                </td>
-            </tr>
-        </table>
-        <h3 class='title'>ME4th year, section 12, ME4 12</h3>
-        <table class='table table-bordered'>
-            <tr>
-                <td><span class='course'>Advanced Maintenance Engineering</span>
-                    <hr><span class='teacher'>Conrado Esslement</span>
-                </td>
-                <td></td>
-                <td></td>
-                <td><span class='course'>Economics</span>
-                    <hr><span class='teacher'>Almira Courtese</span>
-                </td>
-                <td><span class='course'>Economics</span>
-                    <hr><span class='teacher'>Almira Courtese</span>
-                </td>
-                <td><span class='course'>Advanced Dynamics of Machinery</span>
-                    <hr><span class='teacher'>Cristi Gook</span>
-                </td>
-            </tr>
-            <tr>
-                <td><span class='course'>Advanced Thermodynamics</span>
-                    <hr><span class='teacher'>Karlie Gledstane</span>
-                </td>
-                <td><span class='course'>Economics</span>
-                    <hr><span class='teacher'>Almira Courtese</span>
-                </td>
-                <td></td>
-                <td></td>
-                <td><span class='course'>Information Theory</span>
-                    <hr><span class='teacher'>Debera Andreichik</span>
-                </td>
-                <td><span class='course'>Information Theory</span>
-                    <hr><span class='teacher'>Debera Andreichik</span>
-                </td>
-            </tr>
-            <tr>
-                <td><span class='course'>Advanced Fluid Mechanics</span>
-                    <hr><span class='teacher'>Silvia Bowker</span>
-                </td>
-                <td><span class='course'>Advanced Thermodynamics</span>
-                    <hr><span class='teacher'>Karlie Gledstane</span>
-                </td>
-                <td></td>
-                <td><span class='course'>Advanced Fluid Mechanics</span>
-                    <hr><span class='teacher'>Silvia Bowker</span>
-                </td>
-                <td><span class='course'>Advanced Maintenance Engineering</span>
-                    <hr><span class='teacher'>Conrado Esslement</span>
-                </td>
-                <td><span class='course'>LinearAlgebra</span>
-                    <hr><span class='teacher'>Mersey Challen</span>
-                </td>
-            </tr>
-            <tr>
-                <td><span class='course'>Advanced Dynamics of Machinery</span>
-                    <hr><span class='teacher'>Cristi Gook</span>
-                </td>
-                <td><span class='course'>LinearAlgebra</span>
-                    <hr><span class='teacher'>Mersey Challen</span>
-                </td>
-                <td></td>
-                <td><span class='course'>Advanced Thermodynamics</span>
-                    <hr><span class='teacher'>Karlie Gledstane</span>
-                </td>
-                <td><span class='course'>Information Theory</span>
-                    <hr><span class='teacher'>Debera Andreichik</span>
-                </td>
-                <td></td>
-            </tr>
-        </table>
-        <h3 class='title'>EC5th year, section 21, EC5 21</h3>
-        <table class='table table-bordered'>
-            <tr>
-                <td><span class='course'>Signal Processing</span>
-                    <hr><span class='teacher'>Genvieve Easby</span>
-                </td>
-                <td><span class='course'>Instrumentation</span>
-                    <hr><span class='teacher'>Kristian Carbett</span>
-                </td>
-                <td><span class='course'>Encoding</span>
-                    <hr><span class='teacher'>Gusti Hempel</span>
-                </td>
-                <td><span class='course'>Basic Microelectronics</span>
                     <hr><span class='teacher'>Hedvig Brayn</span>
-                </td>
-                <td><span class='course'>Circuit Analysis</span>
-                    <hr><span class='teacher'>Barbabra Oventon</span>
-                </td>
-                <td><span class='course'>Basic Microelectronics</span>
-                    <hr><span class='teacher'>Hedvig Brayn</span>
-                </td>
-            </tr>
-            <tr>
-                <td><span class='course'>Calculus</span>
-                    <hr><span class='teacher'>Marwin Langhorne</span>
-                </td>
-                <td><span class='course'>Calculus</span>
-                    <hr><span class='teacher'>Marwin Langhorne</span>
-                </td>
-                <td><span class='course'>Circuit Analysis</span>
-                    <hr><span class='teacher'>Barbabra Oventon</span>
-                </td>
-                <td><span class='course'>Telecommunications</span>
-                    <hr><span class='teacher'>Kariotta Kirdsch</span>
-                </td>
-                <td><span class='course'>Signal Processing</span>
-                    <hr><span class='teacher'>Genvieve Easby</span>
-                </td>
-                <td><span class='course'>Telecommunications</span>
-                    <hr><span class='teacher'>Kariotta Kirdsch</span>
-                </td>
-            </tr>
-            <tr>
-                <td><span class='course'>Instrumentation</span>
-                    <hr><span class='teacher'>Kristian Carbett</span>
                 </td>
                 <td><span class='course'>Organizational Behavior</span>
                     <hr><span class='teacher'>Felice Bruyns</span>
                 </td>
-                <td><span class='course'>Encoding</span>
-                    <hr><span class='teacher'>Gusti Hempel</span>
-                </td>
-                <td></td>
-                <td><span class='course'>Calculus</span>
-                    <hr><span class='teacher'>Marwin Langhorne</span>
-                </td>
-                <td><span class='course'>Organizational Behavior</span>
-                    <hr><span class='teacher'>Felice Bruyns</span>
-                </td>
-            </tr>
-            <tr>
-                <td><span class='course'>Encoding</span>
-                    <hr><span class='teacher'>Gusti Hempel</span>
+                <td><span class='course'>Advanced Electricity Technology and Machines</span>
+                    <hr><span class='teacher'>Agretha Oloshin</span>
                 </td>
                 <td><span class='course'>Instrumentation</span>
                     <hr><span class='teacher'>Kristian Carbett</span>
                 </td>
+                <td><span class='course'>Advanced Signal Processing</span>
+                    <hr><span class='teacher'>Alexandrina O'Doghesty</span>
+                </td>
+                <td class='no'>Free Slot</td>
+            </tr>
+            <tr>
                 <td><span class='course'>Organizational Behavior</span>
                     <hr><span class='teacher'>Felice Bruyns</span>
                 </td>
-                <td><span class='course'>Basic Microelectronics</span>
+                <td><span class='course'>Organizational Behavior</span>
+                    <hr><span class='teacher'>Felice Bruyns</span>
+                </td>
+                <td><span class='course'>Calculus</span>
+                    <hr><span class='teacher'>Cristine Gormally</span>
+                </td>
+                <td><span class='course'>Microelectronics</span>
                     <hr><span class='teacher'>Hedvig Brayn</span>
                 </td>
-                <td><span class='course'>Circuit Analysis</span>
-                    <hr><span class='teacher'>Barbabra Oventon</span>
-                </td>
-                <td><span class='course'>Signal Processing</span>
-                    <hr><span class='teacher'>Genvieve Easby</span>
-                </td>
-            </tr>
-        </table>
-        <h3 class='title'>EC6th year, section 16, EC6 16</h3>
-        <table class='table table-bordered'>
-            <tr>
-                <td><span class='course'>Applications of Electronics</span>
-                    <hr><span class='teacher'>Lidia Bratty</span>
-                </td>
-                <td><span class='course'>Information Theory</span>
-                    <hr><span class='teacher'>Lazarus Bordessa</span>
-                </td>
-                <td><span class='course'>LinearAlgebra</span>
-                    <hr><span class='teacher'>Cristine Gormally</span>
-                </td>
-                <td><span class='course'>LinearAlgebra</span>
-                    <hr><span class='teacher'>Cristine Gormally</span>
-                </td>
-                <td><span class='course'>Information Theory</span>
-                    <hr><span class='teacher'>Lazarus Bordessa</span>
-                </td>
-                <td></td>
-            </tr>
-            <tr>
-                <td><span class='course'>LinearAlgebra</span>
-                    <hr><span class='teacher'>Cristine Gormally</span>
-                </td>
-                <td></td>
-                <td><span class='course'>Discrete Mathematics</span>
-                    <hr><span class='teacher'>Marwin Langhorne</span>
-                </td>
-                <td><span class='course'>Discrete Mathematics</span>
-                    <hr><span class='teacher'>Marwin Langhorne</span>
-                </td>
-                <td><span class='course'>History</span>
-                    <hr><span class='teacher'>Alina Branscombe</span>
-                </td>
-                <td><span class='course'>History</span>
-                    <hr><span class='teacher'>Alina Branscombe</span>
-                </td>
-            </tr>
-            <tr>
-                <td><span class='course'>History</span>
-                    <hr><span class='teacher'>Alina Branscombe</span>
-                </td>
                 <td><span class='course'>Advanced Signal Processing</span>
-                    <hr><span class='teacher'>Genvieve Easby</span>
+                    <hr><span class='teacher'>Alexandrina O'Doghesty</span>
                 </td>
-                <td><span class='course'>Discrete Mathematics</span>
-                    <hr><span class='teacher'>Marwin Langhorne</span>
+                <td class='no'>Free Slot</td>
+            </tr>
+            <tr>
+                <td><span class='course'>Power Engineering</span>
+                    <hr><span class='teacher'>Judye Springett</span>
                 </td>
-                <td><span class='course'>Applications of Electronics</span>
-                    <hr><span class='teacher'>Lidia Bratty</span>
+                <td><span class='course'>Advanced Electricity Technology and Machines</span>
+                    <hr><span class='teacher'>Agretha Oloshin</span>
                 </td>
-                <td></td>
-                <td><span class='course'>Advanced Telecommunications</span>
-                    <hr><span class='teacher'>Kariotta Kirdsch</span>
+                <td><span class='course'>Advanced Electricity Technology and Machines</span>
+                    <hr><span class='teacher'>Agretha Oloshin</span>
+                </td>
+                <td><span class='course'>Instrumentation</span>
+                    <hr><span class='teacher'>Kristian Carbett</span>
+                </td>
+                <td class='no'>Free Slot</td>
+                <td><span class='course'>Power Engineering</span>
+                    <hr><span class='teacher'>Judye Springett</span>
                 </td>
             </tr>
             <tr>
                 <td><span class='course'>Advanced Signal Processing</span>
-                    <hr><span class='teacher'>Genvieve Easby</span>
+                    <hr><span class='teacher'>Alexandrina O'Doghesty</span>
                 </td>
-                <td><span class='course'>Advanced Signal Processing</span>
-                    <hr><span class='teacher'>Genvieve Easby</span>
+                <td><span class='course'>Microelectronics</span>
+                    <hr><span class='teacher'>Hedvig Brayn</span>
                 </td>
-                <td></td>
-                <td><span class='course'>Advanced Telecommunications</span>
-                    <hr><span class='teacher'>Kariotta Kirdsch</span>
+                <td><span class='course'>Instrumentation</span>
+                    <hr><span class='teacher'>Kristian Carbett</span>
                 </td>
-                <td><span class='course'>Applications of Electronics</span>
-                    <hr><span class='teacher'>Lidia Bratty</span>
+                <td><span class='course'>Calculus</span>
+                    <hr><span class='teacher'>Cristine Gormally</span>
                 </td>
-                <td></td>
-            </tr>
-        </table>
-        <h3 class='title'>ME3th year, section 15, ME3 15</h3>
-        <table class='table table-bordered'>
-            <tr>
-                <td><span class='course'>Dynamics of Machinery</span>
-                    <hr><span class='teacher'>Rochette Geale</span>
+                <td><span class='course'>Calculus</span>
+                    <hr><span class='teacher'>Cristine Gormally</span>
                 </td>
-                <td><span class='course'>Thermodynamics</span>
-                    <hr><span class='teacher'>Karlie Gledstane</span>
-                </td>
-                <td></td>
-                <td></td>
-                <td><span class='course'>Maintenance Engineering</span>
-                    <hr><span class='teacher'>Conrado Esslement</span>
-                </td>
-                <td><span class='course'>Advanced Manufacturing Processes</span>
-                    <hr><span class='teacher'>Ondrea Dederick</span>
-                </td>
-            </tr>
-            <tr>
-                <td></td>
-                <td><span class='course'>Maintenance Engineering</span>
-                    <hr><span class='teacher'>Conrado Esslement</span>
-                </td>
-                <td><span class='course'>Dynamics of Machinery</span>
-                    <hr><span class='teacher'>Rochette Geale</span>
-                </td>
-                <td><span class='course'>Culture and Politics</span>
-                    <hr><span class='teacher'>Rosaline Bragge</span>
-                </td>
-                <td><span class='course'>Thermodynamics</span>
-                    <hr><span class='teacher'>Karlie Gledstane</span>
-                </td>
-                <td><span class='course'>Advanced Manufacturing Processes</span>
-                    <hr><span class='teacher'>Ondrea Dederick</span>
-                </td>
-            </tr>
-            <tr>
-                <td><span class='course'>Kinematics</span>
-                    <hr><span class='teacher'>Ulises Farrand</span>
-                </td>
-                <td><span class='course'>Culture and Politics</span>
-                    <hr><span class='teacher'>Rosaline Bragge</span>
-                </td>
-                <td><span class='course'>Statistics</span>
-                    <hr><span class='teacher'>Debera Andreichik</span>
-                </td>
-                <td><span class='course'>Statistics</span>
-                    <hr><span class='teacher'>Debera Andreichik</span>
-                </td>
-                <td><span class='course'>Kinematics</span>
-                    <hr><span class='teacher'>Ulises Farrand</span>
-                </td>
-                <td><span class='course'>Advanced Manufacturing Processes</span>
-                    <hr><span class='teacher'>Ondrea Dederick</span>
-                </td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td><span class='course'>Dynamics of Machinery</span>
-                    <hr><span class='teacher'>Rochette Geale</span>
-                </td>
-                <td><span class='course'>Culture and Politics</span>
-                    <hr><span class='teacher'>Rosaline Bragge</span>
-                </td>
-                <td><span class='course'>Kinematics</span>
-                    <hr><span class='teacher'>Ulises Farrand</span>
-                </td>
-                <td><span class='course'>Maintenance Engineering</span>
-                    <hr><span class='teacher'>Conrado Esslement</span>
-                </td>
-            </tr>
-        </table>
-        <h3 class='title'>ME6th year, section 20, ME6 20</h3>
-        <table class='table table-bordered'>
-            <tr>
-                <td></td>
-                <td><span class='course'>History</span>
-                    <hr><span class='teacher'>Chandra Reily</span>
-                </td>
-                <td><span class='course'>LinearAlgebra</span>
-                    <hr><span class='teacher'>Kelsy Bantham</span>
-                </td>
-                <td><span class='course'>Advanced Fluid Mechanics</span>
-                    <hr><span class='teacher'>Silvia Bowker</span>
-                </td>
-                <td><span class='course'>LinearAlgebra</span>
-                    <hr><span class='teacher'>Kelsy Bantham</span>
-                </td>
-                <td><span class='course'>Advanced Fluid Mechanics</span>
-                    <hr><span class='teacher'>Silvia Bowker</span>
-                </td>
-            </tr>
-            <tr>
-                <td><span class='course'>Statistics</span>
-                    <hr><span class='teacher'>Millard Neeve</span>
-                </td>
-                <td></td>
-                <td><span class='course'>History</span>
-                    <hr><span class='teacher'>Chandra Reily</span>
-                </td>
-                <td><span class='course'>Discrete Mathematics</span>
-                    <hr><span class='teacher'>Lilah Ellis</span>
-                </td>
-                <td><span class='course'>Discrete Mathematics</span>
-                    <hr><span class='teacher'>Lilah Ellis</span>
-                </td>
-                <td><span class='course'>Advanced Dynamics of Machinery</span>
-                    <hr><span class='teacher'>Cristi Gook</span>
-                </td>
-            </tr>
-            <tr>
-                <td><span class='course'>Discrete Mathematics</span>
-                    <hr><span class='teacher'>Lilah Ellis</span>
-                </td>
-                <td><span class='course'>Advanced Dynamics of Machinery</span>
-                    <hr><span class='teacher'>Cristi Gook</span>
-                </td>
-                <td></td>
-                <td><span class='course'>Statistics</span>
-                    <hr><span class='teacher'>Millard Neeve</span>
-                </td>
-                <td><span class='course'>History</span>
-                    <hr><span class='teacher'>Chandra Reily</span>
-                </td>
-                <td><span class='course'>Advanced Dynamics of Machinery</span>
-                    <hr><span class='teacher'>Cristi Gook</span>
-                </td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td><span class='course'>Advanced Fluid Mechanics</span>
-                    <hr><span class='teacher'>Silvia Bowker</span>
-                </td>
-                <td><span class='course'>LinearAlgebra</span>
-                    <hr><span class='teacher'>Kelsy Bantham</span>
-                </td>
-                <td></td>
-                <td><span class='course'>Statistics</span>
-                    <hr><span class='teacher'>Millard Neeve</span>
+                <td><span class='course'>Power Engineering</span>
+                    <hr><span class='teacher'>Judye Springett</span>
                 </td>
             </tr>
         </table>
         <h3 class='title'>EL4th year, section 9, EL4 9</h3>
         <table class='table table-bordered'>
             <tr>
-                <td><span class='course'>Nano Electronics</span>
-                    <hr><span class='teacher'>Petronella Albany</span>
-                </td>
-                <td></td>
                 <td><span class='course'>Nano Technology</span>
                     <hr><span class='teacher'>Win Mariot</span>
                 </td>
@@ -1619,139 +1058,68 @@
                 <td><span class='course'>Economics</span>
                     <hr><span class='teacher'>Timothy Krzyzaniak</span>
                 </td>
-                <td></td>
+                <td><span class='course'>Nano Electronics</span>
+                    <hr><span class='teacher'>Petronella Albany</span>
+                </td>
+                <td><span class='course'>Applications of Electronics</span>
+                    <hr><span class='teacher'>Lidia Bratty</span>
+                </td>
+                <td><span class='course'>Nano Technology</span>
+                    <hr><span class='teacher'>Win Mariot</span>
+                </td>
             </tr>
             <tr>
+                <td><span class='course'>Advanced Microelectronics</span>
+                    <hr><span class='teacher'>Verla Turneaux</span>
+                </td>
+                <td><span class='course'>Electricity Technology and Machines</span>
+                    <hr><span class='teacher'>Agretha Oloshin</span>
+                </td>
+                <td><span class='course'>Advanced Microelectronics</span>
+                    <hr><span class='teacher'>Verla Turneaux</span>
+                </td>
                 <td><span class='course'>Signal Processing</span>
                     <hr><span class='teacher'>Alexandrina O'Doghesty</span>
                 </td>
                 <td><span class='course'>Electricity Technology and Machines</span>
                     <hr><span class='teacher'>Agretha Oloshin</span>
                 </td>
-                <td><span class='course'>Applications of Electronics</span>
-                    <hr><span class='teacher'>Lidia Bratty</span>
-                </td>
-                <td></td>
-                <td><span class='course'>Electricity Technology and Machines</span>
-                    <hr><span class='teacher'>Agretha Oloshin</span>
-                </td>
                 <td><span class='course'>Advanced Microelectronics</span>
                     <hr><span class='teacher'>Verla Turneaux</span>
                 </td>
             </tr>
             <tr>
-                <td><span class='course'>Nano Electronics</span>
-                    <hr><span class='teacher'>Petronella Albany</span>
+                <td><span class='course'>Applications of Electronics</span>
+                    <hr><span class='teacher'>Lidia Bratty</span>
                 </td>
                 <td><span class='course'>Nano Technology</span>
                     <hr><span class='teacher'>Win Mariot</span>
                 </td>
-                <td><span class='course'>Applications of Electronics</span>
-                    <hr><span class='teacher'>Lidia Bratty</span>
+                <td class='no'>Free Slot</td>
+                <td><span class='course'>Electricity Technology and Machines</span>
+                    <hr><span class='teacher'>Agretha Oloshin</span>
                 </td>
-                <td><span class='course'>Advanced Microelectronics</span>
-                    <hr><span class='teacher'>Verla Turneaux</span>
-                </td>
-                <td><span class='course'>Applications of Electronics</span>
-                    <hr><span class='teacher'>Lidia Bratty</span>
-                </td>
-                <td><span class='course'>Economics</span>
-                    <hr><span class='teacher'>Timothy Krzyzaniak</span>
+                <td class='no'>Free Slot</td>
+                <td><span class='course'>Nano Electronics</span>
+                    <hr><span class='teacher'>Petronella Albany</span>
                 </td>
             </tr>
             <tr>
+                <td><span class='course'>Economics</span>
+                    <hr><span class='teacher'>Timothy Krzyzaniak</span>
+                </td>
+                <td><span class='course'>Applications of Electronics</span>
+                    <hr><span class='teacher'>Lidia Bratty</span>
+                </td>
+                <td><span class='course'>Nano Electronics</span>
+                    <hr><span class='teacher'>Petronella Albany</span>
+                </td>
+                <td class='no'>Free Slot</td>
+                <td><span class='course'>Economics</span>
+                    <hr><span class='teacher'>Timothy Krzyzaniak</span>
+                </td>
                 <td><span class='course'>Signal Processing</span>
                     <hr><span class='teacher'>Alexandrina O'Doghesty</span>
-                </td>
-                <td><span class='course'>Economics</span>
-                    <hr><span class='teacher'>Timothy Krzyzaniak</span>
-                </td>
-                <td><span class='course'>Nano Electronics</span>
-                    <hr><span class='teacher'>Petronella Albany</span>
-                </td>
-                <td><span class='course'>Nano Technology</span>
-                    <hr><span class='teacher'>Win Mariot</span>
-                </td>
-                <td><span class='course'>Electricity Technology and Machines</span>
-                    <hr><span class='teacher'>Agretha Oloshin</span>
-                </td>
-                <td><span class='course'>Advanced Microelectronics</span>
-                    <hr><span class='teacher'>Verla Turneaux</span>
-                </td>
-            </tr>
-        </table>
-        <h3 class='title'>CS1th year, section 7, CS1 7</h3>
-        <table class='table table-bordered'>
-            <tr>
-                <td><span class='course'>Introduction to Programming</span>
-                    <hr><span class='teacher'>Dulcia Petera</span>
-                </td>
-                <td><span class='course'>C/C++ Programming</span>
-                    <hr><span class='teacher'>Harlen Antonijevic</span>
-                </td>
-                <td><span class='course'>Basic electronics</span>
-                    <hr><span class='teacher'>Hyacinth Esposito</span>
-                </td>
-                <td><span class='course'>Introduction to Programming</span>
-                    <hr><span class='teacher'>Dulcia Petera</span>
-                </td>
-                <td><span class='course'>Physics</span>
-                    <hr><span class='teacher'>Lutero Varnes</span>
-                </td>
-                <td></td>
-            </tr>
-            <tr>
-                <td><span class='course'>Data Analysis</span>
-                    <hr><span class='teacher'>Jess Kilbey</span>
-                </td>
-                <td><span class='course'>Mathematics</span>
-                    <hr><span class='teacher'>Ursala Glenn</span>
-                </td>
-                <td><span class='course'>Language and Literature</span>
-                    <hr><span class='teacher'>Sterling Kitching</span>
-                </td>
-                <td></td>
-                <td><span class='course'>Language and Literature</span>
-                    <hr><span class='teacher'>Sterling Kitching</span>
-                </td>
-                <td><span class='course'>Basic electronics</span>
-                    <hr><span class='teacher'>Hyacinth Esposito</span>
-                </td>
-            </tr>
-            <tr>
-                <td></td>
-                <td><span class='course'>Data Analysis</span>
-                    <hr><span class='teacher'>Jess Kilbey</span>
-                </td>
-                <td><span class='course'>Basic electronics</span>
-                    <hr><span class='teacher'>Hyacinth Esposito</span>
-                </td>
-                <td><span class='course'>Mathematics</span>
-                    <hr><span class='teacher'>Ursala Glenn</span>
-                </td>
-                <td><span class='course'>C/C++ Programming</span>
-                    <hr><span class='teacher'>Harlen Antonijevic</span>
-                </td>
-                <td><span class='course'>Physics</span>
-                    <hr><span class='teacher'>Lutero Varnes</span>
-                </td>
-            </tr>
-            <tr>
-                <td><span class='course'>Physics</span>
-                    <hr><span class='teacher'>Lutero Varnes</span>
-                </td>
-                <td><span class='course'>Data Analysis</span>
-                    <hr><span class='teacher'>Jess Kilbey</span>
-                </td>
-                <td><span class='course'>Mathematics</span>
-                    <hr><span class='teacher'>Ursala Glenn</span>
-                </td>
-                <td></td>
-                <td><span class='course'>Introduction to Programming</span>
-                    <hr><span class='teacher'>Dulcia Petera</span>
-                </td>
-                <td><span class='course'>Language and Literature</span>
-                    <hr><span class='teacher'>Sterling Kitching</span>
                 </td>
             </tr>
         </table>
@@ -1761,8 +1129,50 @@
                 <td><span class='course'>Advanced Software Engineering</span>
                     <hr><span class='teacher'>Lilith Fatharly</span>
                 </td>
+                <td><span class='course'>Optimization</span>
+                    <hr><span class='teacher'>Gusti Hempel</span>
+                </td>
+                <td class='no'>Free Slot</td>
+                <td><span class='course'>Optimization</span>
+                    <hr><span class='teacher'>Gusti Hempel</span>
+                </td>
+                <td><span class='course'>Hardware Design</span>
+                    <hr><span class='teacher'>Hazel Jagson</span>
+                </td>
+                <td><span class='course'>Calculus</span>
+                    <hr><span class='teacher'>Kelsy Bantham</span>
+                </td>
+            </tr>
+            <tr>
+                <td><span class='course'>Advanced JAVA Programing</span>
+                    <hr><span class='teacher'>Merill Petley</span>
+                </td>
+                <td><span class='course'>Advanced Software Engineering</span>
+                    <hr><span class='teacher'>Lilith Fatharly</span>
+                </td>
                 <td><span class='course'>Probability</span>
                     <hr><span class='teacher'>Serene Cunnah</span>
+                </td>
+                <td><span class='course'>Organizational Behavior</span>
+                    <hr><span class='teacher'>Miguela Charrington</span>
+                </td>
+                <td><span class='course'>Organizational Behavior</span>
+                    <hr><span class='teacher'>Miguela Charrington</span>
+                </td>
+                <td><span class='course'>Advanced JAVA Programing</span>
+                    <hr><span class='teacher'>Merill Petley</span>
+                </td>
+            </tr>
+            <tr>
+                <td class='no'>Free Slot</td>
+                <td><span class='course'>Advanced JAVA Programing</span>
+                    <hr><span class='teacher'>Merill Petley</span>
+                </td>
+                <td><span class='course'>Hardware Design</span>
+                    <hr><span class='teacher'>Hazel Jagson</span>
+                </td>
+                <td><span class='course'>Calculus</span>
+                    <hr><span class='teacher'>Kelsy Bantham</span>
                 </td>
                 <td><span class='course'>Probability</span>
                     <hr><span class='teacher'>Serene Cunnah</span>
@@ -1770,64 +1180,675 @@
                 <td><span class='course'>Optimization</span>
                     <hr><span class='teacher'>Gusti Hempel</span>
                 </td>
-                <td><span class='course'>Advanced JAVA Programing</span>
-                    <hr><span class='teacher'>Merill Petley</span>
-                </td>
-                <td><span class='course'>Hardware Design</span>
-                    <hr><span class='teacher'>Hazel Jagson</span>
-                </td>
             </tr>
             <tr>
+                <td><span class='course'>Organizational Behavior</span>
+                    <hr><span class='teacher'>Miguela Charrington</span>
+                </td>
+                <td><span class='course'>Calculus</span>
+                    <hr><span class='teacher'>Kelsy Bantham</span>
+                </td>
                 <td><span class='course'>Advanced Software Engineering</span>
                     <hr><span class='teacher'>Lilith Fatharly</span>
                 </td>
                 <td><span class='course'>Hardware Design</span>
                     <hr><span class='teacher'>Hazel Jagson</span>
                 </td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td><span class='course'>Optimization</span>
-                    <hr><span class='teacher'>Gusti Hempel</span>
+                <td class='no'>Free Slot</td>
+                <td class='no'>Free Slot</td>
+            </tr>
+        </table>
+        <h3 class='title'>EC6th year, section 16, EC6 16</h3>
+        <table class='table table-bordered'>
+            <tr>
+                <td><span class='course'>LinearAlgebra</span>
+                    <hr><span class='teacher'>Cristine Gormally</span>
+                </td>
+                <td><span class='course'>Applications of Electronics</span>
+                    <hr><span class='teacher'>Lidia Bratty</span>
+                </td>
+                <td><span class='course'>Applications of Electronics</span>
+                    <hr><span class='teacher'>Lidia Bratty</span>
+                </td>
+                <td><span class='course'>Applications of Electronics</span>
+                    <hr><span class='teacher'>Lidia Bratty</span>
+                </td>
+                <td><span class='course'>LinearAlgebra</span>
+                    <hr><span class='teacher'>Cristine Gormally</span>
+                </td>
+                <td><span class='course'>Advanced Telecommunications</span>
+                    <hr><span class='teacher'>Kariotta Kirdsch</span>
                 </td>
             </tr>
             <tr>
-                <td><span class='course'>Advanced JAVA Programing</span>
-                    <hr><span class='teacher'>Merill Petley</span>
+                <td><span class='course'>Advanced Signal Processing</span>
+                    <hr><span class='teacher'>Genvieve Easby</span>
                 </td>
-                <td><span class='course'>Calculus</span>
-                    <hr><span class='teacher'>Kelsy Bantham</span>
+                <td><span class='course'>Discrete Mathematics</span>
+                    <hr><span class='teacher'>Marwin Langhorne</span>
                 </td>
-                <td><span class='course'>Organizational Behavior</span>
-                    <hr><span class='teacher'>Miguela Charrington</span>
+                <td class='no'>Free Slot</td>
+                <td><span class='course'>History</span>
+                    <hr><span class='teacher'>Alina Branscombe</span>
                 </td>
-                <td></td>
-                <td><span class='course'>Calculus</span>
-                    <hr><span class='teacher'>Kelsy Bantham</span>
-                </td>
-                <td><span class='course'>Organizational Behavior</span>
-                    <hr><span class='teacher'>Miguela Charrington</span>
+                <td class='no'>Free Slot</td>
+                <td><span class='course'>Discrete Mathematics</span>
+                    <hr><span class='teacher'>Marwin Langhorne</span>
                 </td>
             </tr>
             <tr>
-                <td><span class='course'>Organizational Behavior</span>
-                    <hr><span class='teacher'>Miguela Charrington</span>
+                <td><span class='course'>Information Theory</span>
+                    <hr><span class='teacher'>Lazarus Bordessa</span>
                 </td>
-                <td><span class='course'>Advanced Software Engineering</span>
-                    <hr><span class='teacher'>Lilith Fatharly</span>
+                <td class='no'>Free Slot</td>
+                <td><span class='course'>Advanced Signal Processing</span>
+                    <hr><span class='teacher'>Genvieve Easby</span>
                 </td>
-                <td><span class='course'>Optimization</span>
-                    <hr><span class='teacher'>Gusti Hempel</span>
+                <td><span class='course'>Advanced Signal Processing</span>
+                    <hr><span class='teacher'>Genvieve Easby</span>
                 </td>
-                <td><span class='course'>Advanced JAVA Programing</span>
-                    <hr><span class='teacher'>Merill Petley</span>
+                <td><span class='course'>History</span>
+                    <hr><span class='teacher'>Alina Branscombe</span>
                 </td>
-                <td><span class='course'>Calculus</span>
+                <td><span class='course'>History</span>
+                    <hr><span class='teacher'>Alina Branscombe</span>
+                </td>
+            </tr>
+            <tr>
+                <td><span class='course'>Discrete Mathematics</span>
+                    <hr><span class='teacher'>Marwin Langhorne</span>
+                </td>
+                <td class='no'>Free Slot</td>
+                <td><span class='course'>Advanced Telecommunications</span>
+                    <hr><span class='teacher'>Kariotta Kirdsch</span>
+                </td>
+                <td><span class='course'>Information Theory</span>
+                    <hr><span class='teacher'>Lazarus Bordessa</span>
+                </td>
+                <td class='no'>Free Slot</td>
+                <td><span class='course'>LinearAlgebra</span>
+                    <hr><span class='teacher'>Cristine Gormally</span>
+                </td>
+            </tr>
+        </table>
+        <h3 class='title'>ME6th year, section 20, ME6 20</h3>
+        <table class='table table-bordered'>
+            <tr>
+                <td><span class='course'>Discrete Mathematics</span>
+                    <hr><span class='teacher'>Lilah Ellis</span>
+                </td>
+                <td><span class='course'>LinearAlgebra</span>
                     <hr><span class='teacher'>Kelsy Bantham</span>
+                </td>
+                <td><span class='course'>Advanced Fluid Mechanics</span>
+                    <hr><span class='teacher'>Silvia Bowker</span>
+                </td>
+                <td><span class='course'>History</span>
+                    <hr><span class='teacher'>Chandra Reily</span>
+                </td>
+                <td><span class='course'>Discrete Mathematics</span>
+                    <hr><span class='teacher'>Lilah Ellis</span>
+                </td>
+                <td><span class='course'>History</span>
+                    <hr><span class='teacher'>Chandra Reily</span>
+                </td>
+            </tr>
+            <tr>
+                <td><span class='course'>LinearAlgebra</span>
+                    <hr><span class='teacher'>Kelsy Bantham</span>
+                </td>
+                <td class='no'>Free Slot</td>
+                <td><span class='course'>Advanced Fluid Mechanics</span>
+                    <hr><span class='teacher'>Silvia Bowker</span>
+                </td>
+                <td><span class='course'>History</span>
+                    <hr><span class='teacher'>Chandra Reily</span>
+                </td>
+                <td><span class='course'>Discrete Mathematics</span>
+                    <hr><span class='teacher'>Lilah Ellis</span>
+                </td>
+                <td><span class='course'>Advanced Dynamics of Machinery</span>
+                    <hr><span class='teacher'>Cristi Gook</span>
+                </td>
+            </tr>
+            <tr>
+                <td><span class='course'>Statistics</span>
+                    <hr><span class='teacher'>Millard Neeve</span>
+                </td>
+                <td><span class='course'>Statistics</span>
+                    <hr><span class='teacher'>Millard Neeve</span>
+                </td>
+                <td><span class='course'>Advanced Dynamics of Machinery</span>
+                    <hr><span class='teacher'>Cristi Gook</span>
+                </td>
+                <td><span class='course'>Statistics</span>
+                    <hr><span class='teacher'>Millard Neeve</span>
+                </td>
+                <td><span class='course'>Advanced Dynamics of Machinery</span>
+                    <hr><span class='teacher'>Cristi Gook</span>
+                </td>
+                <td class='no'>Free Slot</td>
+            </tr>
+            <tr>
+                <td><span class='course'>LinearAlgebra</span>
+                    <hr><span class='teacher'>Kelsy Bantham</span>
+                </td>
+                <td class='no'>Free Slot</td>
+                <td class='no'>Free Slot</td>
+                <td class='no'>Free Slot</td>
+                <td class='no'>Free Slot</td>
+                <td><span class='course'>Advanced Fluid Mechanics</span>
+                    <hr><span class='teacher'>Silvia Bowker</span>
+                </td>
+            </tr>
+        </table>
+        <h3 class='title'>ME2th year, section 11, ME2 11</h3>
+        <table class='table table-bordered'>
+            <tr>
+                <td><span class='course'>Electromagnetics</span>
+                    <hr><span class='teacher'>Bathsheba Sorbie</span>
+                </td>
+                <td><span class='course'>Basic Kinematics</span>
+                    <hr><span class='teacher'>Ulises Farrand</span>
+                </td>
+                <td><span class='course'>Probability</span>
+                    <hr><span class='teacher'>Debera Andreichik</span>
+                </td>
+                <td class='no'>Free Slot</td>
+                <td><span class='course'>Environmental Studies</span>
+                    <hr><span class='teacher'>Johna Hannabus</span>
+                </td>
+                <td><span class='course'>Manufacturing Processes</span>
+                    <hr><span class='teacher'>Mozelle Husbands</span>
+                </td>
+            </tr>
+            <tr>
+                <td><span class='course'>Environmental Studies</span>
+                    <hr><span class='teacher'>Johna Hannabus</span>
+                </td>
+                <td><span class='course'>Fluid Mechanics</span>
+                    <hr><span class='teacher'>Taber Swarbrigg</span>
+                </td>
+                <td><span class='course'>Fluid Mechanics</span>
+                    <hr><span class='teacher'>Taber Swarbrigg</span>
+                </td>
+                <td><span class='course'>Electromagnetics</span>
+                    <hr><span class='teacher'>Bathsheba Sorbie</span>
+                </td>
+                <td><span class='course'>Discrete Mathematics</span>
+                    <hr><span class='teacher'>Mersey Challen</span>
+                </td>
+                <td><span class='course'>Probability</span>
+                    <hr><span class='teacher'>Debera Andreichik</span>
+                </td>
+            </tr>
+            <tr>
+                <td class='no'>Free Slot</td>
+                <td><span class='course'>Probability</span>
+                    <hr><span class='teacher'>Debera Andreichik</span>
+                </td>
+                <td><span class='course'>Manufacturing Processes</span>
+                    <hr><span class='teacher'>Mozelle Husbands</span>
+                </td>
+                <td><span class='course'>Basic Kinematics</span>
+                    <hr><span class='teacher'>Ulises Farrand</span>
+                </td>
+                <td><span class='course'>Environmental Studies</span>
+                    <hr><span class='teacher'>Johna Hannabus</span>
+                </td>
+                <td><span class='course'>Fluid Mechanics</span>
+                    <hr><span class='teacher'>Taber Swarbrigg</span>
+                </td>
+            </tr>
+            <tr>
+                <td><span class='course'>Discrete Mathematics</span>
+                    <hr><span class='teacher'>Mersey Challen</span>
+                </td>
+                <td><span class='course'>Discrete Mathematics</span>
+                    <hr><span class='teacher'>Mersey Challen</span>
+                </td>
+                <td><span class='course'>Manufacturing Processes</span>
+                    <hr><span class='teacher'>Mozelle Husbands</span>
+                </td>
+                <td class='no'>Free Slot</td>
+                <td><span class='course'>Basic Kinematics</span>
+                    <hr><span class='teacher'>Ulises Farrand</span>
+                </td>
+                <td class='no'>Free Slot</td>
+            </tr>
+        </table>
+        <h3 class='title'>CS2th year, section 2, CS2 2</h3>
+        <table class='table table-bordered'>
+            <tr>
+                <td><span class='course'>Computer Networks</span>
+                    <hr><span class='teacher'>Sigrid Laker</span>
+                </td>
+                <td><span class='course'>Environmental Studies</span>
+                    <hr><span class='teacher'>Johna Hannabus</span>
                 </td>
                 <td><span class='course'>Hardware Design</span>
                     <hr><span class='teacher'>Hazel Jagson</span>
                 </td>
+                <td><span class='course'>Optimization</span>
+                    <hr><span class='teacher'>Paulo McCuffie</span>
+                </td>
+                <td class='no'>Free Slot</td>
+                <td><span class='course'>Computer Networks</span>
+                    <hr><span class='teacher'>Sigrid Laker</span>
+                </td>
+            </tr>
+            <tr>
+                <td><span class='course'>LinearAlgebra</span>
+                    <hr><span class='teacher'>Lynn Stygall</span>
+                </td>
+                <td><span class='course'>Probability</span>
+                    <hr><span class='teacher'>Shanta Trendle</span>
+                </td>
+                <td><span class='course'>Optimization</span>
+                    <hr><span class='teacher'>Paulo McCuffie</span>
+                </td>
+                <td><span class='course'>Environmental Studies</span>
+                    <hr><span class='teacher'>Johna Hannabus</span>
+                </td>
+                <td><span class='course'>Computer Networks</span>
+                    <hr><span class='teacher'>Sigrid Laker</span>
+                </td>
+                <td class='no'>Free Slot</td>
+            </tr>
+            <tr>
+                <td><span class='course'>Hardware Design</span>
+                    <hr><span class='teacher'>Hazel Jagson</span>
+                </td>
+                <td><span class='course'>Data Structures and Algorithms</span>
+                    <hr><span class='teacher'>Harlen Antonijevic</span>
+                </td>
+                <td><span class='course'>LinearAlgebra</span>
+                    <hr><span class='teacher'>Lynn Stygall</span>
+                </td>
+                <td><span class='course'>Probability</span>
+                    <hr><span class='teacher'>Shanta Trendle</span>
+                </td>
+                <td><span class='course'>Data Structures and Algorithms</span>
+                    <hr><span class='teacher'>Harlen Antonijevic</span>
+                </td>
+                <td><span class='course'>Data Structures and Algorithms</span>
+                    <hr><span class='teacher'>Harlen Antonijevic</span>
+                </td>
+            </tr>
+            <tr>
+                <td class='no'>Free Slot</td>
+                <td><span class='course'>LinearAlgebra</span>
+                    <hr><span class='teacher'>Lynn Stygall</span>
+                </td>
+                <td class='no'>Free Slot</td>
+                <td class='no'>Free Slot</td>
+                <td class='no'>Free Slot</td>
+                <td class='no'>Free Slot</td>
+            </tr>
+        </table>
+        <h3 class='title'>CS6th year, section 18, CS6 18</h3>
+        <table class='table table-bordered'>
+            <tr>
+                <td><span class='course'>Advanced Hardware Design</span>
+                    <hr><span class='teacher'>Hazel Jagson</span>
+                </td>
+                <td><span class='course'>LinearAlgebra</span>
+                    <hr><span class='teacher'>Lilah Ellis</span>
+                </td>
+                <td><span class='course'>Cryptography</span>
+                    <hr><span class='teacher'>Gusti Hempel</span>
+                </td>
+                <td><span class='course'>Advanced Hardware Design</span>
+                    <hr><span class='teacher'>Hazel Jagson</span>
+                </td>
+                <td><span class='course'>Cryptography</span>
+                    <hr><span class='teacher'>Gusti Hempel</span>
+                </td>
+                <td><span class='course'>LinearAlgebra</span>
+                    <hr><span class='teacher'>Lilah Ellis</span>
+                </td>
+            </tr>
+            <tr>
+                <td><span class='course'>History</span>
+                    <hr><span class='teacher'>Chandra Reily</span>
+                </td>
+                <td><span class='course'>Statistics</span>
+                    <hr><span class='teacher'>Serene Cunnah</span>
+                </td>
+                <td><span class='course'>Discrete Mathematics</span>
+                    <hr><span class='teacher'>Kelsy Bantham</span>
+                </td>
+                <td><span class='course'>Advanced Information Theory</span>
+                    <hr><span class='teacher'>Millard Neeve</span>
+                </td>
+                <td><span class='course'>Discrete Mathematics</span>
+                    <hr><span class='teacher'>Kelsy Bantham</span>
+                </td>
+                <td><span class='course'>History</span>
+                    <hr><span class='teacher'>Chandra Reily</span>
+                </td>
+            </tr>
+            <tr>
+                <td class='no'>Free Slot</td>
+                <td><span class='course'>Statistics</span>
+                    <hr><span class='teacher'>Serene Cunnah</span>
+                </td>
+                <td><span class='course'>History</span>
+                    <hr><span class='teacher'>Chandra Reily</span>
+                </td>
+                <td class='no'>Free Slot</td>
+                <td><span class='course'>Advanced Information Theory</span>
+                    <hr><span class='teacher'>Millard Neeve</span>
+                </td>
+                <td><span class='course'>Advanced Hardware Design</span>
+                    <hr><span class='teacher'>Hazel Jagson</span>
+                </td>
+            </tr>
+            <tr>
+                <td><span class='course'>Advanced Information Theory</span>
+                    <hr><span class='teacher'>Millard Neeve</span>
+                </td>
+                <td class='no'>Free Slot</td>
+                <td><span class='course'>LinearAlgebra</span>
+                    <hr><span class='teacher'>Lilah Ellis</span>
+                </td>
+                <td><span class='course'>Discrete Mathematics</span>
+                    <hr><span class='teacher'>Kelsy Bantham</span>
+                </td>
+                <td><span class='course'>Cryptography</span>
+                    <hr><span class='teacher'>Gusti Hempel</span>
+                </td>
+                <td><span class='course'>Statistics</span>
+                    <hr><span class='teacher'>Serene Cunnah</span>
+                </td>
+            </tr>
+        </table>
+        <h3 class='title'>EL2th year, section 8, EL2 8</h3>
+        <table class='table table-bordered'>
+            <tr>
+                <td><span class='course'>Basic Signal Processing</span>
+                    <hr><span class='teacher'>Alexandrina O'Doghesty</span>
+                </td>
+                <td><span class='course'>Basic Microelectronics</span>
+                    <hr><span class='teacher'>Verla Turneaux</span>
+                </td>
+                <td><span class='course'>Telecommunications</span>
+                    <hr><span class='teacher'>Hall Turban</span>
+                </td>
+                <td><span class='course'>Basic Signal Processing</span>
+                    <hr><span class='teacher'>Alexandrina O'Doghesty</span>
+                </td>
+                <td><span class='course'>Telecommunications</span>
+                    <hr><span class='teacher'>Hall Turban</span>
+                </td>
+                <td class='no'>Free Slot</td>
+            </tr>
+            <tr>
+                <td><span class='course'>Circuit Design using Logic gates</span>
+                    <hr><span class='teacher'>Far Voysey</span>
+                </td>
+                <td><span class='course'>Basic Signal Processing</span>
+                    <hr><span class='teacher'>Alexandrina O'Doghesty</span>
+                </td>
+                <td><span class='course'>Telecommunications</span>
+                    <hr><span class='teacher'>Hall Turban</span>
+                </td>
+                <td><span class='course'>Basic Microelectronics</span>
+                    <hr><span class='teacher'>Verla Turneaux</span>
+                </td>
+                <td><span class='course'>Basic Microelectronics</span>
+                    <hr><span class='teacher'>Verla Turneaux</span>
+                </td>
+                <td><span class='course'>Circuit Design using Logic gates</span>
+                    <hr><span class='teacher'>Far Voysey</span>
+                </td>
+            </tr>
+            <tr>
+                <td class='no'>Free Slot</td>
+                <td><span class='course'>Electromagnetics</span>
+                    <hr><span class='teacher'>Bathsheba Sorbie</span>
+                </td>
+                <td><span class='course'>Digital Electronics</span>
+                    <hr><span class='teacher'>Petronella Albany</span>
+                </td>
+                <td><span class='course'>Electromagnetics</span>
+                    <hr><span class='teacher'>Bathsheba Sorbie</span>
+                </td>
+                <td class='no'>Free Slot</td>
+                <td><span class='course'>Electromagnetics</span>
+                    <hr><span class='teacher'>Bathsheba Sorbie</span>
+                </td>
+            </tr>
+            <tr>
+                <td><span class='course'>Environmental Studies</span>
+                    <hr><span class='teacher'>Eugenius Vlasenko</span>
+                </td>
+                <td><span class='course'>Environmental Studies</span>
+                    <hr><span class='teacher'>Eugenius Vlasenko</span>
+                </td>
+                <td class='no'>Free Slot</td>
+                <td><span class='course'>Digital Electronics</span>
+                    <hr><span class='teacher'>Petronella Albany</span>
+                </td>
+                <td><span class='course'>Digital Electronics</span>
+                    <hr><span class='teacher'>Petronella Albany</span>
+                </td>
+                <td class='no'>Free Slot</td>
+            </tr>
+        </table>
+        <h3 class='title'>EL6th year, section 22, EL6 22</h3>
+        <table class='table table-bordered'>
+            <tr>
+                <td><span class='course'>Telecommunications</span>
+                    <hr><span class='teacher'>Hall Turban</span>
+                </td>
+                <td><span class='course'>Discrete Mathematics</span>
+                    <hr><span class='teacher'>Cristine Gormally</span>
+                </td>
+                <td><span class='course'>LinearAlgebra</span>
+                    <hr><span class='teacher'>Marwin Langhorne</span>
+                </td>
+                <td><span class='course'>Discrete Mathematics</span>
+                    <hr><span class='teacher'>Cristine Gormally</span>
+                </td>
+                <td><span class='course'>Advanced Power Engineering</span>
+                    <hr><span class='teacher'>Xena Cockram</span>
+                </td>
+                <td class='no'>Free Slot</td>
+            </tr>
+            <tr>
+                <td><span class='course'>Telecommunications</span>
+                    <hr><span class='teacher'>Hall Turban</span>
+                </td>
+                <td><span class='course'>Advanced Electrical Engineering Material</span>
+                    <hr><span class='teacher'>Helene Kelcey</span>
+                </td>
+                <td><span class='course'>Advanced Microelectronics</span>
+                    <hr><span class='teacher'>Hedvig Brayn</span>
+                </td>
+                <td><span class='course'>Advanced Electrical Engineering Material</span>
+                    <hr><span class='teacher'>Helene Kelcey</span>
+                </td>
+                <td class='no'>Free Slot</td>
+                <td class='no'>Free Slot</td>
+            </tr>
+            <tr>
+                <td class='no'>Free Slot</td>
+                <td><span class='course'>Telecommunications</span>
+                    <hr><span class='teacher'>Hall Turban</span>
+                </td>
+                <td><span class='course'>Advanced Microelectronics</span>
+                    <hr><span class='teacher'>Hedvig Brayn</span>
+                </td>
+                <td><span class='course'>Advanced Electrical Engineering Material</span>
+                    <hr><span class='teacher'>Helene Kelcey</span>
+                </td>
+                <td class='no'>Free Slot</td>
+                <td><span class='course'>LinearAlgebra</span>
+                    <hr><span class='teacher'>Marwin Langhorne</span>
+                </td>
+            </tr>
+            <tr>
+                <td><span class='course'>History</span>
+                    <hr><span class='teacher'>Alina Branscombe</span>
+                </td>
+                <td class='no'>Free Slot</td>
+                <td><span class='course'>Discrete Mathematics</span>
+                    <hr><span class='teacher'>Cristine Gormally</span>
+                </td>
+                <td><span class='course'>Advanced Power Engineering</span>
+                    <hr><span class='teacher'>Xena Cockram</span>
+                </td>
+                <td><span class='course'>LinearAlgebra</span>
+                    <hr><span class='teacher'>Marwin Langhorne</span>
+                </td>
+                <td><span class='course'>History</span>
+                    <hr><span class='teacher'>Alina Branscombe</span>
+                </td>
+            </tr>
+        </table>
+        <h3 class='title'>EC4th year, section 14, EC4 14</h3>
+        <table class='table table-bordered'>
+            <tr>
+                <td><span class='course'>Electricity Technology and Machines</span>
+                    <hr><span class='teacher'>Agretha Oloshin</span>
+                </td>
+                <td><span class='course'>Statistics</span>
+                    <hr><span class='teacher'>Lazarus Bordessa</span>
+                </td>
+                <td><span class='course'>Nano Electronics</span>
+                    <hr><span class='teacher'>Faunie Sweeny</span>
+                </td>
+                <td><span class='course'>Economics</span>
+                    <hr><span class='teacher'>Timothy Krzyzaniak</span>
+                </td>
+                <td><span class='course'>Web Development</span>
+                    <hr><span class='teacher'>Emanuel Dicke</span>
+                </td>
+                <td><span class='course'>Statistics</span>
+                    <hr><span class='teacher'>Lazarus Bordessa</span>
+                </td>
+            </tr>
+            <tr>
+                <td><span class='course'>Nano Technology</span>
+                    <hr><span class='teacher'>Win Mariot</span>
+                </td>
+                <td><span class='course'>Economics</span>
+                    <hr><span class='teacher'>Timothy Krzyzaniak</span>
+                </td>
+                <td><span class='course'>Nano Technology</span>
+                    <hr><span class='teacher'>Win Mariot</span>
+                </td>
+                <td class='no'>Free Slot</td>
+                <td><span class='course'>Advanced Information Theory</span>
+                    <hr><span class='teacher'>Serene Cunnah</span>
+                </td>
+                <td><span class='course'>Web Development</span>
+                    <hr><span class='teacher'>Emanuel Dicke</span>
+                </td>
+            </tr>
+            <tr>
+                <td><span class='course'>Advanced Information Theory</span>
+                    <hr><span class='teacher'>Serene Cunnah</span>
+                </td>
+                <td class='no'>Free Slot</td>
+                <td><span class='course'>Web Development</span>
+                    <hr><span class='teacher'>Emanuel Dicke</span>
+                </td>
+                <td><span class='course'>Advanced Information Theory</span>
+                    <hr><span class='teacher'>Serene Cunnah</span>
+                </td>
+                <td><span class='course'>Electricity Technology and Machines</span>
+                    <hr><span class='teacher'>Agretha Oloshin</span>
+                </td>
+                <td><span class='course'>Statistics</span>
+                    <hr><span class='teacher'>Lazarus Bordessa</span>
+                </td>
+            </tr>
+            <tr>
+                <td><span class='course'>Electricity Technology and Machines</span>
+                    <hr><span class='teacher'>Agretha Oloshin</span>
+                </td>
+                <td><span class='course'>Nano Electronics</span>
+                    <hr><span class='teacher'>Faunie Sweeny</span>
+                </td>
+                <td class='no'>Free Slot</td>
+                <td><span class='course'>Economics</span>
+                    <hr><span class='teacher'>Timothy Krzyzaniak</span>
+                </td>
+                <td class='no'>Free Slot</td>
+                <td><span class='course'>Nano Technology</span>
+                    <hr><span class='teacher'>Win Mariot</span>
+                </td>
+            </tr>
+        </table>
+        <h3 class='title'>ME4th year, section 12, ME4 12</h3>
+        <table class='table table-bordered'>
+            <tr>
+                <td><span class='course'>Economics</span>
+                    <hr><span class='teacher'>Almira Courtese</span>
+                </td>
+                <td><span class='course'>Advanced Fluid Mechanics</span>
+                    <hr><span class='teacher'>Silvia Bowker</span>
+                </td>
+                <td><span class='course'>LinearAlgebra</span>
+                    <hr><span class='teacher'>Mersey Challen</span>
+                </td>
+                <td><span class='course'>Advanced Fluid Mechanics</span>
+                    <hr><span class='teacher'>Silvia Bowker</span>
+                </td>
+                <td class='no'>Free Slot</td>
+                <td><span class='course'>Information Theory</span>
+                    <hr><span class='teacher'>Debera Andreichik</span>
+                </td>
+            </tr>
+            <tr>
+                <td><span class='course'>Economics</span>
+                    <hr><span class='teacher'>Almira Courtese</span>
+                </td>
+                <td><span class='course'>Advanced Dynamics of Machinery</span>
+                    <hr><span class='teacher'>Cristi Gook</span>
+                </td>
+                <td class='no'>Free Slot</td>
+                <td><span class='course'>LinearAlgebra</span>
+                    <hr><span class='teacher'>Mersey Challen</span>
+                </td>
+                <td class='no'>Free Slot</td>
+                <td><span class='course'>Advanced Maintenance Engineering</span>
+                    <hr><span class='teacher'>Conrado Esslement</span>
+                </td>
+            </tr>
+            <tr>
+                <td class='no'>Free Slot</td>
+                <td><span class='course'>Advanced Maintenance Engineering</span>
+                    <hr><span class='teacher'>Conrado Esslement</span>
+                </td>
+                <td><span class='course'>Advanced Thermodynamics</span>
+                    <hr><span class='teacher'>Karlie Gledstane</span>
+                </td>
+                <td><span class='course'>Information Theory</span>
+                    <hr><span class='teacher'>Debera Andreichik</span>
+                </td>
+                <td><span class='course'>Advanced Thermodynamics</span>
+                    <hr><span class='teacher'>Karlie Gledstane</span>
+                </td>
+                <td class='no'>Free Slot</td>
+            </tr>
+            <tr>
+                <td><span class='course'>Advanced Dynamics of Machinery</span>
+                    <hr><span class='teacher'>Cristi Gook</span>
+                </td>
+                <td class='no'>Free Slot</td>
+                <td><span class='course'>Economics</span>
+                    <hr><span class='teacher'>Almira Courtese</span>
+                </td>
+                <td><span class='course'>Advanced Thermodynamics</span>
+                    <hr><span class='teacher'>Karlie Gledstane</span>
+                </td>
+                <td><span class='course'>Information Theory</span>
+                    <hr><span class='teacher'>Debera Andreichik</span>
+                </td>
+                <td class='no'>Free Slot</td>
             </tr>
         </table>
     </div>

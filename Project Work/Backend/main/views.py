@@ -125,12 +125,37 @@ def changeslot(request,slot):
         for item in timetable:
             lis[item.time][item.day]=1
         available=[]
+        def fun(i):
+            if i==0:
+                return 'Slot-1'
+            elif i==1:
+                return 'Slot-2'
+            elif i==2:
+                return 'Slot-3'
+            else:
+                return 'Slot-4'
+        def fun2(i):
+            if i==0:
+                return 'Monday'
+            elif i==1:
+                return 'Tuesday'
+            elif i==2:
+                return 'Wednesday'
+            elif i==3:
+                return 'Thursday'
+            elif i==4:
+                return 'Friday'
+            else:
+                return 'Saturday'
+
         for i in range(0,4):
             for j in range(0,6):
                 if lis[i][j]==0:
                     available.append({
                         'time':i,
                         'day':j,
+                        'Time':fun(i),
+                        'Day':fun2(j),
                     })
         if available.count==0:
             return redirect('phome')
@@ -173,7 +198,24 @@ def phome(request):
 
 def ahome(request):
     if request.user.is_superuser:
-        return render(request,'main/ahome.html')
+        final=[]
+        for k in range(0,24):
+            dic={}
+            lis=[]
+            for i in range(0,4):
+                li=[]
+                for j in range(0,6):
+                    li.append(dic)
+                lis.append(li)
+            final.append(lis)
+        timetable=Algo.objects.filter()
+        for item in timetable:
+            final[item.batch_id][item.time][item.day]={
+                'subject':item.subject,
+                'prof':item.prof_name,
+            }
+        form2=UserSignUpForm()
+        return render(request,'main/ahome.html',{'timetable':final,'fm2':form2})
     else:
         return redirect('login')
 
@@ -200,11 +242,29 @@ def signup(request):
                 messages.success(request,'success!!!')
         else:
             fm=UserSignUpForm()
-        return render(request,'main/signup.html',{'form':fm})
+        return redirect('login')
     else:
         return redirect('login')   
 
-
+def studentcsv(request):
+    if request.method=='POST':
+        csv_file=request.FILES['data']   #csv file read code
+        data_set = csv_file.read().decode('UTF-8')
+        io_string=io.StringIO(data_set)
+        next(io_string)
+        for column in csv.reader(io_string, delimiter=',', quotechar='|'):
+            x=Account.objects.filter(username=column[0])
+            y=Account.objects.filter(email=column[1])
+            if x.count() > 0 or y.count()>0 :
+                messages.info(request,f'{column[0]} username or {column[1]} email is already exist') 
+            else:
+                password=make_password(column[2])
+                fm=Account(username=column[0], email=column[1] , password=password , batch=column[3])
+                fm.save() 
+        # messages.info(request,'success')
+        return redirect('login')
+    else:
+        return redirect('login')
 
 # def profcsv(request):
 #     if request.method == 'POST':
