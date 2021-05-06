@@ -619,14 +619,23 @@
                 </table>
             </div>
             <div class="tab-pane" role="tabpanel" id="tab-3">
-                <form method="post" action="/gtimetable/" enctype="multipart/form-data">
+<<<<<<< Updated upstream
+                
+                <form method="post" action="/gtimetable/" enctype="multipart/form-data"  style="position: absolute; top: 40%; left: 42%; margin: -25px 0 0 -25px;">
+                    <h3>Insert Your CSV file here...</h3>
+                    </br>
                     {% csrf_token %}
                     <input type="file" name="data">
-                    <button type="submit">submit</button>
+                    <button type="submit" class="btn btn-primary">submit</button>
+=======
+                <form method="post" action="/gtimetable/" enctype="multipart/form-data" style="position: absolute; top: 40%;left: 42%;margin: -25px 0 0 -25px;">
+                <h3>Insert Your CSV file here...</h3>
+                </br>
+                    {% csrf_token %}
+                    <input type="file" name="data">
+                    <button class="btn btn-primary"type="submit">submit</button>
+>>>>>>> Stashed changes
                   </form>
-            </div>
-            <div class="tab-pane" role="tabpanel" id="tab-7">
-                <p>Tab content.</p>
             </div>
         </div>
     </div>

@@ -125,12 +125,37 @@ def changeslot(request,slot):
         for item in timetable:
             lis[item.time][item.day]=1
         available=[]
+        def fun(i):
+            if i==0:
+                return 'Slot-1'
+            elif i==1:
+                return 'Slot-2'
+            elif i==2:
+                return 'Slot-3'
+            else:
+                return 'Slot-4'
+        def fun2(i):
+            if i==0:
+                return 'Monday'
+            elif i==1:
+                return 'Tuesday'
+            elif i==2:
+                return 'Wednesday'
+            elif i==3:
+                return 'Thursday'
+            elif i==4:
+                return 'Friday'
+            else:
+                return 'Saturday'
+
         for i in range(0,4):
             for j in range(0,6):
                 if lis[i][j]==0:
                     available.append({
                         'time':i,
                         'day':j,
+                        'Time':fun(i),
+                        'Day':fun2(j),
                     })
         if available.count==0:
             return redirect('phome')
