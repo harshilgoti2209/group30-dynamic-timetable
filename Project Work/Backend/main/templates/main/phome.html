@@ -113,7 +113,7 @@
                                             <td>
                                                 <strong>
                                                     <span class="glyphicon glyphicon-calendar text-primary"></span>
-                                                    created
+                                                    Created
                                                 </strong>
                                             </td>
                                             <td class="text-primary">
@@ -136,7 +136,7 @@
                             <!-- <div class="alert alert-info alert-dismissible absolue center" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button><span>Profile save with success</span></div> -->
                         </div>
                     </div>
-                    <form method="POST" action="/seditprofile/">
+                    <form method="POST" action="/seditprofile/" style="margin-top:40px;">
                         {% csrf_token %}
                         <div class="form-row profile-row">
                             <div class="col-md-4 relative">
@@ -183,36 +183,36 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td><a href="/changeslot/{{ timetable.0.0.slot}} "> {{timetable.0.0.batch}} {{timetable.0.0.subject}}</a></td>
-                                    <td><a href="/changeslot/{{ timetable.0.1.slot}} "> {{timetable.0.1.batch}} {{timetable.0.1.subject}}</a></td>
-                                    <td><a href="/changeslot/{{ timetable.0.2.slot}} "> {{timetable.0.2.batch}} {{timetable.0.2.subject}}</a></td>
-                                    <td><a href="/changeslot/{{ timetable.0.3.slot}} "> {{timetable.0.3.batch}} {{timetable.0.3.subject}}</a></td>
-                                    <td><a href="/changeslot/{{ timetable.0.4.slot}} "> {{timetable.0.4.batch}} {{timetable.0.4.subject}}</a></td>
-                                    <td><a href="/changeslot/{{ timetable.0.5.slot}} "> {{timetable.0.5.batch}} {{timetable.0.5.subject}}</a></td>
+                                    <td>{% if timetable.0.0%}<a href="/changeslot/{{ timetable.0.0.slot}} "> Batch : {{timetable.0.0.batch}} <br> Subject : {{timetable.0.0.subject}}</a>{%endif%}</td>
+                                    <td>{% if timetable.0.1%}<a href="/changeslot/{{ timetable.0.1.slot}} "> Batch : {{timetable.0.1.batch}} <br> Subject : {{timetable.0.1.subject}}</a>{%endif%}</td>
+                                    <td>{% if timetable.0.2%}<a href="/changeslot/{{ timetable.0.2.slot}} "> Batch : {{timetable.0.2.batch}} <br> Subject : {{timetable.0.2.subject}}</a>{%endif%}</td>
+                                    <td>{% if timetable.0.3%}<a href="/changeslot/{{ timetable.0.3.slot}} "> Batch : {{timetable.0.3.batch}} <br> Subject : {{timetable.0.3.subject}}</a>{%endif%}</td>
+                                    <td>{% if timetable.0.4%}<a href="/changeslot/{{ timetable.0.4.slot}} "> Batch : {{timetable.0.4.batch}} <br> Subject : {{timetable.0.4.subject}}</a>{%endif%}</td>
+                                    <td>{% if timetable.0.5%}<a href="/changeslot/{{ timetable.0.5.slot}} "> Batch : {{timetable.0.5.batch}} <br> Subject : {{timetable.0.5.subject}}</a>{%endif%}</td>
                                 </tr>
                                 <tr>
-                                    <td><a href="/changeslot/{{ timetable.1.0.slot}} "> {{timetable.1.0.batch}} {{timetable.1.0.subject}}</a></td>
-                                    <td><a href="/changeslot/{{ timetable.1.1.slot}} "> {{timetable.1.1.batch}} {{timetable.1.1.subject}}</a></td>
-                                    <td><a href="/changeslot/{{ timetable.1.2.slot}} "> {{timetable.1.2.batch}} {{timetable.1.2.subject}}</a></td>
-                                    <td><a href="/changeslot/{{ timetable.1.3.slot}} "> {{timetable.1.3.batch}} {{timetable.1.3.subject}}</a></td>
-                                    <td><a href="/changeslot/{{ timetable.1.4.slot}} "> {{timetable.1.4.batch}} {{timetable.1.4.subject}}</a></td>
-                                    <td><a href="/changeslot/{{ timetable.1.5.slot}} "> {{timetable.1.5.batch}} {{timetable.1.5.subject}}</a></td>
+                                    <td>{% if timetable.1.0%}<a href="/changeslot/{{ timetable.1.0.slot}} "> Batch : {{timetable.1.0.batch}} <br> Subject : {{timetable.1.0.subject}}</a>{%endif%}</td>
+                                    <td>{% if timetable.1.1%}<a href="/changeslot/{{ timetable.1.1.slot}} "> Batch : {{timetable.1.1.batch}} <br> Subject : {{timetable.1.1.subject}}</a>{%endif%}</td>
+                                    <td>{% if timetable.1.2%}<a href="/changeslot/{{ timetable.1.2.slot}} "> Batch : {{timetable.1.2.batch}} <br> Subject : {{timetable.1.2.subject}}</a>{%endif%}</td>
+                                    <td>{% if timetable.1.3%}<a href="/changeslot/{{ timetable.1.3.slot}} "> Batch : {{timetable.1.3.batch}} <br> Subject : {{timetable.1.3.subject}}</a>{%endif%}</td>
+                                    <td>{% if timetable.1.4%}<a href="/changeslot/{{ timetable.1.4.slot}} "> Batch : {{timetable.1.4.batch}} <br> Subject : {{timetable.1.4.subject}}</a>{%endif%}</td>
+                                    <td>{% if timetable.1.5%}<a href="/changeslot/{{ timetable.1.5.slot}} "> Batch : {{timetable.1.5.batch}} <br> Subject : {{timetable.1.5.subject}}</a>{%endif%}</td>
                                 </tr>
                                 <tr>
-                                    <td><a href="/changeslot/{{ timetable.2.0.slot}} "> {{timetable.2.0.batch}} {{timetable.2.0.subject}}</a></td>
-                                    <td><a href="/changeslot/{{ timetable.2.1.slot}} "> {{timetable.2.1.batch}} {{timetable.2.1.subject}}</a></td>
-                                    <td><a href="/changeslot/{{ timetable.2.2.slot}} "> {{timetable.2.2.batch}} {{timetable.2.2.subject}}</a></td>
-                                    <td><a href="/changeslot/{{ timetable.2.3.slot}} "> {{timetable.2.3.batch}} {{timetable.2.3.subject}}</a></td>
-                                    <td><a href="/changeslot/{{ timetable.2.4.slot}} "> {{timetable.2.4.batch}} {{timetable.2.4.subject}}</a></td>
-                                    <td><a href="/changeslot/{{ timetable.2.5.slot}} "> {{timetable.2.5.batch}} {{timetable.2.5.subject}}</a></td>
+                                    <td>{% if timetable.2.0%}<a href="/changeslot/{{ timetable.2.0.slot}} "> Batch : {{timetable.2.0.batch}} <br> Subject : {{timetable.2.0.subject}}</a>{%endif%}</td>
+                                    <td>{% if timetable.2.1%}<a href="/changeslot/{{ timetable.2.1.slot}} "> Batch : {{timetable.2.1.batch}} <br> Subject : {{timetable.2.1.subject}}</a>{%endif%}</td>
+                                    <td>{% if timetable.2.2%}<a href="/changeslot/{{ timetable.2.2.slot}} "> Batch : {{timetable.2.2.batch}} <br> Subject : {{timetable.2.2.subject}}</a>{%endif%}</td>
+                                    <td>{% if timetable.2.3%}<a href="/changeslot/{{ timetable.2.3.slot}} "> Batch : {{timetable.2.3.batch}} <br> Subject : {{timetable.2.3.subject}}</a>{%endif%}</td>
+                                    <td>{% if timetable.2.4%}<a href="/changeslot/{{ timetable.2.4.slot}} "> Batch : {{timetable.2.4.batch}} <br> Subject : {{timetable.2.4.subject}}</a>{%endif%}</td>
+                                    <td>{% if timetable.2.5%}<a href="/changeslot/{{ timetable.2.5.slot}} "> Batch : {{timetable.2.5.batch}} <br> Subject : {{timetable.2.5.subject}}</a>{%endif%}</td>
                                 </tr>
                                 <tr>
-                                    <td><a href="/changeslot/{{ timetable.3.0.slot}} "> {{timetable.3.0.batch}} {{timetable.3.0.subject}}</a></td>
-                                    <td><a href="/changeslot/{{ timetable.3.1.slot}} "> {{timetable.3.1.batch}} {{timetable.3.1.subject}}</a></td>
-                                    <td><a href="/changeslot/{{ timetable.3.2.slot}} "> {{timetable.3.2.batch}} {{timetable.3.2.subject}}</a></td>
-                                    <td><a href="/changeslot/{{ timetable.3.3.slot}} "> {{timetable.3.3.batch}} {{timetable.3.3.subject}}</a></td>
-                                    <td><a href="/changeslot/{{ timetable.3.4.slot}} "> {{timetable.3.4.batch}} {{timetable.3.4.subject}}</a></td>
-                                    <td><a href="/changeslot/{{ timetable.3.5.slot}} "> {{timetable.3.5.batch}} {{timetable.3.5.subject}}</a></td>
+                                    <td>{% if timetable.3.0%}<a href="/changeslot/{{ timetable.3.0.slot}} "> Batch : {{timetable.3.0.batch}} <br> Subject : {{timetable.3.0.subject}}</a>{%endif%}</td>
+                                    <td>{% if timetable.3.1%}<a href="/changeslot/{{ timetable.3.1.slot}} "> Batch : {{timetable.3.1.batch}} <br> Subject : {{timetable.3.1.subject}}</a>{%endif%}</td>
+                                    <td>{% if timetable.3.2%}<a href="/changeslot/{{ timetable.3.2.slot}} "> Batch : {{timetable.3.2.batch}} <br> Subject : {{timetable.3.2.subject}}</a>{%endif%}</td>
+                                    <td>{% if timetable.3.3%}<a href="/changeslot/{{ timetable.3.3.slot}} "> Batch : {{timetable.3.3.batch}} <br> Subject : {{timetable.3.3.subject}}</a>{%endif%}</td>
+                                    <td>{% if timetable.3.4%}<a href="/changeslot/{{ timetable.3.4.slot}} "> Batch : {{timetable.3.4.batch}} <br> Subject : {{timetable.3.4.subject}}</a>{%endif%}</td>
+                                    <td>{% if timetable.3.5%}<a href="/changeslot/{{ timetable.3.5.slot}} "> Batch : {{timetable.3.5.batch}} <br> Subject : {{timetable.3.5.subject}}</a>{%endif%}</td>
                                 </tr>
 
                             </tbody>
