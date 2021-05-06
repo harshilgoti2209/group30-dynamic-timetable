@@ -105,27 +105,6 @@ class GA:
         argsorted = fitnesses.argsort()
         return self.chroms[argsorted[-1]]
 
-
-def test_schedule(cube, genes):
-
-    cover = np.zeros(len(genes))
-
-    for i in cube:
-        for j in i:
-            for k in j:
-                if k != -1:
-                    if cover[k] == 0:
-                        cover[k] = 1
-                    else:
-                        assert False, 'repeated twice'
-
-    for i in cover:
-        if i == 0:
-            assert False, 'someone left out'
-
-    print ('Schedule is valid')
-
-
 def timetable(s):
     p = 20
     days = 6
