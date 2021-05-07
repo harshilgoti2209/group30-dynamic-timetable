@@ -76,7 +76,7 @@
                 <h4 class='title'> Or </h4>
                 <div class="row register-form">
                     <div class="col-md-8 offset-md-2">
-                        <form method="post" action="/studentcsv/" enctype="multipart/form-data" style="position: absolute; top: 15%; left: 35%; ">
+                        <form method="post" action="/studentcsv/" enctype="multipart/form-data" style="position: absolute; top: 15%; left: 35%; " >
                             <h3>Insert Your CSV file here...</h3>
                             <br> {% csrf_token %}
                             <input type="file" name="data">
@@ -1386,6 +1386,13 @@
     <script src="https://cdn.datatables.net/1.10.15/js/dataTables.bootstrap.min.js"></script>
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
     <!-- <script src="{% static 'main/dean_asset/js/Profile-Edit-Form.js'%}"></script> -->
+    <script>
+        '{% if messages %}'
+            '{% for m in messages %}'
+                alert('{{m}}')
+            '{% endfor%}'
+        '{%endif%}';
+    </script>
 </body>
 
 </html>
