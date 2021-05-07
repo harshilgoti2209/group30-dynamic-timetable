@@ -249,6 +249,13 @@
     <script src="https://cdn.datatables.net/1.10.15/js/dataTables.bootstrap.min.js"></script>
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
     <!-- <script src="{% static 'main/student_assets/js/Profile-Edit-Form.js'%}"></script> -->
+    <script>
+        '{% if messages %}'
+            '{% for m in messages %}'
+                alert('{{m}}')
+            '{% endfor%}'
+        '{%endif%}'
+    </script>
 </body>
 
 </html>

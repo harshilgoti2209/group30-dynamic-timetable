@@ -35,5 +35,12 @@
     <script src="{% static 'main/login_assets/bootstrap/js/bootstrap.min.js' %}"></script>
     <script src="{% static 'main/login_assets/js/bs-init.js' %}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        '{% if messages %}'
+          '{% for m in messages %}'
+            alert('{{m}}')
+          '{% endfor%}'
+        '{%endif%}'
+    </script>
 </body>
 </html>
