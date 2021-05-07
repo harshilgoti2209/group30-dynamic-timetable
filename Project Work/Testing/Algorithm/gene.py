@@ -10,9 +10,3 @@ class Gene :
         
     def display(self) : 
         print(self.slot_id, self.prof_name, self.prof_id, self.subject, self.subject_id, self.batch, self.batch_id)
-
-    def toStudentString(self):
-        """
-            Returns the string that represents the students who are taking course representing this gene
-        """
-        return "{0}th year, section {1}, {2} {3}".format(self.batch, self.batch_id, self.batch, self.batch_id)

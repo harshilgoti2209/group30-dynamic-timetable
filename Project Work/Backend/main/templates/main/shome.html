@@ -5,7 +5,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Home</title>
+    <title>Student</title>
     <link rel="stylesheet" href="{% static 'main/student_assets/bootstrap/css/bootstrap.min.css'%}">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alegreya+Sans+SC">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Encode+Sans">
@@ -22,7 +22,7 @@
     <link rel="stylesheet" href="{% static 'main/student_assets/css/Profile-Edit-Form.css'%}">
     <link rel="stylesheet" href="{% static 'main/student_assets/css/styles.css'%}">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-    <link rel="shortcut icon" href="{% static 'main/student_assets/img/timetable.png'%}" type="image/x-icon">
+    <link rel="shortcut icon" href="{% static 'main/assets/img/timetable.png'%}" type="image/x-icon">
 </head>
 
 <body>
@@ -110,7 +110,7 @@
                                             <td>
                                                 <strong>
                                                     <span class="glyphicon glyphicon-calendar text-primary"></span>
-                                                    created
+                                                    Created
                                                 </strong>
                                             </td>
                                             <td class="text-primary">
@@ -129,7 +129,7 @@
                 <div class="container d-md-flex align-items-center justify-content-center">
                     <div class="row">
                         <div class="col" style="margin-top:5rem;">
-                            <p style="font-size:50px;font-family:Encode Sans Expanded;color:#495057;padding-top:250px; float:left;">
+                            <p style="font-size:50px;font-family:Encode Sans Expanded;color:#495057;padding-top:200px; float:left;">
                                 Welcome to Dynamic Time-Table System</p>
                         </div>
                         <div class="col" style="margin-top:10rem;">
@@ -226,36 +226,36 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>{{timetable.0.0.prof}} {{timetable.0.0.subject}}</td>
-                                    <td>{{timetable.0.1.prof}} {{timetable.0.1.subject}}</td>
-                                    <td>{{timetable.0.2.prof}} {{timetable.0.2.subject}}</td>
-                                    <td>{{timetable.0.3.prof}} {{timetable.0.3.subject}}</td>
-                                    <td>{{timetable.0.4.prof}} {{timetable.0.4.subject}}</td>
-                                    <td>{{timetable.0.5.prof}} {{timetable.0.5.subject}}</td>
+                                    <td>{% if timetable.0.0%}Professor : {{timetable.0.0.prof}} <br> Subject: {{timetable.0.0.subject}}{%endif%}</td>
+                                    <td>{% if timetable.0.1%}Professor :{{timetable.0.1.prof}} <br> Subject: {{timetable.0.1.subject}}{%endif%}</td>
+                                    <td>{% if timetable.0.2%}Professor :{{timetable.0.2.prof}} <br> Subject: {{timetable.0.2.subject}}{%endif%}</td>
+                                    <td>{% if timetable.0.3%}Professor :{{timetable.0.3.prof}} <br> Subject: {{timetable.0.3.subject}}{%endif%}</td>
+                                    <td>{% if timetable.0.4%}Professor :{{timetable.0.4.prof}} <br> Subject: {{timetable.0.4.subject}}{%endif%}</td>
+                                    <td>{% if timetable.0.5%}Professor :{{timetable.0.5.prof}} <br> Subject: {{timetable.0.5.subject}}{%endif%}</td>
                                 </tr>
                                 <tr>
-                                    <td>{{timetable.1.0.prof}} {{timetable.1.0.subject}}</td>
-                                    <td>{{timetable.1.1.prof}} {{timetable.1.1.subject}}</td>
-                                    <td>{{timetable.1.2.prof}} {{timetable.1.2.subject}}</td>
-                                    <td>{{timetable.1.3.prof}} {{timetable.1.3.subject}}</td>
-                                    <td>{{timetable.1.4.prof}} {{timetable.1.4.subject}}</td>
-                                    <td>{{timetable.1.5.prof}} {{timetable.1.5.subject}}</td>
+                                    <td>{% if timetable.1.0%}Professor :{{timetable.1.0.prof}} <br> Subject: {{timetable.1.0.subject}}{%endif%}</td>
+                                    <td>{% if timetable.1.1%}Professor :{{timetable.1.1.prof}} <br> Subject: {{timetable.1.1.subject}}{%endif%}</td>
+                                    <td>{% if timetable.1.2%}Professor :{{timetable.1.2.prof}} <br> Subject: {{timetable.1.2.subject}}{%endif%}</td>
+                                    <td>{% if timetable.1.3%}Professor :{{timetable.1.3.prof}} <br> Subject: {{timetable.1.3.subject}}{%endif%}</td>
+                                    <td>{% if timetable.1.4%}Professor :{{timetable.1.4.prof}} <br> Subject: {{timetable.1.4.subject}}{%endif%}</td>
+                                    <td>{% if timetable.1.5%}Professor :{{timetable.1.5.prof}} <br> Subject: {{timetable.1.5.subject}}{%endif%}</td>
                                 </tr>
                                 <tr>
-                                    <td>{{timetable.2.0.prof}} {{timetable.2.0.subject}}</td>
-                                    <td>{{timetable.2.1.prof}} {{timetable.2.1.subject}}</td>
-                                    <td>{{timetable.2.2.prof}} {{timetable.2.2.subject}}</td>
-                                    <td>{{timetable.2.3.prof}} {{timetable.2.3.subject}}</td>
-                                    <td>{{timetable.2.4.prof}} {{timetable.2.4.subject}}</td>
-                                    <td>{{timetable.2.5.prof}} {{timetable.2.5.subject}}</td>
+                                    <td>{% if timetable.2.0%}Professor :{{timetable.2.0.prof}} <br> Subject: {{timetable.2.0.subject}}{%endif%}</td>
+                                    <td>{% if timetable.2.1%}Professor :{{timetable.2.1.prof}} <br> Subject: {{timetable.2.1.subject}}{%endif%}</td>
+                                    <td>{% if timetable.2.2%}Professor :{{timetable.2.2.prof}} <br> Subject: {{timetable.2.2.subject}}{%endif%}</td>
+                                    <td>{% if timetable.2.3%}Professor :{{timetable.2.3.prof}} <br> Subject: {{timetable.2.3.subject}}{%endif%}</td>
+                                    <td>{% if timetable.2.4%}Professor :{{timetable.2.4.prof}} <br> Subject: {{timetable.2.4.subject}}{%endif%}</td>
+                                    <td>{% if timetable.2.5%}Professor :{{timetable.2.5.prof}} <br> Subject: {{timetable.2.5.subject}}{%endif%}</td>
                                 </tr>
                                 <tr>
-                                    <td>{{timetable.3.0.prof}} {{timetable.3.0.subject}}</td>
-                                    <td>{{timetable.3.1.prof}} {{timetable.3.1.subject}}</td>
-                                    <td>{{timetable.3.2.prof}} {{timetable.3.2.subject}}</td>
-                                    <td>{{timetable.3.3.prof}} {{timetable.3.3.subject}}</td>
-                                    <td>{{timetable.3.4.prof}} {{timetable.3.4.subject}}</td>
-                                    <td>{{timetable.3.5.prof}} {{timetable.3.5.subject}}</td>
+                                    <td>{% if timetable.3.0%}Professor :{{timetable.3.0.prof}} <br> Subject: {{timetable.3.0.subject}}{%endif%}</td>
+                                    <td>{% if timetable.3.1%}Professor :{{timetable.3.1.prof}} <br> Subject: {{timetable.3.1.subject}}{%endif%}</td>
+                                    <td>{% if timetable.3.2%}Professor :{{timetable.3.2.prof}} <br> Subject: {{timetable.3.2.subject}}{%endif%}</td>
+                                    <td>{% if timetable.3.3%}Professor :{{timetable.3.3.prof}} <br> Subject: {{timetable.3.3.subject}}{%endif%}</td>
+                                    <td>{% if timetable.3.4%}Professor :{{timetable.3.4.prof}} <br> Subject: {{timetable.3.4.subject}}{%endif%}</td>
+                                    <td>{% if timetable.3.5%}Professor :{{timetable.3.5.prof}} <br> Subject: {{timetable.3.5.subject}}{%endif%}</td>
                                 </tr>
 
                             </tbody>

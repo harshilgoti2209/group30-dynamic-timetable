@@ -40,7 +40,7 @@ def login(request):
 ##working
 def logout(request):
     logout_(request)
-    return redirect('login')
+    return redirect('home')
 
 ##working
 def gtimetable(request):
@@ -198,7 +198,24 @@ def phome(request):
 
 def ahome(request):
     if request.user.is_superuser:
-        return render(request,'main/ahome.html')
+        final=[]
+        for k in range(0,24):
+            dic={}
+            lis=[]
+            for i in range(0,4):
+                li=[]
+                for j in range(0,6):
+                    li.append(dic)
+                lis.append(li)
+            final.append(lis)
+        timetable=Algo.objects.filter()
+        for item in timetable:
+            final[item.batch_id][item.time][item.day]={
+                'subject':item.subject,
+                'prof':item.prof_name,
+            }
+        form2=UserSignUpForm()
+        return render(request,'main/ahome.html',{'timetable':final,'fm2':form2})
     else:
         return redirect('login')
 
@@ -225,11 +242,29 @@ def signup(request):
                 messages.success(request,'success!!!')
         else:
             fm=UserSignUpForm()
-        return render(request,'main/signup.html',{'form':fm})
+        return redirect('login')
     else:
         return redirect('login')   
 
-
+def studentcsv(request):
+    if request.method=='POST':
+        csv_file=request.FILES['data']   #csv file read code
+        data_set = csv_file.read().decode('UTF-8')
+        io_string=io.StringIO(data_set)
+        next(io_string)
+        for column in csv.reader(io_string, delimiter=',', quotechar='|'):
+            x=Account.objects.filter(username=column[0])
+            y=Account.objects.filter(email=column[1])
+            if x.count() > 0 or y.count()>0 :
+                messages.info(request,f'{column[0]} username or {column[1]} email is already exist') 
+            else:
+                password=make_password(column[2])
+                fm=Account(username=column[0], email=column[1] , password=password , batch=column[3])
+                fm.save() 
+        # messages.info(request,'success')
+        return redirect('login')
+    else:
+        return redirect('login')
 
 # def profcsv(request):
 #     if request.method == 'POST':
