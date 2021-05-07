@@ -18,7 +18,6 @@ class profileform(forms.ModelForm):
 class profform(forms.ModelForm):
     username=forms.CharField(widget=forms.TextInput(attrs={'class':'form-control'}))
     email=forms.CharField(widget=forms.EmailInput(attrs={'class':'form-control'}))
-    # batch=forms.CharField(widget=forms.NumberInput(attrs={'class':'form-control'}))
     class Meta:
         model=Account
         fields=('username','email',)     
@@ -41,10 +40,6 @@ class changePasswordForm(PasswordChangeForm):
         model:Account
         fields=('old_password','new_password1','new_password2')
 
-class Editnotes(forms.ModelForm):
-    class Meta:
-        model=Notes
-        fields=('notes',)
 class Editnotes(forms.ModelForm):
     notes=forms.CharField(max_length=2024,widget=forms.Textarea(attrs={'placeholder':'Enter notes here','class':'form-control','id':'search'}))
     class Meta:

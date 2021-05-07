@@ -9,12 +9,9 @@ from .forms import loginForm,profform,changePasswordForm
 import csv,io
 from .timetable_generator_V2 import *
 
-
-##working 
 def home(request):
     return render(request,'main/home.html')
 
-##working
 def login(request):
     if request.user.is_authenticated:
         if request.user.is_prof:
@@ -37,12 +34,10 @@ def login(request):
             fm=loginForm()
         return render(request,'main/login.html',{'form':fm})
 
-##working
 def logout(request):
     logout_(request)
     return redirect('home')
 
-##working
 def shome(request):
     if request.user.is_authenticated and request.user.is_prof==False and request.user.is_superuser==False:
         account=Account.objects.get(pk=request.user.id)
@@ -66,7 +61,6 @@ def shome(request):
     else:
         return redirect('login')  
 
-##working
 def seditprofile(request):
     if not request.user.is_authenticated: 
         messages.info(request,'You can not edit someone profile')
@@ -214,7 +208,6 @@ def ahome(request):
     else:
         return redirect('login')
 
-##working
 def signup(request):
     if request.user.is_superuser==True:
         if request.method=="POST":
@@ -228,10 +221,9 @@ def signup(request):
     else:
         return redirect('login')   
 
-##working
 def studentcsv(request):
     if request.method=='POST':
-        csv_file=request.FILES['data']   #csv file read code
+        csv_file=request.FILES['data']   
         data_set = csv_file.read().decode('UTF-8')
         io_string=io.StringIO(data_set)
         next(io_string)
@@ -244,12 +236,11 @@ def studentcsv(request):
                 password=make_password(column[2])
                 fm=Account(username=column[0], email=column[1] , password=password , batch=column[3])
                 fm.save() 
-        # messages.info(request,'success')
         return redirect('login')
     else:
         return redirect('login')
 
-##working
+
 def gtimetable(request):
     if request.method=='POST':
         obj=Algo.objects.all()
@@ -330,38 +321,4 @@ def pprofile(request,prof_id):
             if item.subject not in sub:
                 sub.append(item.subject)
         return render(request,'main/pprofile.html',{'data':account,'subject':sub})
- 
-
-
-# def profcsv(request):
-#     if request.method == 'POST':
-#         for key,value in request.FILES:
-#             print(key)
-#         # doc = request.FILES #returns a dict-like object
-#         # doc_name = doc['filename']
-#         print('hello')
-#         return redirect('login')
-#     else:
-#         return redirect('login') 
-              
-def addprof(request):
-    pass
-    # if  request.user.is_superuser==True:
-    #     if request.method=="POST":
-    #         fm=ProfSignUpForm(request.POST)
-    #         if fm.is_valid():
-    #             name=fm.cleaned_data['username']
-    #             password=fm.cleaned_data['password1']
-    #             email=fm.cleaned_data['email']
-    #             password=make_password(password)
-    #             prof=Account(username=name,password=password,email=email,is_prof=True)
-    #             prof.save()
-    #             messages.success(request,'success!!!')
-    #             fm=ProfSignUpForm()
-    #     else:
-    #         fm=ProfSignUpForm()
-    #     return render(request,'main/profsignup.html',{'form':fm})
-    # else:
-    #     return redirect('login')
-
-
+  
