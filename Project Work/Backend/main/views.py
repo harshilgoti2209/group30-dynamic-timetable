@@ -94,6 +94,7 @@ def phome(request):
                 'batch':item.batch,
                 'subject':item.subject,
                 'slot':item.slot_id,
+                'Batch':item.batch_id+1,
             }
             if item.subject not in sub:
                 sub.append(item.subject)
