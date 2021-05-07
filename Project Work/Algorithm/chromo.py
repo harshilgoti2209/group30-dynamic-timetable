@@ -24,7 +24,13 @@ class Chromosome:
 
     def calcFitness(self, timetable, genes, num_Batch, noClassInDay, noDays):
         fitness = 0
-        vis_prof = -1 * np.ones(100)
+
+        total_prof = 0
+
+        for i in genes :
+            total_prof = max(total_prof,i.prof_id + 1)
+
+        vis_prof = -1 * np.ones(total_prof)
         vis_batch = -1 * np.ones(num_Batch)
 
         for i in range(noClassInDay):
@@ -51,7 +57,7 @@ class Chromosome:
 
         for j in range(noDays):
 
-            prof_count = np.zeros(100)
+            prof_count = np.zeros(total_prof)
 
             for i in range(noClassInDay):
                 for k in range(num_Batch):
@@ -74,8 +80,13 @@ class Chromosome:
 
     def mutation(self, rate, timetable, genes, num_Batch, noClassInDay, noDays):
 
+        total_prof = 0
+
+        for i in genes :
+            total_prof = max(total_prof,i.prof_id + 1)
+
         # Instead of randomly assigning i and j, find the two which are clashing and then swap those two.
-        vis_prof = -1 * np.ones(100)
+        vis_prof = -1 * np.ones(total_prof)
         vis_batch = -1 * np.ones(num_Batch)
 
         s1 = -1
@@ -109,12 +120,17 @@ class Chromosome:
 
     def mutation_load(self, rate, timetable, genes, num_Batch, noClassInDay, noDays):
 
+        total_prof = 0
+
+        for i in genes :
+            total_prof = max(total_prof,i.prof_id + 1)
+
         s1 = s2 = -1
         # For each prof and batch, we want to know details of their lecture
-        prof_slot = -1 * np.ones((100, noDays, noClassInDay), dtype=np.int32)
+        prof_slot = -1 * np.ones((total_prof, noDays, noClassInDay), dtype=np.int32)
         batch_slot = -1 * \
             np.ones((num_Batch, noDays, noClassInDay), dtype=np.int32)
-        prof_count = np.zeros((100, noDays), dtype=np.int32)
+        prof_count = np.zeros((total_prof, noDays), dtype=np.int32)
 
         for i in range(noClassInDay):
             for j in range(noDays):
@@ -128,7 +144,7 @@ class Chromosome:
                         prof_count[genes[slot].prof_id][j] += 1
 
         # Now we iterate over prof and day , try to rectify the load
-        for i in range(100):
+        for i in range(total_prof):
             for j in range(noDays):
                 if prof_count[i][j] > 2:
                     for kk in range(noClassInDay):
@@ -145,7 +161,7 @@ class Chromosome:
                                         break
 
                                     if prof_count[i][k] < 2:
-
+                                        
                                         for l in range(noClassInDay):
 
                                             # for this slot check if we can swap it with current slot
@@ -160,8 +176,7 @@ class Chromosome:
 
                                                     # Index 1 : find index of id_to_swap in timetabe
                                                     # Index 2 : find index of -1 in timetable for given day and time
-                                                    s1 = np.where(
-                                                        timetable == id_to_swap)[0]
+                                                    s1 = np.where(timetable == id_to_swap)[0][0]
 
                                                     for z in range(num_Batch):
                                                         temp = z*noClassInDay*noDays + l*noDays + k
@@ -169,10 +184,16 @@ class Chromosome:
                                                         if timetable[temp] == -1:
                                                             s2 = temp
                                                             break
-
-                                                    self.timetable = self.mut(
-                                                        self.timetable, s1, s2)
+                                    
+                                                    self.timetable = self.mut(self.timetable, s1, s2)
                                                     new_id = s2
+
+                                                    prof_slot[i][j][kk] -= 1
+                                                    prof_slot[i][k][l] += 1
+                                                    prof_count[i][j] -= 1
+                                                    prof_slot[i][k] += 1
+                                                    batch_slot[genes[id_to_swap].batch_id][j][kk] -= 1
+                                                    batch_slot[genes[id_to_swap].batch_id][k][l] += 1
 
                                                 elif prof_slot[genes[other_slot].prof_id][j][kk] == -1:
                                                     # #We can change the timing of that prof,
@@ -182,12 +203,17 @@ class Chromosome:
 
                                                     # #Index 1 : find index of id_to_swap in timetable
                                                     # #Index 2 : find index of other_slot in timetable
-                                                    # s1 =  np.where(timetable==id_to_swap)[0]
-                                                    # s2 =  np.where(timetable==other_slot)[0]
-                                                    # self.timetable = self.mut(self.timetable, s1, s2)
-                                                    # new_id = s2
-                                                    xx = 1
+                                                    s1 =  np.where(timetable==id_to_swap)[0][0]
+                                                    s2 =  np.where(timetable==other_slot)[0][0]
+                                                    self.timetable = self.mut(self.timetable, s1, s2) 
+                                                    new_id = s2
 
+                                                    prof_slot[i][j][kk] -= 1
+                                                    prof_slot[i][k][l] += 1
+                                                    prof_count[i][j] -= 1
+                                                    prof_slot[i][k] += 1
+                                                    batch_slot[genes[id_to_swap].batch_id][j][kk] -= 1
+                                                    batch_slot[genes[id_to_swap].batch_id][k][l] += 1
     def mut(self, timetable, i, j):
         temp = timetable[i]
         timetable[i] = timetable[j]
@@ -204,8 +230,13 @@ class Chromosome:
         selected_slot = np.zeros(
             (noDays * noClassInDay * num_Batch), dtype=np.int32)
 
+        total_prof = 0
+
+        for i in genes :
+            total_prof = max(total_prof,i.prof_id + 1)
+
         # Selection without creating clash
-        vis_prof = -1 * np.ones(100)
+        vis_prof = -1 * np.ones(total_prof)
         vis_batch = -1 * np.ones(num_Batch)
 
         for i in range(noClassInDay):
