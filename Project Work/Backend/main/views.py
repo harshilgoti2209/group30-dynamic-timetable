@@ -53,7 +53,7 @@ def shome(request):
         for item in timetable:
             lis[item.time][item.day]={
                 'prof':item.prof_name,
-                'Prof':item.prof_id,
+                'Prof':item.email,
                 'subject':item.subject,
                 'slot':item.slot_id,
             }
@@ -62,8 +62,8 @@ def shome(request):
         return redirect('login')  
 
 def seditprofile(request):
-    if not request.user.is_authenticated: 
-        messages.info(request,'You can not edit someone profile')
+    if not request.user.is_authenticated:
+        messages.info(request,'Login first')
         return redirect('login')
     else:
         account=Account.objects.get(pk=request.user.id)
@@ -73,7 +73,7 @@ def seditprofile(request):
                 fm.save()
                 messages.success(request,'Your profile is edited successfully!!!')
                 return redirect('login')
-            messages.info(request,f'username or email is already exist')
+            messages.info(request,'email is already exist')
             return redirect('login')  
 
 def phome(request):
@@ -94,6 +94,7 @@ def phome(request):
                 'batch':item.batch,
                 'subject':item.subject,
                 'slot':item.slot_id,
+                'Batch':item.batch_id+1,
             }
             if item.subject not in sub:
                 sub.append(item.subject)
@@ -103,7 +104,7 @@ def phome(request):
 
 def peditprofile(request):
     if not request.user.is_prof: 
-        messages.info(request,'You can not edit someone profile')
+        # messages.info(request,'You can not edit someone profile')
         return redirect('login')
     else:
         if request.method=="POST":
@@ -113,7 +114,7 @@ def peditprofile(request):
                 fm.save()
                 messages.success(request,'Your profile is edited successfully!!!')
                 return redirect('login')
-            messages.info(request,f'username or email is already exist')
+            messages.info(request,'Email is already exist')
             return redirect('login')  
         else:
             return redirect('login')
@@ -180,6 +181,7 @@ def finalchangeslot(request,slot,time,day):
         obj.time=int(time)
         obj.day=int(day)
         obj.save()
+        messages.info(request,'Your slot changed successfully!')
         return redirect('login')
     else:
         return redirect('login')   
@@ -259,6 +261,7 @@ def gtimetable(request):
                         if Account.objects.filter(email=genes[cube[k,i,j]].email).count()==0:
                             ob=Account(username= genes[cube[k,i,j]].prof_name,email=genes[cube[k,i,j]].email,password=make_password('qwer@123'),is_prof=True, batch=genes[cube[k,i,j]].prof_id)
                             ob.save()
+        messages.info(request,'Your timetable has generated')
         return redirect('login')
     else:
         return redirect('login')
@@ -291,6 +294,7 @@ def changepassword(request):
             if fm.is_valid():
                 fm.save()
                 update_session_auth_hash(request=request,user=request.user)
+                messages.success(request,'Your password changed successfully')
                 return redirect('login')
         else:
             fm=changePasswordForm(user=request.user)
@@ -302,7 +306,7 @@ def pprofile(request,prof_id):
     if not request.user.is_authenticated:
         return redirect('login')
     else:
-        account=Account.objects.get(batch=int(prof_id))
+        account=Account.objects.get(email=prof_id)
         dic={}
         lis=[]
         for i in range(0,4):
