@@ -1,6 +1,6 @@
 from .models import Account,Notes
 from django import forms
-from django.contrib.auth.forms import UserCreationForm,AuthenticationForm
+from django.contrib.auth.forms import UserCreationForm,AuthenticationForm,PasswordChangeForm
 
 class UserSignUpForm(UserCreationForm):
     class Meta:
@@ -13,7 +13,15 @@ class profileform(forms.ModelForm):
     batch=forms.CharField(widget=forms.NumberInput(attrs={'class':'form-control'}))
     class Meta:
         model=Account
-        fields=('username','email','batch',)   
+        fields=('username','email','batch',)
+
+class profform(forms.ModelForm):
+    username=forms.CharField(widget=forms.TextInput(attrs={'class':'form-control'}))
+    email=forms.CharField(widget=forms.EmailInput(attrs={'class':'form-control'}))
+    # batch=forms.CharField(widget=forms.NumberInput(attrs={'class':'form-control'}))
+    class Meta:
+        model=Account
+        fields=('username','email',)     
 
 class loginForm( AuthenticationForm):
     username=forms.CharField(widget=forms.EmailInput(attrs={ 'placeholder':'Email', 'class':'form-control'}))
@@ -27,6 +35,11 @@ class ProfSignUpForm(UserCreationForm):
     class Meta:
         model=Account
         fields=('username','email','password1','password2')
+
+class changePasswordForm(PasswordChangeForm):
+    class Meta:
+        model:Account
+        fields=('old_password','new_password1','new_password2')
 
 class Editnotes(forms.ModelForm):
     class Meta:

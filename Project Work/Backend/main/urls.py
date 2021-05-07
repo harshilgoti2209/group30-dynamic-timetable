@@ -10,12 +10,14 @@ urlpatterns = [
 
     # path('sprofile/<str:id>',sprofile,name='sprofile'),   #done
     path('seditprofile/',seditprofile,name='seditprofile'),   #done
+    path('peditprofile/',peditprofile,name='peditprofile'),   #done
     
-    path('viewtimetable/',viewtimetable,name='viewtimetable'),   #done
+    # path('viewtimetable/',viewtimetable,name='viewtimetable'),   #done
 
     path('phome/',phome,name='phome'),  #done
 
     path('ahome/',ahome,name='ahome'),   #done
+    path('pprofile/<str:prof_id>',pprofile,name='pprofile'),   #done
     
     path('changepassword/',changepassword,name='changepassword'),   #done
     
@@ -26,7 +28,7 @@ urlpatterns = [
       
     path('addprof/',addprof,name='addprof'),  # baki
     
-    path('editnotes/<str:id>/<str:slotid>',editnotes,name='editnotes'),
+    path('editnotes/<str:slotid>',editnotes,name='editnotes'),
     path('changeslot/<str:slot>',changeslot,name='changeslot'),
 
     path('finalchangeslot/<str:slot>/<str:time>/<str:day>',finalchangeslot,name='finalchangeslot'),
