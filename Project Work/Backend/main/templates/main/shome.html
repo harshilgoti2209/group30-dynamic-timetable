@@ -140,36 +140,6 @@
                 </div>
             </div>
 
-            <!-- <div class="tab-pane" role="tabpanel" id="tab-6">
-                <div class="row register-form">
-                    <div class="col-md-8 offset-md-2">
-                        <form class="custom-form">
-                            <h1>Add Batch</h1>
-                            <div class="form-row form-group">
-                                <div class="col-sm-4 label-column"><label class="col-form-label" for="name-input-field">Year&nbsp;</label></div>
-                                <div class="col-sm-6 input-column"><input class="form-control" type="text"></div>
-                            </div>
-                            <div class="form-row form-group">
-                                <div class="col-sm-4 label-column"><label class="col-form-label" for="email-input-field">Number of Subject&nbsp;</label></div>
-                                <div class="col-sm-6 input-column"><input class="form-control" type="email"></div>
-                            </div>
-                            <div class="form-row form-group">
-                                <div class="col-sm-4 label-column"><label class="col-form-label" for="dropdown-input-field">Subjects&nbsp;</label></div>
-                                <div class="col-sm-4 input-column">
-                                    <div class="dropdown"><button class="btn btn-light dropdown-toggle" aria-expanded="false" data-toggle="dropdown" type="button">Dropdown </button>
-                                        <div class="dropdown-menu"><a class="dropdown-item" href="#">First Item</a><a class="dropdown-item" href="#">Second Item</a><a class="dropdown-item" href="#">Third Item</a></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-row form-group">
-                                <div class="col-sm-4 label-column"><label class="col-form-label" for="email-input-field">Batch Name&nbsp;</label></div>
-                                <div class="col-sm-6 input-column"><input class="form-control" type="email"></div>
-                            </div><button class="btn btn-light submit-button" type="button">ADD</button>
-                        </form>
-                    </div>
-                </div>
-            </div> -->
-
             <div class="tab-pane" role="tabpanel" id="tab-4">
                 <div class="container profile profile-view" id="profile">
                     <div class="row">
@@ -178,7 +148,7 @@
                                         aria-hidden="true">×</span></button><span>Profile save with success</span></div>
                         </div>
                     </div>
-                    <a href="{% url 'changepassword' %}"><button>change password</button></a>
+                    
                     <form method="POST" action="/seditprofile/">
                         {% csrf_token %}
                         <div class="form-row profile-row">
@@ -200,7 +170,7 @@
                                 {% endfor%}
                                 <!-- <div class="form-group"><label>Email</label><input class="form-control" type="email" autocomplete="off" required="" name="email" value={{data.email}}></div> -->
                                 <div class="form-row">
-                                    <div class="col-md-12 content-right">
+                                    <div class="col-md-12 content-center">
                                         <button class="btn btn-primary form-btn" type="submit">SAVE </button>
                                     </div>
                                 </div>
@@ -208,6 +178,7 @@
                             </div>
                         </div>
                     </form>
+                    <a href="{% url 'changepassword' %}" style="display: flex;justify-content:center;align-content:center;"><button class="btn btn-primary" >Change password</button></a>
                 </div>
             </div>
             <div class="tab-pane" role="tabpanel" id="tab-2">
@@ -228,37 +199,37 @@
                             <tbody>
                                 <tr>
                                     <td>{% if timetable.0.0%}<a href="/pprofile/{{timetable.0.0.Prof}}">Professor :{{timetable.0.0.prof}}</a> <br> <a href="/editnotes/{{timetable.0.0.slot}}">Subject: {{timetable.0.0.subject}}</a>{%endif%}</td>
-                                    <td>{% if timetable.0.1%}Professor :{{timetable.0.1.prof}} <br> Subject: {{timetable.0.1.subject}}{%endif%}</td>
-                                    <td>{% if timetable.0.2%}Professor :{{timetable.0.2.prof}} <br> Subject: {{timetable.0.2.subject}}{%endif%}</td>
-                                    <td>{% if timetable.0.3%}Professor :{{timetable.0.3.prof}} <br> Subject: {{timetable.0.3.subject}}{%endif%}</td>
-                                    <td>{% if timetable.0.4%}Professor :{{timetable.0.4.prof}} <br> Subject: {{timetable.0.4.subject}}{%endif%}</td>
-                                    <td>{% if timetable.0.5%}Professor :{{timetable.0.5.prof}} <br> Subject: {{timetable.0.5.subject}}{%endif%}</td>
+                                    <td>{% if timetable.0.1%}<a href="/pprofile/{{timetable.0.1.Prof}}">Professor :{{timetable.0.1.prof}}</a> <br> <a href="/editnotes/{{timetable.0.1.slot}}">Subject: {{timetable.0.1.subject}}</a>{%endif%}</td>
+                                    <td>{% if timetable.0.2%}<a href="/pprofile/{{timetable.0.2.Prof}}">Professor :{{timetable.0.2.prof}}</a> <br> <a href="/editnotes/{{timetable.0.2.slot}}">Subject: {{timetable.0.2.subject}}</a>{%endif%}</td>
+                                    <td>{% if timetable.0.3%}<a href="/pprofile/{{timetable.0.3.Prof}}">Professor :{{timetable.0.3.prof}}</a> <br> <a href="/editnotes/{{timetable.0.3.slot}}">Subject: {{timetable.0.3.subject}}</a>{%endif%}</td>
+                                    <td>{% if timetable.0.4%}<a href="/pprofile/{{timetable.0.4.Prof}}">Professor :{{timetable.0.4.prof}}</a> <br> <a href="/editnotes/{{timetable.0.4.slot}}">Subject: {{timetable.0.4.subject}}</a>{%endif%}</td>
+                                    <td>{% if timetable.0.5%}<a href="/pprofile/{{timetable.0.5.Prof}}">Professor :{{timetable.0.5.prof}}</a> <br> <a href="/editnotes/{{timetable.0.5.slot}}">Subject: {{timetable.0.5.subject}}</a>{%endif%}</td>
                                 </tr>
                                 <tr>
-                                    <td>{% if timetable.1.0%}Professor :{{timetable.1.0.prof}} <br> Subject: {{timetable.1.0.subject}}{%endif%}</td>
-                                    <td>{% if timetable.1.1%}Professor :{{timetable.1.1.prof}} <br> Subject: {{timetable.1.1.subject}}{%endif%}</td>
-                                    <td>{% if timetable.1.2%}Professor :{{timetable.1.2.prof}} <br> Subject: {{timetable.1.2.subject}}{%endif%}</td>
-                                    <td>{% if timetable.1.3%}Professor :{{timetable.1.3.prof}} <br> Subject: {{timetable.1.3.subject}}{%endif%}</td>
-                                    <td>{% if timetable.1.4%}Professor :{{timetable.1.4.prof}} <br> Subject: {{timetable.1.4.subject}}{%endif%}</td>
-                                    <td>{% if timetable.1.5%}Professor :{{timetable.1.5.prof}} <br> Subject: {{timetable.1.5.subject}}{%endif%}</td>
+                                    <td>{% if timetable.1.0%}<a href="/pprofile/{{timetable.1.0.Prof}}">Professor :{{timetable.1.0.prof}}</a> <br> <a href="/editnotes/{{timetable.1.0.slot}}">Subject: {{timetable.1.0.subject}}</a>{%endif%}</td>
+                                    <td>{% if timetable.1.1%}<a href="/pprofile/{{timetable.1.1.Prof}}">Professor :{{timetable.1.1.prof}}</a> <br> <a href="/editnotes/{{timetable.1.1.slot}}">Subject: {{timetable.1.1.subject}}</a>{%endif%}</td>
+                                    <td>{% if timetable.1.2%}<a href="/pprofile/{{timetable.1.2.Prof}}">Professor :{{timetable.1.2.prof}}</a> <br> <a href="/editnotes/{{timetable.1.2.slot}}">Subject: {{timetable.1.2.subject}}</a>{%endif%}</td>
+                                    <td>{% if timetable.1.3%}<a href="/pprofile/{{timetable.1.3.Prof}}">Professor :{{timetable.1.3.prof}}</a> <br> <a href="/editnotes/{{timetable.1.3.slot}}">Subject: {{timetable.1.3.subject}}</a>{%endif%}</td>
+                                    <td>{% if timetable.1.4%}<a href="/pprofile/{{timetable.1.4.Prof}}">Professor :{{timetable.1.4.prof}}</a> <br> <a href="/editnotes/{{timetable.1.4.slot}}">Subject: {{timetable.1.4.subject}}</a>{%endif%}</td>
+                                    <td>{% if timetable.1.5%}<a href="/pprofile/{{timetable.1.5.Prof}}">Professor :{{timetable.1.5.prof}}</a> <br> <a href="/editnotes/{{timetable.1.5.slot}}">Subject: {{timetable.1.5.subject}}</a>{%endif%}</td>
                                 </tr>
                                 <tr>
-                                    <td>{% if timetable.2.0%}Professor :{{timetable.2.0.prof}} <br> Subject: {{timetable.2.0.subject}}{%endif%}</td>
-                                    <td>{% if timetable.2.1%}Professor :{{timetable.2.1.prof}} <br> Subject: {{timetable.2.1.subject}}{%endif%}</td>
-                                    <td>{% if timetable.2.2%}Professor :{{timetable.2.2.prof}} <br> Subject: {{timetable.2.2.subject}}{%endif%}</td>
-                                    <td>{% if timetable.2.3%}Professor :{{timetable.2.3.prof}} <br> Subject: {{timetable.2.3.subject}}{%endif%}</td>
-                                    <td>{% if timetable.2.4%}Professor :{{timetable.2.4.prof}} <br> Subject: {{timetable.2.4.subject}}{%endif%}</td>
-                                    <td>{% if timetable.2.5%}Professor :{{timetable.2.5.prof}} <br> Subject: {{timetable.2.5.subject}}{%endif%}</td>
+                                    <td>{% if timetable.2.0%}<a href="/pprofile/{{timetable.2.0.Prof}}">Professor :{{timetable.2.0.prof}}</a> <br> <a href="/editnotes/{{timetable.2.0.slot}}">Subject: {{timetable.2.0.subject}}</a>{%endif%}</td>
+                                    <td>{% if timetable.2.1%}<a href="/pprofile/{{timetable.2.1.Prof}}">Professor :{{timetable.2.1.prof}}</a> <br> <a href="/editnotes/{{timetable.2.1.slot}}">Subject: {{timetable.2.1.subject}}</a>{%endif%}</td>
+                                    <td>{% if timetable.2.2%}<a href="/pprofile/{{timetable.2.2.Prof}}">Professor :{{timetable.2.2.prof}}</a> <br> <a href="/editnotes/{{timetable.2.2.slot}}">Subject: {{timetable.2.2.subject}}</a>{%endif%}</td>
+                                    <td>{% if timetable.2.3%}<a href="/pprofile/{{timetable.2.3.Prof}}">Professor :{{timetable.2.3.prof}}</a> <br> <a href="/editnotes/{{timetable.2.3.slot}}">Subject: {{timetable.2.3.subject}}</a>{%endif%}</td>
+                                    <td>{% if timetable.2.4%}<a href="/pprofile/{{timetable.2.4.Prof}}">Professor :{{timetable.2.4.prof}}</a> <br> <a href="/editnotes/{{timetable.2.4.slot}}">Subject: {{timetable.2.4.subject}}</a>{%endif%}</td>
+                                    <td>{% if timetable.2.5%}<a href="/pprofile/{{timetable.2.5.Prof}}">Professor :{{timetable.2.5.prof}}</a> <br> <a href="/editnotes/{{timetable.2.5.slot}}">Subject: {{timetable.2.5.subject}}</a>{%endif%}</td>
+                                   
                                 </tr>
                                 <tr>
-                                    <td>{% if timetable.3.0%}Professor :{{timetable.3.0.prof}} <br> Subject: {{timetable.3.0.subject}}{%endif%}</td>
-                                    <td>{% if timetable.3.1%}Professor :{{timetable.3.1.prof}} <br> Subject: {{timetable.3.1.subject}}{%endif%}</td>
-                                    <td>{% if timetable.3.2%}Professor :{{timetable.3.2.prof}} <br> Subject: {{timetable.3.2.subject}}{%endif%}</td>
-                                    <td>{% if timetable.3.3%}Professor :{{timetable.3.3.prof}} <br> Subject: {{timetable.3.3.subject}}{%endif%}</td>
-                                    <td>{% if timetable.3.4%}Professor :{{timetable.3.4.prof}} <br> Subject: {{timetable.3.4.subject}}{%endif%}</td>
-                                    <td>{% if timetable.3.5%}Professor :{{timetable.3.5.prof}} <br> Subject: {{timetable.3.5.subject}}{%endif%}</td>
+                                    <td>{% if timetable.3.0%}<a href="/pprofile/{{timetable.3.0.Prof}}">Professor :{{timetable.3.0.prof}}</a> <br> <a href="/editnotes/{{timetable.3.0.slot}}">Subject: {{timetable.3.0.subject}}</a>{%endif%}</td>
+                                    <td>{% if timetable.3.1%}<a href="/pprofile/{{timetable.3.1.Prof}}">Professor :{{timetable.3.1.prof}}</a> <br> <a href="/editnotes/{{timetable.3.1.slot}}">Subject: {{timetable.3.1.subject}}</a>{%endif%}</td>
+                                    <td>{% if timetable.3.2%}<a href="/pprofile/{{timetable.3.2.Prof}}">Professor :{{timetable.3.2.prof}}</a> <br> <a href="/editnotes/{{timetable.3.2.slot}}">Subject: {{timetable.3.2.subject}}</a>{%endif%}</td>
+                                    <td>{% if timetable.3.3%}<a href="/pprofile/{{timetable.3.3.Prof}}">Professor :{{timetable.3.3.prof}}</a> <br> <a href="/editnotes/{{timetable.3.3.slot}}">Subject: {{timetable.3.3.subject}}</a>{%endif%}</td>
+                                    <td>{% if timetable.3.4%}<a href="/pprofile/{{timetable.3.4.Prof}}">Professor :{{timetable.3.4.prof}}</a> <br> <a href="/editnotes/{{timetable.3.4.slot}}">Subject: {{timetable.3.4.subject}}</a>{%endif%}</td>
+                                    <td>{% if timetable.3.5%}<a href="/pprofile/{{timetable.3.5.Prof}}">Professor :{{timetable.3.5.prof}}</a> <br> <a href="/editnotes/{{timetable.3.5.slot}}">Subject: {{timetable.3.5.subject}}</a>{%endif%}</td>
                                 </tr>
-
                             </tbody>
                         </table>
                     </div>
