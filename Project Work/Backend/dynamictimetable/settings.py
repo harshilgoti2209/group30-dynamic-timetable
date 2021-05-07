@@ -25,7 +25,7 @@ SECRET_KEY = 'y8xh4wb(ke^8=9mezbi4h&9g(^^c43_v)9uepjucj1ana%e%7o'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1']
+ALLOWED_HOSTS = ['127.0.0.1','dynamic-timetable.herokuapp.com/']
 
 
 # Application definition
