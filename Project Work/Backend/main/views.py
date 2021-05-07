@@ -53,7 +53,7 @@ def shome(request):
         for item in timetable:
             lis[item.time][item.day]={
                 'prof':item.prof_name,
-                'Prof':item.prof_id,
+                'Prof':item.email,
                 'subject':item.subject,
                 'slot':item.slot_id,
             }
@@ -306,7 +306,7 @@ def pprofile(request,prof_id):
     if not request.user.is_authenticated:
         return redirect('login')
     else:
-        account=Account.objects.get(batch=int(prof_id))
+        account=Account.objects.get(email=prof_id)
         dic={}
         lis=[]
         for i in range(0,4):
