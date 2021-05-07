@@ -178,6 +178,7 @@
                                         aria-hidden="true">×</span></button><span>Profile save with success</span></div>
                         </div>
                     </div>
+                    <a href="{% url 'changepassword' %}"><button>change password</button></a>
                     <form method="POST" action="/seditprofile/">
                         {% csrf_token %}
                         <div class="form-row profile-row">
@@ -226,7 +227,7 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>{% if timetable.0.0%}Professor : {{timetable.0.0.prof}} <br> Subject: {{timetable.0.0.subject}}{%endif%}</td>
+                                    <td>{% if timetable.0.0%}<a href="/pprofile/{{timetable.0.0.Prof}}">Professor :{{timetable.0.0.prof}}</a> <br> <a href="/editnotes/{{timetable.0.0.slot}}">Subject: {{timetable.0.0.subject}}</a>{%endif%}</td>
                                     <td>{% if timetable.0.1%}Professor :{{timetable.0.1.prof}} <br> Subject: {{timetable.0.1.subject}}{%endif%}</td>
                                     <td>{% if timetable.0.2%}Professor :{{timetable.0.2.prof}} <br> Subject: {{timetable.0.2.subject}}{%endif%}</td>
                                     <td>{% if timetable.0.3%}Professor :{{timetable.0.3.prof}} <br> Subject: {{timetable.0.3.subject}}{%endif%}</td>

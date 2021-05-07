@@ -14,9 +14,8 @@ class NotesA(admin.ModelAdmin):
 
 admin.site.register(Notes,NotesA)
 
-
 class AlgoA(admin.ModelAdmin):
     model=Algo
-    list_display=['slot_id','batch_id','day','time']
+    list_display=['slot_id','prof_name','prof_id','batch_id','day','time']
 
 admin.site.register(Algo,AlgoA)
