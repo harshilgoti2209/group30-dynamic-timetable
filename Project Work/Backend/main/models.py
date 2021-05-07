@@ -30,7 +30,7 @@ class MyAccountManager(BaseUserManager):
 
 class Account(AbstractBaseUser):
     email=models.EmailField(max_length=70,unique=True, verbose_name="Email")
-    username=models.CharField(max_length=70,unique=True, verbose_name="Username")
+    username=models.CharField(max_length=70, verbose_name="Username")
     date_joined=models.DateTimeField(verbose_name='date joined', auto_now_add=True)
     last_login=models.DateTimeField(verbose_name='last login', auto_now=True)
     is_admin=models.BooleanField(default=False)
@@ -55,7 +55,7 @@ class Account(AbstractBaseUser):
         return True
 
 class Notes(models.Model ):
-    userid= models.CharField(max_length=100)
+    userid= models.IntegerField()
     slotid= models.CharField(max_length=100)
     notes = models.TextField(max_length=1000)
 
@@ -64,9 +64,10 @@ class Algo(models.Model ):
     prof_name=models.CharField( max_length=50)
     prof_id=models.IntegerField()
     subject=models.CharField( max_length=50)
-    subject_id=models.CharField(max_length=256)
+    subject_id=models.CharField(max_length=50)
     batch=models.CharField( max_length=50)
     batch_id=models.IntegerField()
     day=models.IntegerField()
     time=models.IntegerField()
+    email=models.EmailField(max_length=150)
 
