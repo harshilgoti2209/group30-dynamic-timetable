@@ -3,8 +3,11 @@ from django.contrib.auth import logout as logout_,login as login_,authenticate,u
 from .forms import UserSignUpForm,profileform,ProfSignUpForm,Editnotes
 from django.contrib.auth.forms import AuthenticationForm,PasswordChangeForm
 from django.contrib import messages
-from .models import Account,Notes
+from .models import Account,Notes,Algo
+from django.contrib.auth.hashers import make_password
+from .forms import loginForm,profform,changePasswordForm
 import csv,io
+from .timetable_generator_V2 import *
 
 def home(request):
     return render(request,'main/home.html')
@@ -19,46 +22,48 @@ def login(request):
             return redirect('shome') 
     else:
         if request.method=='POST':
-            fm=AuthenticationForm(request=request,data=request.POST)
+            fm=loginForm(request=request,data=request.POST)
             if fm.is_valid():
                 email=fm.cleaned_data['username']
                 password=fm.cleaned_data['password']
                 user=authenticate(email=email,password=password)
                 if user is not None:
                     login_(request,user)
-                    messages.success(request,'welcome!!!')
                     return redirect('login')
         else:
-            fm=AuthenticationForm()
+            fm=loginForm()
         return render(request,'main/login.html',{'form':fm})
 
 def logout(request):
     logout_(request)
-    return redirect('login')
-
-def about(request):
-    return render(request,'main/about.html')
-
-def contact(request):
-    return render(request,'main/contact.html')
+    return redirect('home')
 
 def shome(request):
     if request.user.is_authenticated and request.user.is_prof==False and request.user.is_superuser==False:
-        username=request.user.username
-        return render(request,'main/shome.html' ,{'username':username})
+        account=Account.objects.get(pk=request.user.id)
+        pform=profileform(instance=request.user)
+        dic={}
+        lis=[]
+        for i in range(0,4):
+            li=[]
+            for j in range(0,6):
+                li.append(dic)
+            lis.append(li)
+        timetable=Algo.objects.filter(batch_id=account.batch-1)
+        for item in timetable:
+            lis[item.time][item.day]={
+                'prof':item.prof_name,
+                'Prof':item.email,
+                'subject':item.subject,
+                'slot':item.slot_id,
+            }
+        return render(request,'main/shome.html', {'data':account,'pform': pform,'timetable':lis})
     else:
-        return redirect('login')    
+        return redirect('login')  
 
-def sprofile(request,id):
+def seditprofile(request):
     if not request.user.is_authenticated:
-        return redirect('login')
-    else:
-        account=Account.objects.get(pk=id)
-        return render(request,'main/sprofile.html',{'user':account})
-
-def seditprofile(request,id):
-    if not request.user.is_authenticated or id!=str(request.user.id):
-        messages.info(request,'You can not edit someone profile')
+        messages.info(request,'Login first')
         return redirect('login')
     else:
         account=Account.objects.get(pk=request.user.id)
@@ -67,40 +72,141 @@ def seditprofile(request,id):
             if fm.is_valid():
                 fm.save()
                 messages.success(request,'Your profile is edited successfully!!!')
-                return redirect('sprofile', id)
-        else:
-            fm=profileform( instance=request.user )
-        return render(request,'main/seditprofile.html',{'form':fm})
-
-def viewtimetable(request):
-    if request.user.is_authenticated:
-        return render(request,'main/viewtimetable.html',{'data':None})
-    else:
-        return redirect('login')
+                return redirect('login')
+            messages.info(request,'email is already exist')
+            return redirect('login')  
 
 def phome(request):
     if request.user.is_prof:
-        return render(request,'main/phome.html')
+        account=Account.objects.get(pk=request.user.id)
+        pform=profform (instance=request.user)
+        dic={}
+        lis=[]
+        for i in range(0,4):
+            li=[]
+            for j in range(0,6):
+                li.append(dic)
+            lis.append(li)
+        sub=[]
+        timetable=Algo.objects.filter(prof_id=request.user.batch)
+        for item in timetable:
+            lis[item.time][item.day]={
+                'batch':item.batch,
+                'subject':item.subject,
+                'slot':item.slot_id,
+                'Batch':item.batch_id+1,
+            }
+            if item.subject not in sub:
+                sub.append(item.subject)
+        return render(request,'main/phome.html',{'data':account,'pform': pform,'timetable':lis,'subject':sub})
     else:
         return redirect('login')
+
+def peditprofile(request):
+    if not request.user.is_prof: 
+        # messages.info(request,'You can not edit someone profile')
+        return redirect('login')
+    else:
+        if request.method=="POST":
+            fm=profform(request.POST, instance=request.user)
+            if fm.is_valid():
+                Algo.objects.filter(prof_id=request.user.batch).update(prof_name=request.POST['username'],email=request.POST['email'])
+                fm.save()
+                messages.success(request,'Your profile is edited successfully!!!')
+                return redirect('login')
+            messages.info(request,'Email is already exist')
+            return redirect('login')  
+        else:
+            return redirect('login')
+
+def changeslot(request,slot):
+    if request.user.is_prof:
+        dic=0
+        lis=[]
+        for i in range(0,4):
+            li=[]
+            for j in range(0,6):
+                li.append(dic)
+            lis.append(li)
+        timetable=Algo.objects.filter(prof_id=request.user.batch)
+        for item in timetable:
+            lis[item.time][item.day]=1
+        batch=Algo.objects.get(slot_id=int(slot)).batch
+        timetable=Algo.objects.filter(batch=batch)
+        for item in timetable:
+            lis[item.time][item.day]=1
+        available=[]
+        def fun(i):
+            if i==0:
+                return 'Slot-1'
+            elif i==1:
+                return 'Slot-2'
+            elif i==2:
+                return 'Slot-3'
+            else:
+                return 'Slot-4'
+        def fun2(i):
+            if i==0:
+                return 'Monday'
+            elif i==1:
+                return 'Tuesday'
+            elif i==2:
+                return 'Wednesday'
+            elif i==3:
+                return 'Thursday'
+            elif i==4:
+                return 'Friday'
+            else:
+                return 'Saturday'
+
+        for i in range(0,4):
+            for j in range(0,6):
+                if lis[i][j]==0:
+                    available.append({
+                        'time':i,
+                        'day':j,
+                        'Time':fun(i),
+                        'Day':fun2(j),
+                    })
+        if available.count==0:
+            return redirect('phome')
+        else:
+            return render(request,'main/available.html',{'available':available,'slot':slot})
+    else:
+        return redirect('login')
+
+def finalchangeslot(request,slot,time,day):
+    if request.user.is_prof:
+        obj=Algo.objects.get(slot_id=int(slot))
+        obj.time=int(time)
+        obj.day=int(day)
+        obj.save()
+        messages.info(request,'Your slot changed successfully!')
+        return redirect('login')
+    else:
+        return redirect('login')   
+
 
 def ahome(request):
     if request.user.is_superuser:
-        return render(request,'main/ahome.html')
-    else:
-        return redirect('login')
-
-def changepassword(request):
-    if request.user.is_authenticated:
-        if request.method=='POST':
-            fm=PasswordChangeForm(user=request.user,data=request.POST)
-            if fm.is_valid():
-                fm.save()
-                update_session_auth_hash(request=request,user=request.user)
-                return redirect('login')
-        else:
-            fm=PasswordChangeForm(user=request.user)
-        return render(request,'main/changepassword.html',{'form':fm})
+        final=[]
+        for k in range(0,24):
+            dic={}
+            lis=[]
+            for i in range(0,4):
+                li=[]
+                for j in range(0,6):
+                    li.append(dic)
+                lis.append(li)
+            final.append(lis)
+        timetable=Algo.objects.filter()
+        for item in timetable:
+            final[item.batch_id][item.time][item.day]={
+                'subject':item.subject,
+                'prof':item.prof_name,
+            }
+        form2=UserSignUpForm()
+        return render(request,'main/ahome.html',{'timetable':final,'fm2':form2})
     else:
         return redirect('login')
 
@@ -113,13 +219,13 @@ def signup(request):
                 messages.success(request,'success!!!')
         else:
             fm=UserSignUpForm()
-        return render(request,'main/signup.html',{'form':fm})
+        return redirect('login')
     else:
-        return redirect('login')   # a change karwanu che
+        return redirect('login')   
 
 def studentcsv(request):
     if request.method=='POST':
-        csv_file=request.FILES['data']   #csv file read code
+        csv_file=request.FILES['data']   
         data_set = csv_file.read().decode('UTF-8')
         io_string=io.StringIO(data_set)
         next(io_string)
@@ -129,57 +235,94 @@ def studentcsv(request):
             if x.count() > 0 or y.count()>0 :
                 messages.info(request,f'{column[0]} username or {column[1]} email is already exist') 
             else:
-                fm=Account(username=column[0], email=column[1] , password=column[2] , batch=column[3])
+                password=make_password(column[2])
+                fm=Account(username=column[0], email=column[1] , password=password , batch=column[3])
                 fm.save() 
-        messages.info(request,'success')
-        return redirect('signup')
+        return redirect('login')
     else:
         return redirect('login')
 
-def profcsv(request):
+
+def gtimetable(request):
     if request.method=='POST':
-        data=request.POST.get('file')  #csv file read code
-        messages.info(request,'success')
-        return redirect('addprof')
-    else:
-        return redirect('login') 
-              
-def addprof(request):
-    if  request.user.is_superuser==True:
-        if request.method=="POST":
-            fm=ProfSignUpForm(request.POST)
-            if fm.is_valid():
-                name=fm.cleaned_data['username']
-                password=fm.cleaned_data['password1']
-                email=fm.cleaned_data['email']
-                prof=Account(username=name,password=password,email=email,is_prof=True)
-                prof.save()
-                messages.success(request,'success!!!')
-                fm=ProfSignUpForm()
-        else:
-            fm=ProfSignUpForm()
-        return render(request,'main/profsignup.html',{'form':fm})
+        obj=Algo.objects.all()
+        lis=[]
+        obj.delete()
+        obj=Account.objects.filter(is_prof=True)
+        obj.delete()
+        csv_file=request.FILES['data']  
+        cube, genes =timetable( csv_file)  
+        for i in range(cube.shape[1]):
+            for j in range(cube.shape[2]):
+                for k in range(cube.shape[0]) : 
+                    if(cube[k,i,j] != -1) : 
+                        obj=Algo( slot_id=genes[cube[k,i,j]].slot_id,email=genes[cube[k,i,j]].email, prof_name=genes[cube[k,i,j]].prof_name,prof_id=genes[cube[k,i,j]].prof_id,subject=genes[cube[k,i,j]].subject,subject_id=genes[cube[k,i,j]].subject_id,batch=genes[cube[k,i,j]].batch,batch_id=genes[cube[k,i,j]].batch_id, day=j,time=i )
+                        obj.save()
+                        if Account.objects.filter(email=genes[cube[k,i,j]].email).count()==0:
+                            ob=Account(username= genes[cube[k,i,j]].prof_name,email=genes[cube[k,i,j]].email,password=make_password('qwer@123'),is_prof=True, batch=genes[cube[k,i,j]].prof_id)
+                            ob.save()
+        messages.info(request,'Your timetable has generated')
+        return redirect('login')
     else:
         return redirect('login')
 
-def editnotes(request,id,slotid):
-    if not request.user.is_authenticated or id!=str(request.user.id):
-        messages.info(request,"You can not edit/view someone's notes")
+def editnotes(request,slotid):
+    if not request.user.is_authenticated:
         return redirect('login')
     else:
-        account=Notes.objects.filter(userid=id,slotid=slotid)
+        account=Notes.objects.filter(userid=request.user.id,slotid=slotid)
         if account.count()==0:
-            ob=Notes(userid=id, slotid=slotid, notes='')
+            ob=Notes(userid=request.user.id, slotid=slotid, notes='')
             ob.save()
-        account=Notes.objects.get(userid=id,slotid=slotid)
+        account=Notes.objects.get(userid=request.user.id,slotid=slotid)
         if request.method=="POST":
             fm=Editnotes(request.POST, instance=account)
             if fm.is_valid():
                 data=fm.cleaned_data['notes']
-                note=Notes(id=account.id,userid=id,slotid=slotid,notes=data) 
+                note=Notes(id=account.id,userid=request.user.id,slotid=slotid,notes=data) 
                 note.save()
                 messages.success(request,'Your Notes is edited successfully!!!')
-                return redirect('viewtimetable')
+                return redirect('login')
         else:
             fm=Editnotes( instance=account)
         return render(request,'main/editnotes.html',{'form':fm})
+
+def changepassword(request):
+    if request.user.is_authenticated:
+        if request.method=='POST':
+            fm=changePasswordForm(user=request.user,data=request.POST)
+            if fm.is_valid():
+                fm.save()
+                update_session_auth_hash(request=request,user=request.user)
+                messages.success(request,'Your password changed successfully')
+                return redirect('login')
+        else:
+            fm=changePasswordForm(user=request.user)
+        return render(request,'main/changepassword.html',{'form':fm})
+    else:
+        return redirect('login')
+
+def pprofile(request,prof_id):
+    if not request.user.is_authenticated:
+        return redirect('login')
+    else:
+        account=Account.objects.get(email=prof_id)
+        dic={}
+        lis=[]
+        for i in range(0,4):
+            li=[]
+            for j in range(0,6):
+                li.append(dic)
+            lis.append(li)
+        sub=[]
+        timetable=Algo.objects.filter(prof_id=account.batch)
+        for item in timetable:
+            lis[item.time][item.day]={
+                'batch':item.batch,
+                'subject':item.subject,
+                'slot':item.slot_id,
+            }
+            if item.subject not in sub:
+                sub.append(item.subject)
+        return render(request,'main/pprofile.html',{'data':account,'subject':sub})
+  
