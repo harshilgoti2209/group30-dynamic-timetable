@@ -45,4 +45,8 @@ class Editnotes(forms.ModelForm):
     class Meta:
         model=Notes
         fields=('notes',)
-    
+class Editnotes(forms.ModelForm):
+    notes=forms.CharField(max_length=2024,widget=forms.Textarea(attrs={'placeholder':'Enter notes here','class':'form-control','id':'search'}))
+    class Meta:
+        model=Notes
+        fields=('notes',)

@@ -78,12 +78,13 @@
             <!-- Breadcrumb -->
             <nav aria-label="breadcrumb" class="main-breadcrumb">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item active" aria-current="page"><a href="{% url 'login' %}">back</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Profile</li>
+                    <li class="breadcrumb-item active" aria-current="page">
+                        <a href="{% url 'login' %}">
+                            <-Back</a>
+                    </li>
                 </ol>
             </nav>
             <!-- /Breadcrumb -->
-
             <div class="row gutters-sm">
                 <div class="col-md-4 mb-3">
                     <div class="card">
@@ -95,8 +96,10 @@
                     </div>
                 </div>
                 <div class="col-md-8">
+                    <h4 style="text-align:center;">Professor Information</h4>
                     <div class="card mb-3">
                         <div class="card-body">
+
                             <div class="row">
                                 <div class="col-sm-3">
                                     <h6 class="mb-0">Full Name</h6>
@@ -120,9 +123,7 @@
                                     <h6 class="mb-0">Subject</h6>
                                 </div>
                                 <div class="col-sm-9 text-secondary">
-                                    {% for x in subject %}
-                                    {{x}},
-                                   {%endfor%}
+                                    {% for x in subject %} {{x}}, {%endfor%}
                                 </div>
                             </div>
                             <hr>
@@ -134,7 +135,7 @@
                                     {{ data.date_joined}}
                                 </div>
                             </div>
-                           
+
                         </div>
                     </div>
                 </div>
