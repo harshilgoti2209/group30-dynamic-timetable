@@ -41,6 +41,12 @@ def load(s) :
         for j in range(len(Subject[i])) : 
             New_Num_lecture.append(STR[j])
 
+    Email = df[['Email']].values
+    New_Email = []
+    for i in range(len(Email)) : 
+        for j in range(len(Subject[i])) : 
+            New_Email.append(Email[i][0])
+
     Sub = df[['Subject']].values
     New_Sub = []
     for i in range(len(Num_lecture)) : 
@@ -48,15 +54,16 @@ def load(s) :
         for j in range(len(Subject[i])) : 
             New_Sub.append(STR[j])
             
-    df2 = pd.DataFrame(columns=['ID of Prof.','Name of Prof.','Subject','Subject ID','Batch','No. of lecture'])
+    df2 = pd.DataFrame(columns=['ID of Prof.','Name of Prof.','Subject','Subject ID','Batch','No. of lecture','Email'])
     df2['ID of Prof.'] = New_Prof_ID
     df2['Name of Prof.'] = New_Name
     df2['Subject'] = New_Sub
     df2['Subject ID'] = New_Sub_ID
     df2['Batch'] = New_Batch_ID
     df2['No. of lecture'] = New_Num_lecture
+    df2['Email'] = New_Email
 
-    arr = df2[['ID of Prof.','Name of Prof.','Subject','Subject ID','Batch']].values
+    arr = df2[['ID of Prof.','Name of Prof.','Subject','Subject ID','Batch','Email']].values
     data_list = []
     t=0
     for i in range(len(arr)) : 
@@ -72,7 +79,7 @@ def load(s) :
         for j in range(int(nol[i])) : 
             da.append(data_list[i])
 
-    my_df = pd.DataFrame(data=da, columns=['Slot ID','ID of Prof.','Name of Prof.','Subject','Subject ID','Batch'])
+    my_df = pd.DataFrame(data=da, columns=['Slot ID','ID of Prof.','Name of Prof.','Subject','Subject ID','Batch','Email'])
 
     t=0
     slot_id = []
@@ -97,11 +104,11 @@ def load(s) :
             
     my_df['Batch ID'] = BID
 
-    my_data = my_df[['Slot ID','ID of Prof.','Name of Prof.','Subject','Subject ID','Batch','Batch ID']].values
+    my_data = my_df[['Slot ID','ID of Prof.','Name of Prof.','Subject','Subject ID','Batch','Batch ID','Email']].values
     genes = []
     for i in range(len(my_data)) : 
-        g = Gene(my_data[i][0],my_data[i][2],my_data[i][1],my_data[i][3],my_data[i][4],my_data[i][5],my_data[i][6])
+        g = Gene(my_data[i][0],my_data[i][2],my_data[i][1],my_data[i][3],my_data[i][4],my_data[i][5],my_data[i][6],my_data[i][7])
         genes.append(g)
-        #genes[i].display()
 
     return genes
+
